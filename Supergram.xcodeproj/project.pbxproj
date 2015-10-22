@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB21253F1BD98F3B00AA824B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB21253E1BD98F3B00AA824B /* main.m */; };
+		CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125411BD98F3B00AA824B /* AppDelegate.m */; };
+		CB2125451BD98F3B00AA824B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125441BD98F3B00AA824B /* ViewController.m */; };
+		CB2125481BD98F3B00AA824B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB2125461BD98F3B00AA824B /* Main.storyboard */; };
+		CB21254A1BD98F3B00AA824B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB2125491BD98F3B00AA824B /* Assets.xcassets */; };
+		CB21254D1BD98F3B00AA824B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */; };
+		CB2125581BD98F3B00AA824B /* SupergramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125571BD98F3B00AA824B /* SupergramTests.m */; };
+		CB2125631BD98F3B00AA824B /* SupergramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125621BD98F3B00AA824B /* SupergramUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB2125541BD98F3B00AA824B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB2125321BD98F3B00AA824B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB2125391BD98F3B00AA824B;
+			remoteInfo = Supergram;
+		};
+		CB21255F1BD98F3B00AA824B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB2125321BD98F3B00AA824B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB2125391BD98F3B00AA824B;
+			remoteInfo = Supergram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB21253A1BD98F3B00AA824B /* Supergram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supergram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB21253E1BD98F3B00AA824B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB2125401BD98F3B00AA824B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CB2125411BD98F3B00AA824B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CB2125431BD98F3B00AA824B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CB2125441BD98F3B00AA824B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CB2125471BD98F3B00AA824B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB2125491BD98F3B00AA824B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB21254C1BD98F3B00AA824B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB21254E1BD98F3B00AA824B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2125531BD98F3B00AA824B /* SupergramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupergramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2125571BD98F3B00AA824B /* SupergramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupergramTests.m; sourceTree = "<group>"; };
+		CB2125591BD98F3B00AA824B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB21255E1BD98F3B00AA824B /* SupergramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupergramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2125621BD98F3B00AA824B /* SupergramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupergramUITests.m; sourceTree = "<group>"; };
+		CB2125641BD98F3B00AA824B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB2125371BD98F3B00AA824B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB2125501BD98F3B00AA824B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB21255B1BD98F3B00AA824B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB2125311BD98F3B00AA824B = {
+			isa = PBXGroup;
+			children = (
+				CB21253C1BD98F3B00AA824B /* Supergram */,
+				CB2125561BD98F3B00AA824B /* SupergramTests */,
+				CB2125611BD98F3B00AA824B /* SupergramUITests */,
+				CB21253B1BD98F3B00AA824B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB21253B1BD98F3B00AA824B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB21253A1BD98F3B00AA824B /* Supergram.app */,
+				CB2125531BD98F3B00AA824B /* SupergramTests.xctest */,
+				CB21255E1BD98F3B00AA824B /* SupergramUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB21253C1BD98F3B00AA824B /* Supergram */ = {
+			isa = PBXGroup;
+			children = (
+				CB2125401BD98F3B00AA824B /* AppDelegate.h */,
+				CB2125411BD98F3B00AA824B /* AppDelegate.m */,
+				CB2125431BD98F3B00AA824B /* ViewController.h */,
+				CB2125441BD98F3B00AA824B /* ViewController.m */,
+				CB2125461BD98F3B00AA824B /* Main.storyboard */,
+				CB2125491BD98F3B00AA824B /* Assets.xcassets */,
+				CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */,
+				CB21254E1BD98F3B00AA824B /* Info.plist */,
+				CB21253D1BD98F3B00AA824B /* Supporting Files */,
+			);
+			path = Supergram;
+			sourceTree = "<group>";
+		};
+		CB21253D1BD98F3B00AA824B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB21253E1BD98F3B00AA824B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB2125561BD98F3B00AA824B /* SupergramTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB2125571BD98F3B00AA824B /* SupergramTests.m */,
+				CB2125591BD98F3B00AA824B /* Info.plist */,
+			);
+			path = SupergramTests;
+			sourceTree = "<group>";
+		};
+		CB2125611BD98F3B00AA824B /* SupergramUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB2125621BD98F3B00AA824B /* SupergramUITests.m */,
+				CB2125641BD98F3B00AA824B /* Info.plist */,
+			);
+			path = SupergramUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB2125391BD98F3B00AA824B /* Supergram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB2125671BD98F3B00AA824B /* Build configuration list for PBXNativeTarget "Supergram" */;
+			buildPhases = (
+				CB2125361BD98F3B00AA824B /* Sources */,
+				CB2125371BD98F3B00AA824B /* Frameworks */,
+				CB2125381BD98F3B00AA824B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Supergram;
+			productName = Supergram;
+			productReference = CB21253A1BD98F3B00AA824B /* Supergram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB2125521BD98F3B00AA824B /* SupergramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB21256A1BD98F3B00AA824B /* Build configuration list for PBXNativeTarget "SupergramTests" */;
+			buildPhases = (
+				CB21254F1BD98F3B00AA824B /* Sources */,
+				CB2125501BD98F3B00AA824B /* Frameworks */,
+				CB2125511BD98F3B00AA824B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB2125551BD98F3B00AA824B /* PBXTargetDependency */,
+			);
+			name = SupergramTests;
+			productName = SupergramTests;
+			productReference = CB2125531BD98F3B00AA824B /* SupergramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB21255D1BD98F3B00AA824B /* SupergramUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB21256D1BD98F3B00AA824B /* Build configuration list for PBXNativeTarget "SupergramUITests" */;
+			buildPhases = (
+				CB21255A1BD98F3B00AA824B /* Sources */,
+				CB21255B1BD98F3B00AA824B /* Frameworks */,
+				CB21255C1BD98F3B00AA824B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB2125601BD98F3B00AA824B /* PBXTargetDependency */,
+			);
+			name = SupergramUITests;
+			productName = SupergramUITests;
+			productReference = CB21255E1BD98F3B00AA824B /* SupergramUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB2125321BD98F3B00AA824B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Shotty Shack Games";
+				TargetAttributes = {
+					CB2125391BD98F3B00AA824B = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = ZZ32G7S6G8;
+					};
+					CB2125521BD98F3B00AA824B = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = ZZ32G7S6G8;
+						TestTargetID = CB2125391BD98F3B00AA824B;
+					};
+					CB21255D1BD98F3B00AA824B = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = ZZ32G7S6G8;
+						TestTargetID = CB2125391BD98F3B00AA824B;
+					};
+				};
+			};
+			buildConfigurationList = CB2125351BD98F3B00AA824B /* Build configuration list for PBXProject "Supergram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB2125311BD98F3B00AA824B;
+			productRefGroup = CB21253B1BD98F3B00AA824B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB2125391BD98F3B00AA824B /* Supergram */,
+				CB2125521BD98F3B00AA824B /* SupergramTests */,
+				CB21255D1BD98F3B00AA824B /* SupergramUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB2125381BD98F3B00AA824B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB21254D1BD98F3B00AA824B /* LaunchScreen.storyboard in Resources */,
+				CB21254A1BD98F3B00AA824B /* Assets.xcassets in Resources */,
+				CB2125481BD98F3B00AA824B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB2125511BD98F3B00AA824B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB21255C1BD98F3B00AA824B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB2125361BD98F3B00AA824B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2125451BD98F3B00AA824B /* ViewController.m in Sources */,
+				CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */,
+				CB21253F1BD98F3B00AA824B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB21254F1BD98F3B00AA824B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2125581BD98F3B00AA824B /* SupergramTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB21255A1BD98F3B00AA824B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2125631BD98F3B00AA824B /* SupergramUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB2125551BD98F3B00AA824B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB2125391BD98F3B00AA824B /* Supergram */;
+			targetProxy = CB2125541BD98F3B00AA824B /* PBXContainerItemProxy */;
+		};
+		CB2125601BD98F3B00AA824B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB2125391BD98F3B00AA824B /* Supergram */;
+			targetProxy = CB21255F1BD98F3B00AA824B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB2125461BD98F3B00AA824B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB2125471BD98F3B00AA824B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB21254C1BD98F3B00AA824B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB2125651BD98F3B00AA824B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CB2125661BD98F3B00AA824B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB2125681BD98F3B00AA824B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Supergram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShottyShackGames.Supergram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CB2125691BD98F3B00AA824B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Supergram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShottyShackGames.Supergram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CB21256B1BD98F3B00AA824B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SupergramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShottyShackGames.SupergramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Supergram.app/Supergram";
+			};
+			name = Debug;
+		};
+		CB21256C1BD98F3B00AA824B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SupergramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShottyShackGames.SupergramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Supergram.app/Supergram";
+			};
+			name = Release;
+		};
+		CB21256E1BD98F3B00AA824B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SupergramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShottyShackGames.SupergramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Supergram;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CB21256F1BD98F3B00AA824B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SupergramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShottyShackGames.SupergramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Supergram;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB2125351BD98F3B00AA824B /* Build configuration list for PBXProject "Supergram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB2125651BD98F3B00AA824B /* Debug */,
+				CB2125661BD98F3B00AA824B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB2125671BD98F3B00AA824B /* Build configuration list for PBXNativeTarget "Supergram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB2125681BD98F3B00AA824B /* Debug */,
+				CB2125691BD98F3B00AA824B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB21256A1BD98F3B00AA824B /* Build configuration list for PBXNativeTarget "SupergramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB21256B1BD98F3B00AA824B /* Debug */,
+				CB21256C1BD98F3B00AA824B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CB21256D1BD98F3B00AA824B /* Build configuration list for PBXNativeTarget "SupergramUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB21256E1BD98F3B00AA824B /* Debug */,
+				CB21256F1BD98F3B00AA824B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB2125321BD98F3B00AA824B /* Project object */;
+}
