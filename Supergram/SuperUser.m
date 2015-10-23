@@ -10,4 +10,6 @@
 
 @implementation SuperUser
 
+@dynamic profilePicture;
+
 @end

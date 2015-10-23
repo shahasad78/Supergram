@@ -7,6 +7,7 @@
 //
 
 #import "ResetPasswordViewController.h"
+#import <Parse/Parse.h>
 
 @interface ResetPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -20,7 +21,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (IBAction)onResetPasswordButtonpressed:(UIButton *)sender {
+
+    // TODO: validate email
+    [self.spinner startAnimating];
+    [PFUser requestPasswordResetForEmailInBackground:self.emailTextField.text];
+    
+    [self.spinner stopAnimating];
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Password Reset"
+                                                                   message:[NSString stringWithFormat:@"An email containing information on how to reset your password has been sent to %@.", self.emailTextField.text]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:okButton];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

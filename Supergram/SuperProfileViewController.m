@@ -7,6 +7,9 @@
 //
 
 #import "SuperProfileViewController.h"
+#import "LoginViewController.h"
+#import <Parse/Parse.h>
+#import "SuperUser.h"
 
 @interface SuperProfileViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -17,9 +20,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    PFUser *user = [PFUser currentUser];
+
+    // If the current visitor is not logged in, show the login scene
+
+    if (user == nil ) {
+        [self showLogInScreen];
+    }
+
+    // Show the current visitor's username
+    if (user.username) {
+        self.usernameLabel.text = user.username;
+    }
 }
+
 - (IBAction)onLogOutButtonPressed:(UIButton *)sender {
+    // Send a request to log out a user
+    [PFUser logOutInBackground];
+    [self showLogInScreen];
+}
+
+- (void) showLogInScreen {
+
+    __weak SuperProfileViewController *weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        NSString * storyboardName = @"Main";
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+        LoginViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
+        [weakSelf presentViewController:vc animated:YES completion:nil];
+    });
 }
 
 

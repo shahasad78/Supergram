@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Omh-SM-h4M">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJ5-27-hIn">
                                 <rect key="frame" x="550" y="40" width="30" height="30"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Gyu-Ay-vwS"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="I9j-NB-UxT"/>
@@ -59,6 +59,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="g6o-B0-RqG" id="gOb-iU-wZI"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbu-uB-om9">
                                         <rect key="frame" x="43" y="220" width="185" height="30"/>
@@ -85,7 +88,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="VZB-rQ-9hm" firstAttribute="top" secondItem="8Ls-Et-aRd" secondAttribute="bottom" constant="66.5" id="2nP-aV-OHH"/>
                                     <constraint firstAttribute="height" constant="346" id="705-ec-Wbm"/>
@@ -131,7 +134,7 @@
         <!--Login View Controller-->
         <scene sceneID="ixi-jq-X2j">
             <objects>
-                <viewController id="3Yu-Hn-DiC" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="3Yu-Hn-DiC" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0md-XI-5je"/>
                         <viewControllerLayoutGuide type="bottom" id="UA6-iH-Tqi"/>
@@ -159,7 +162,10 @@
                                             <constraint firstAttribute="height" constant="30" id="zL9-pH-kZI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3Yu-Hn-DiC" id="f3R-kc-LQX"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cET-LW-Pf9">
                                         <rect key="frame" x="13" y="80" width="245" height="30"/>
@@ -169,6 +175,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3Yu-Hn-DiC" id="Dde-D1-POB"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kuo-zJ-7A2">
                                         <rect key="frame" x="101" y="195" width="70" height="45"/>
@@ -230,7 +239,7 @@
                                         <color key="color" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="Vov-es-wy8" secondAttribute="centerX" id="0st-pP-3bz"/>
                                     <constraint firstItem="cET-LW-Pf9" firstAttribute="centerX" secondItem="Vov-es-wy8" secondAttribute="centerX" constant="-0.25" id="29k-ws-22r"/>
@@ -310,7 +319,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IG-fF-7rU">
                                 <rect key="frame" x="550" y="40" width="30" height="30"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NKp-Fs-xCa"/>
                                     <constraint firstAttribute="width" constant="30" id="k5u-va-QKg"/>
@@ -346,6 +355,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="L9q-jq-dsX" id="9SX-GH-E38"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTe-sp-UQg">
                                         <rect key="frame" x="13" y="182" width="245" height="30"/>
@@ -353,7 +365,10 @@
                                             <constraint firstAttribute="width" constant="245" id="Hdd-7a-SVS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="L9q-jq-dsX" id="hHz-GR-F6q"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ps-ch-gF3">
                                         <rect key="frame" x="13" y="132" width="245" height="30"/>
@@ -363,6 +378,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="L9q-jq-dsX" id="PUr-hl-ynI"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKN-42-rY4">
                                         <rect key="frame" x="85" y="245" width="100" height="40"/>
@@ -383,7 +401,7 @@
                                         <color key="color" red="0.27450980390000002" green="0.74509803919999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="1ps-ch-gF3" firstAttribute="top" secondItem="L5e-vQ-GGc" secondAttribute="bottom" constant="23" id="1tF-rf-zB9"/>
                                     <constraint firstAttribute="height" constant="346" id="DWy-cv-Kfm"/>
@@ -452,7 +470,7 @@
         <!--Super Profile View Controller-->
         <scene sceneID="Plt-uW-DhA">
             <objects>
-                <viewController id="Omh-SM-h4M" customClass="SuperProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="Omh-SM-h4M" customClass="SuperProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TWe-ZG-iY6"/>
                         <viewControllerLayoutGuide type="bottom" id="vtf-it-VNc"/>
@@ -487,7 +505,7 @@
                                             <constraint firstAttribute="width" constant="105" id="28I-2Z-209"/>
                                             <constraint firstAttribute="height" constant="30" id="tXH-UR-thj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                                         <state key="normal" title="Log Out">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -497,7 +515,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="xTp-86-Sil" firstAttribute="top" secondItem="9eh-YR-FL1" secondAttribute="bottom" constant="16" id="0Lc-yz-lpk"/>
                                     <constraint firstItem="9eh-YR-FL1" firstAttribute="top" secondItem="RMC-C2-W7I" secondAttribute="top" constant="34" id="21p-ES-fmT"/>
