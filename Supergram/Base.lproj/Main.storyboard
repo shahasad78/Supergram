@@ -653,8 +653,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="fwy-6O-upc"/>
                                                 <exclude reference="Lu1-JJ-Jpb"/>
+                                                <exclude reference="fwy-6O-upc"/>
                                             </mask>
                                         </variation>
                                     </imageView>
@@ -698,8 +698,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="fAx-Ec-xsL"/>
                                                 <exclude reference="P4Q-d3-pPj"/>
+                                                <exclude reference="fAx-Ec-xsL"/>
                                             </mask>
                                         </variation>
                                     </imageView>
