@@ -35,12 +35,6 @@
     }
 }
 
-- (IBAction)onLogOutButtonPressed:(UIButton *)sender {
-    // Send a request to log out a user
-    [PFUser logOutInBackground];
-    [self showLogInScreen];
-}
-
 - (void) showLogInScreen {
 
     __weak SuperProfileViewController *weakSelf = self;

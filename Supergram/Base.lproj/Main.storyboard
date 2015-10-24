@@ -502,21 +502,6 @@
                                             <constraint firstAttribute="width" constant="120" id="ddN-WV-7bp"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pU-8k-Vhu">
-                                        <rect key="frame" x="83" y="245" width="105" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="105" id="28I-2Z-209"/>
-                                            <constraint firstAttribute="height" constant="30" id="tXH-UR-thj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                        <state key="normal" title="Log Out">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onLogOutButtonPressed:" destination="Omh-SM-h4M" eventType="touchUpInside" id="sG5-xr-vKi"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-Gq-R6u">
                                         <rect key="frame" x="148" y="109" width="22" height="22"/>
                                         <constraints>
@@ -540,10 +525,8 @@
                                 <constraints>
                                     <constraint firstItem="xTp-86-Sil" firstAttribute="top" secondItem="9eh-YR-FL1" secondAttribute="bottom" constant="16" id="0Lc-yz-lpk"/>
                                     <constraint firstItem="9eh-YR-FL1" firstAttribute="top" secondItem="RMC-C2-W7I" secondAttribute="top" constant="34" id="21p-ES-fmT"/>
-                                    <constraint firstItem="5pU-8k-Vhu" firstAttribute="top" secondItem="xTp-86-Sil" secondAttribute="bottom" constant="41" id="36M-ri-S4s"/>
                                     <constraint firstItem="5EQ-Gq-R6u" firstAttribute="top" secondItem="RMC-C2-W7I" secondAttribute="top" constant="109" id="6fQ-Yx-Qi4"/>
                                     <constraint firstItem="xTp-86-Sil" firstAttribute="centerX" secondItem="9eh-YR-FL1" secondAttribute="centerX" constant="0.5" id="Gk7-aq-Y9S"/>
-                                    <constraint firstItem="xTp-86-Sil" firstAttribute="centerX" secondItem="5pU-8k-Vhu" secondAttribute="centerX" id="M0r-Q7-ROl"/>
                                     <constraint firstAttribute="width" constant="270" id="Ogf-FR-bSV"/>
                                     <constraint firstItem="sys-bn-U3K" firstAttribute="centerX" secondItem="RMC-C2-W7I" secondAttribute="centerX" id="TDH-KQ-Qcg"/>
                                     <constraint firstItem="sys-bn-U3K" firstAttribute="top" secondItem="xTp-86-Sil" secondAttribute="bottom" constant="-1" id="YSm-Ir-JbT"/>
