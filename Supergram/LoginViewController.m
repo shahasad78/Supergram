@@ -19,16 +19,21 @@
 
 @implementation LoginViewController
 
+#pragma mark - View LifeCycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - Text Field Delegate Methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
 
+#pragma mark - Helper Methods
+
+#pragma mark - IBAction Methods
 - (IBAction)onLoginButtonPressed:(UIButton *)sender {
     [self.spinner startAnimating];
 
@@ -44,8 +49,8 @@
         [self.spinner stopAnimating];
 
         // TODO present user friendly error description
-        alertTitle = (error == nil) ? @"Success" :  @"Error";
-        alertMessage = (error == nil) ? @"Logged In"  : error.description;
+        alertTitle   = (error) ? @"Error" : @"Success";
+        alertMessage = (error) ? error.description : @"Logged In";
 
         dispatch_async(dispatch_get_main_queue(), ^{
 

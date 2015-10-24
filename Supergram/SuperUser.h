@@ -9,5 +9,7 @@
 #import <Parse/Parse.h>
 
 @interface SuperUser : PFUser
+
 @property UIImage *profilePicture;
+
 @end
