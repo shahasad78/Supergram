@@ -9,7 +9,6 @@
 #import "SuperProfileViewController.h"
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
-#import "SuperUser.h"
 
 @interface SuperProfileViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;

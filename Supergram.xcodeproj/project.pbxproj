@@ -41,6 +41,7 @@
 		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */; settings = {ASSET_TAGS = (); }; };
 		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,8 @@
 		E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ValidationUtility.m"; sourceTree = "<group>"; };
 		E05F80411BDB1BB600B8DD21 /* UserSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsViewController.h; sourceTree = "<group>"; };
 		E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsViewController.m; sourceTree = "<group>"; };
+		E05F80441BDB403A00B8DD21 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
+		E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +273,8 @@
 				E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */,
 				E05F80411BDB1BB600B8DD21 /* UserSettingsViewController.h */,
 				E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */,
+				E05F80441BDB403A00B8DD21 /* ImagePickerViewController.h */,
+				E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -359,7 +364,7 @@
 				TargetAttributes = {
 					CB2125391BD98F3B00AA824B = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = ZZ32G7S6G8;
+						DevelopmentTeam = RYF7YHAMY5;
 					};
 					CB2125521BD98F3B00AA824B = {
 						CreatedOnToolsVersion = 7.1;
@@ -428,6 +433,7 @@
 				E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */,
 				E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */,
 				CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */,
+				E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */,
 				E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */,
 				E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */,
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
@@ -573,6 +579,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Supergram",
@@ -581,6 +589,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShottyShackGames.Supergram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -588,6 +597,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Supergram",
@@ -596,6 +607,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShottyShackGames.Supergram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
