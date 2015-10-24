@@ -38,16 +38,20 @@
 
 #pragma mark - Helper Methods
 - (BOOL)isValidEmailAddress:(NSString *)emailAddress {
+    // Base Case - No text
     if (!emailAddress.length) {
         return NO;
     }
+
     NSError *error = nil;
     NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:&error];
     NSRange fullRange = NSMakeRange(0, emailAddress.length);
     NSArray *matches = [detector matchesInString:emailAddress options:0 range:fullRange];
+    // Detector should only find one pattern match.
     if (matches.count != 1) {
         return NO;
     }
+
     NSTextCheckingResult *result = [matches firstObject];
     if (![result.URL.scheme isEqual:@"mailto"]) {
         return NO;
