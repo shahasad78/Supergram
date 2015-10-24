@@ -12,6 +12,7 @@
 @interface ResetPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
 @end
 

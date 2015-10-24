@@ -40,6 +40,7 @@
 		E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */; settings = {ASSET_TAGS = (); }; };
+		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		E01CFDE11BD9AC73004E1874 /* NSString+ValidationUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ValidationUtility.h"; sourceTree = "<group>"; };
 		E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ValidationUtility.m"; sourceTree = "<group>"; };
+		E05F80411BDB1BB600B8DD21 /* UserSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsViewController.h; sourceTree = "<group>"; };
+		E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +268,8 @@
 				E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */,
 				E01CFDDE1BD99F3A004E1874 /* SignUpViewController.h */,
 				E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */,
+				E05F80411BDB1BB600B8DD21 /* UserSettingsViewController.h */,
+				E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */,
 				CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */,
 				E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */,
+				E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */,
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
 				E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */,
 				E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */,
