@@ -8,6 +8,8 @@
 
 #import <Parse/Parse.h>
 
-@interface SuperUser : PFUser
+@interface SuperUser : PFUser <PFSubclassing>
+
 @property UIImage *profilePicture;
+
 @end

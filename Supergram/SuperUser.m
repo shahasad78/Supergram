@@ -7,6 +7,7 @@
 //
 
 #import "SuperUser.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation SuperUser
 
