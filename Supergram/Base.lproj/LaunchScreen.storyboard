@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,15 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supercameraLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="gaB-Ui-Qje">
-                                <rect key="frame" x="151" y="151" width="298" height="298"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supercameraLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="AO0-bm-ULC">
+                                <rect key="frame" x="180" y="159.5" width="240" height="281"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="6Vo-ci-qMw"/>
+                                    <constraint firstAttribute="height" constant="281" id="aOB-QS-KfT"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.93333333333333335" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="gaB-Ui-Qje" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ECD-GE-e3Z"/>
-                            <constraint firstItem="gaB-Ui-Qje" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="NdT-sa-JbX"/>
+                            <constraint firstItem="AO0-bm-ULC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hrt-9k-eyp"/>
+                            <constraint firstItem="AO0-bm-ULC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xRI-fI-F2D"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -34,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="supercameraLaunch" width="298" height="298"/>
+        <image name="supercameraLaunch" width="1242" height="1242"/>
     </resources>
 </document>
