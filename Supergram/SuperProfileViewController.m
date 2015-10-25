@@ -9,9 +9,13 @@
 #import "SuperProfileViewController.h"
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface SuperProfileViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
+
+@property (weak, nonatomic) IBOutlet UIButton *editProfileImageBtn;
 
 @end
 
@@ -32,6 +36,12 @@
     if (user.username) {
         self.usernameLabel.text = user.username;
     }
+
+    if (user[@"profilePic"]) {
+        self.profileImage.file = user[@"profilePic"];
+        
+        [self.profileImage loadInBackground];
+    }
 }
 
 - (void) showLogInScreen {
@@ -44,6 +54,10 @@
         LoginViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
         [weakSelf presentViewController:vc animated:YES completion:nil];
     });
+}
+
+- (IBAction) unwindToProfile:(UIStoryboardSegue *)segue {
+
 }
 
 

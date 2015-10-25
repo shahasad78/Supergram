@@ -7,7 +7,8 @@
 //
 
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface SuperUser : PFUser
-@property UIImage *profilePicture;
+@property PFFile *profilePic;
 @end

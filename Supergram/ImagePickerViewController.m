@@ -7,12 +7,15 @@
 //
 
 #import "ImagePickerViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import <UIKit/UIKit.h>
+//#import <AVFoundation/AVFoundation.h>
+//#import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface ImagePickerViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet PFImageView *imageView;
 @property UIImagePickerController *picker;
+@property UIImage *chosenImage;
 @end
 @implementation ImagePickerViewController
 
@@ -21,6 +24,14 @@
 
     self.picker = [[UIImagePickerController alloc] init];
     self.picker.delegate = self;
+
+    PFUser *user = [PFUser currentUser];
+    if (user[@"profilePic"]) {
+        self.imageView.file = user[@"profilePic"];
+
+        [self.imageView loadInBackground];
+    }
+
 
     // if camera is not available
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -59,8 +70,8 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.imageView.image = chosenImage;
+    self.chosenImage = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = self.chosenImage;
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -70,5 +81,55 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
 
 }
+
+- (IBAction)onSaveButtonPressed:(UIBarButtonItem *)sender {
+
+    if (self.chosenImage != nil) {
+        NSData *imageData = UIImageJPEGRepresentation(self.chosenImage, 0.0);
+
+        PFFile *imageFile = [PFFile fileWithData:imageData];
+        [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                if (succeeded) {
+                    PFUser *user = [PFUser currentUser];
+                    //user[@"profilePic"] = imageFile;
+                    [user setObject:imageFile forKey:@"profilePic"];
+                    [user saveInBackground];
+                }
+            } else {
+                // Handle error
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                               message:@"Unable to save an error."
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:nil];
+                [alert addAction:okButton];
+
+                [self presentViewController:alert animated:YES completion:nil];
+            }        
+        }];
+
+        // Execute the unwind segue and go back to the user profile screen
+        //[self performSegueWithIdentifier:@"unwindToProfile" sender:self];
+        [self dismissViewControllerAnimated:YES completion:nil];
+
+    } else {
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:@"Please select a photo."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:nil];
+        [alert addAction:okButton];
+
+        [self presentViewController:alert animated:YES completion:nil];
+
+    }
+
+
+}
+
 
 @end

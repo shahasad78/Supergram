@@ -8,8 +8,9 @@
 
 #import "SuperUser.h"
 
+
 @implementation SuperUser
 
-@dynamic profilePicture;
+@dynamic profilePic;
 
 @end

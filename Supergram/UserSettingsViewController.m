@@ -31,7 +31,7 @@
     PFUser *user = [PFUser currentUser];
 }
 
-- (IBAction) unwindToProfile:(UIStoryboardSegue *)segue {
+- (IBAction) unwindToUserSettings:(UIStoryboardSegue *)segue {
 
 }
 - (IBAction)onChangePasswordPressed:(UIButton *)sender {

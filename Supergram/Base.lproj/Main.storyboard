@@ -496,7 +496,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="9eh-YR-FL1">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="9eh-YR-FL1" customClass="PFImageView">
                                         <rect key="frame" x="75" y="34" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="QfZ-Z9-NBp"/>
@@ -554,6 +554,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editProfileImageBtn" destination="5EQ-Gq-R6u" id="fhN-MU-UYp"/>
+                        <outlet property="profileImage" destination="9eh-YR-FL1" id="meE-5e-OGe"/>
                         <outlet property="usernameLabel" destination="xTp-86-Sil" id="UJU-fJ-KDH"/>
                     </connections>
                 </viewController>
@@ -610,7 +612,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="N0l-FW-NBn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="N0l-FW-NBn" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="2oI-Eu-lOn"/>
@@ -646,14 +648,19 @@
                     <navigationItem key="navigationItem" title="Select Photo" id="wBh-gl-yy1">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EnN-14-2vT">
                             <connections>
-                                <segue destination="cLO-Am-yRZ" kind="unwind" unwindAction="unwindToProfile:" id="nc2-aQ-Q6t"/>
+                                <segue destination="cLO-Am-yRZ" kind="unwind" unwindAction="unwindToProfile:" id="7cP-lj-Ygw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rcm-TC-56U"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rcm-TC-56U">
+                            <connections>
+                                <action selector="onSaveButtonPressed:" destination="psA-yh-Usp" id="u0R-11-mLV"/>
+                                <segue destination="cLO-Am-yRZ" kind="unwind" unwindAction="unwindToProfile:" id="Ud3-jU-Vae"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="N0l-FW-NBn" id="yEP-gW-gP1"/>
+                        <outlet property="imageView" destination="N0l-FW-NBn" id="BY6-q9-Z1S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKa-K5-gHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -963,7 +970,6 @@
     </scenes>
     <resources>
         <image name="bar" width="300" height="20"/>
-        <image name="camera" width="256" height="256"/>
         <image name="close" width="64" height="64"/>
         <image name="user" width="126" height="126"/>
     </resources>
