@@ -111,8 +111,9 @@
         }];
 
         // Execute the unwind segue and go back to the user profile screen
-        //[self performSegueWithIdentifier:@"unwindToProfile" sender:self];
+
         [self dismissViewControllerAnimated:YES completion:nil];
+        [self performSegueWithIdentifier:@"unwindToProfile" sender:self];
 
     } else {
 

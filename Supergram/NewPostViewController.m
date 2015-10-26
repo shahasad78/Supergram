@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "Post.h"
+#import "SuperUser.h"
 
 @interface NewPostViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
@@ -70,16 +71,12 @@
         NSData *imageData = UIImageJPEGRepresentation(self.chosenImage, 0.0);
 
         PFFile *imageFile = [PFFile fileWithData:imageData];
-        PFUser *user = [PFUser currentUser];
+        SuperUser *user = [SuperUser currentUser];
         Post *post = [Post objectWithClassName:@"Post"];
         post.media = imageFile;
         post.author = user;
-//        [post setObject:imageFile forKey:@"media"];
-//        [post setObject:user forKey:@"author"];
-        [post saveInBackground];
 
         [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-
             if (error) {
                 // Handle error
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
@@ -96,9 +93,11 @@
         }];
 
         // Execute the unwind segue and go back to the user profile screen
-        //[self performSegueWithIdentifier:@"unwindToProfile" sender:self];
+
         [self dismissViewControllerAnimated:YES completion:nil];
 
+      //  [self performSegueWithIdentifier:@"unwindToProfileFromPost" sender:self];
+        
     } else {
 
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"

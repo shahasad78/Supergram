@@ -618,15 +618,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yh4-Ib-66d">
                                 <rect key="frame" x="193" y="307" width="215" height="64"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JgV-gI-sy9">
-                                        <rect key="frame" x="89" y="12" width="50" height="39"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JgV-gI-sy9">
+                                        <rect key="frame" x="83" y="13" width="50" height="39"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eku-hy-QkP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eku-hy-QkP">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hme-Nj-gSI">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hme-Nj-gSI">
                                                 <rect key="frame" x="0.0" y="22" width="50" height="17"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -635,7 +635,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6Ih-tS-S5e">
-                                        <rect key="frame" x="161" y="12" width="51" height="39"/>
+                                        <rect key="frame" x="156" y="13" width="51" height="39"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfW-he-x0I">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="20"/>
@@ -651,7 +651,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="7ZD-hs-Qsh">
-                                        <rect key="frame" x="33" y="12" width="32" height="39"/>
+                                        <rect key="frame" x="26" y="13" width="32" height="39"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nei-Xw-lSb">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="20"/>
@@ -670,7 +670,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="B7c-CZ-kPV"/>
+                                    <constraint firstItem="JgV-gI-sy9" firstAttribute="centerY" secondItem="Yh4-Ib-66d" secondAttribute="centerY" id="gIQ-nP-TMr"/>
                                     <constraint firstAttribute="width" constant="215" id="kas-ik-bYl"/>
+                                    <constraint firstItem="JgV-gI-sy9" firstAttribute="centerX" secondItem="Yh4-Ib-66d" secondAttribute="centerX" id="qvN-zW-8ah"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -802,7 +804,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcB-pP-m1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UdR-zy-tlH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2172" y="1357"/>
+            <point key="canvasLocation" x="2272" y="1178"/>
         </scene>
         <!--Select Photo-->
         <scene sceneID="B97-SW-vQI">
@@ -831,9 +833,6 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="selectPhoto:" destination="psA-yh-Usp" eventType="touchUpInside" id="nvN-0v-1UA"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEk-Au-B5c">
                                         <rect key="frame" x="155" y="0.0" width="105" height="30"/>
@@ -847,9 +846,6 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="onCameraButtonClicked:" destination="psA-yh-Usp" eventType="touchUpInside" id="S2w-RV-b66"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -895,7 +891,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="rcm-TC-56U">
                             <connections>
                                 <action selector="onSaveButtonPressed:" destination="psA-yh-Usp" id="u0R-11-mLV"/>
-                                <segue destination="cLO-Am-yRZ" kind="unwind" unwindAction="unwindToProfile:" id="Ud3-jU-Vae"/>
+                                <segue destination="Omh-SM-h4M" kind="show" identifier="unwindToProfile" id="pUL-jF-zMj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -907,7 +903,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKa-K5-gHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cLO-Am-yRZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3796" y="1212"/>
+            <point key="canvasLocation" x="2959" y="1199"/>
         </scene>
         <!--User Settings-->
         <scene sceneID="W6c-oy-CJu">
@@ -1254,4 +1250,7 @@
         <image name="user" width="126" height="126"/>
         <image name="userHome" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pUL-jF-zMj"/>
+    </inferredMetricsTieBreakers>
 </document>

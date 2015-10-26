@@ -13,7 +13,6 @@
 
 @dynamic profilePic;
 
-
 + (NSString *)parseClassName {
     return @"SuperUser";
 }
