@@ -14,13 +14,13 @@
 		CB21254D1BD98F3B00AA824B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */; };
 		CB2125581BD98F3B00AA824B /* SupergramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125571BD98F3B00AA824B /* SupergramTests.m */; };
 		CB2125631BD98F3B00AA824B /* SupergramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125621BD98F3B00AA824B /* SupergramUITests.m */; };
-		E01CFDAD1BD9932A004E1874 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA61BD9932A004E1874 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDAE1BD9932A004E1874 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA71BD9932A004E1874 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDAF1BD9932A004E1874 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA81BD9932A004E1874 /* ParseCrashReporting.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDB01BD9932A004E1874 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA91BD9932A004E1874 /* ParseFacebookUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDB11BD9932A004E1874 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAA1BD9932A004E1874 /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDB21BD9932A004E1874 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAB1BD9932A004E1874 /* ParseTwitterUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDB31BD9932A004E1874 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAC1BD9932A004E1874 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		E01CFDAD1BD9932A004E1874 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA61BD9932A004E1874 /* Bolts.framework */; };
+		E01CFDAE1BD9932A004E1874 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA71BD9932A004E1874 /* Parse.framework */; };
+		E01CFDAF1BD9932A004E1874 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA81BD9932A004E1874 /* ParseCrashReporting.framework */; };
+		E01CFDB01BD9932A004E1874 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA91BD9932A004E1874 /* ParseFacebookUtils.framework */; };
+		E01CFDB11BD9932A004E1874 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAA1BD9932A004E1874 /* ParseFacebookUtilsV4.framework */; };
+		E01CFDB21BD9932A004E1874 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAB1BD9932A004E1874 /* ParseTwitterUtils.framework */; };
+		E01CFDB31BD9932A004E1874 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAC1BD9932A004E1874 /* ParseUI.framework */; };
 		E01CFDB51BD994F9004E1874 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDB41BD994F9004E1874 /* AudioToolbox.framework */; };
 		E01CFDB71BD994FF004E1874 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDB61BD994FF004E1874 /* CFNetwork.framework */; };
 		E01CFDB91BD99507004E1874 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDB81BD99507004E1874 /* CoreGraphics.framework */; };
@@ -33,15 +33,17 @@
 		E01CFDC71BD99556004E1874 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDC61BD99556004E1874 /* libsqlite3.tbd */; };
 		E01CFDC91BD9956B004E1874 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDC81BD9956B004E1874 /* Accounts.framework */; };
 		E01CFDCB1BD99572004E1874 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDCA1BD99572004E1874 /* Social.framework */; };
-		E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD01BD99777004E1874 /* AllFeedViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD31BD998B8004E1874 /* SuperUser.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD91BD99EBF004E1874 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */; settings = {ASSET_TAGS = (); }; };
-		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD01BD99777004E1874 /* AllFeedViewController.m */; };
+		E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD31BD998B8004E1874 /* SuperUser.m */; };
+		E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */; };
+		E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD91BD99EBF004E1874 /* LoginViewController.m */; };
+		E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */; };
+		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; };
+		E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */; };
+		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; };
+		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; };
+		E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */; };
+		E0A410A41BDD99A800AC5C3D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A31BDD99A800AC5C3D /* Post.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,10 @@
 		E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsViewController.m; sourceTree = "<group>"; };
 		E05F80441BDB403A00B8DD21 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
 		E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerViewController.m; sourceTree = "<group>"; };
+		E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
+		E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
+		E0A410A21BDD99A800AC5C3D /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		E0A410A31BDD99A800AC5C3D /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +259,8 @@
 			children = (
 				E01CFDD21BD998B8004E1874 /* SuperUser.h */,
 				E01CFDD31BD998B8004E1874 /* SuperUser.m */,
+				E0A410A21BDD99A800AC5C3D /* Post.h */,
+				E0A410A31BDD99A800AC5C3D /* Post.m */,
 				E01CFDE41BD9AC89004E1874 /* Helper */,
 			);
 			name = Model;
@@ -275,6 +283,8 @@
 				E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */,
 				E05F80441BDB403A00B8DD21 /* ImagePickerViewController.h */,
 				E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */,
+				E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */,
+				E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -430,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A410A41BDD99A800AC5C3D /* Post.m in Sources */,
 				E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */,
 				E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */,
 				CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */,
@@ -439,6 +450,7 @@
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
 				E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */,
 				E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */,
+				E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */,
 				CB21253F1BD98F3B00AA824B /* main.m in Sources */,
 				E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */,
 			);

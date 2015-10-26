@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supercameraLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="AO0-bm-ULC">
-                                <rect key="frame" x="180" y="159.5" width="240" height="281"/>
+                                <rect key="frame" x="180" y="160" width="240" height="281"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="6Vo-ci-qMw"/>
                                     <constraint firstAttribute="height" constant="281" id="aOB-QS-KfT"/>
