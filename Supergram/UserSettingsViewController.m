@@ -8,6 +8,7 @@
 
 #import "UserSettingsViewController.h"
 #import "LoginViewController.h"
+#import "SuperUser.h"
 #import <Parse/Parse.h>
 
 @interface UserSettingsViewController()
@@ -28,7 +29,7 @@
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     self.navigationController.navigationBar.translucent = NO;
-    PFUser *user = [PFUser currentUser];
+    SuperUser *user = [SuperUser currentUser];
 }
 
 - (IBAction) unwindToUserSettings:(UIStoryboardSegue *)segue {
@@ -39,7 +40,7 @@
 }
 - (IBAction)onLogOutButtonPressed:(UIButton *)sender {
     // Send a request to log out a user
-    [PFUser logOutInBackground];
+    [SuperUser logOutInBackground];
     dispatch_async(dispatch_get_main_queue(), ^{
 
         NSString * storyboardName = @"Main";

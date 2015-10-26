@@ -14,12 +14,12 @@
 #import "Post.h"
 #import "SuperUser.h"
 
-@interface SuperProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface SuperProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UICollectionView *mediaCollection;
 @property (weak, nonatomic) IBOutlet UIButton *editProfileImageBtn;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @property NSMutableArray *userMedia;
 @end
 
@@ -30,6 +30,18 @@
 
     PFUser *user = [PFUser currentUser];
      self.userMedia = [[NSMutableArray alloc] init];
+
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.itemSize = CGSizeMake(self.mediaCollection.frame.size.width/3 - 10, self.mediaCollection.frame.size.width/3 - 10);
+   // flowLayout.itemSize = CGSizeMake(100, 100);
+    flowLayout.minimumLineSpacing = 10.0f;
+    flowLayout.minimumInteritemSpacing = 10.0f;
+    flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 10.0f, 5.0f, 10.0f);
+
+
+//
+    self.mediaCollection.collectionViewLayout = flowLayout;
+
 
     // If the current visitor is not logged in, show the login scene
 
@@ -57,11 +69,11 @@
                // post.media = [result  objectForKey:@"media"];
 //                PFFile *image = [result  objectForKey:@"media"];
                 [self.userMedia addObject:result];
-                 NSLog(@"%@", result.objectId);
+               //  NSLog(@"%@", result.objectId);
             }
 
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.collectionView reloadData];
+                [self.mediaCollection reloadData];
             });
         }];
 
@@ -72,8 +84,6 @@
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
    return self.userMedia.count;
-
-;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -92,6 +102,15 @@
 
     return cell;
 }
+//- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+//
+//    return  CGSizeMake(self.collectionView.frame.size.width/3, self.collectionView.frame.size.width/3);
+//}
+
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+//    return UIEdgeInsetsMake(5, 5, 5, 5);
+//}
+
 
 #pragma mark - segue
 

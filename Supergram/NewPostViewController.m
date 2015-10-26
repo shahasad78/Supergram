@@ -71,12 +71,15 @@
 
         PFFile *imageFile = [PFFile fileWithData:imageData];
         PFUser *user = [PFUser currentUser];
-        PFObject *post = [PFObject objectWithClassName:@"Post"];
-        [post setObject:imageFile forKey:@"media"];
-        [post setObject:user forKey:@"author"];
+        Post *post = [Post objectWithClassName:@"Post"];
+        post.media = imageFile;
+        post.author = user;
+//        [post setObject:imageFile forKey:@"media"];
+//        [post setObject:user forKey:@"author"];
         [post saveInBackground];
 
         [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
             if (error) {
                 // Handle error
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
@@ -89,6 +92,7 @@
 
                 [self presentViewController:alert animated:YES completion:nil];
             }
+            
         }];
 
         // Execute the unwind segue and go back to the user profile screen

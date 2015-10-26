@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "SuperProfileViewController.h"
+#import "SuperUser.h"
 #import <Parse/Parse.h>
 
 @interface LoginViewController () <UITextFieldDelegate>
@@ -16,18 +17,77 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
+// UI Control State properties
+@property (strong, nonatomic) UIColor *disabledColor;
+@property (strong, nonatomic) UIColor *enabledColor;
+
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    // --------------------------------------------------------------------
+    // Setup Text Fields
+    // --------------------------------------------------------------------
+    self.usernameTextField.delegate = self;
+    self.passwordTextField.delegate = self;
+    self.usernameTextField.tag      = 1;
+    self.passwordTextField.tag      = 2;
+    [self.passwordTextField addTarget:self action:@selector(editingBeganOnTextField:) forControlEvents:UIControlEventEditingChanged];
+    [self.usernameTextField addTarget:self action:@selector(editingBeganOnTextField:) forControlEvents:UIControlEventEditingChanged];
+
+
+    // --------------------------------------------------------------------
+    // Setup Initial Button State
+    // --------------------------------------------------------------------
+    self.enabledColor = self.loginButton.tintColor;
+    self.disabledColor = [UIColor colorWithWhite:0.6 alpha:0.2];
+    self.loginButton.enabled = NO;
+    [self.loginButton setTitleColor:self.disabledColor forState:UIControlStateDisabled];
+    [self.loginButton setTitleColor:self.enabledColor forState:UIControlStateNormal];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+#pragma mark - Text Field Delegate Methods
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    return [self textFieldShouldUpdate:textField];
+}
+
+#pragma mark - Helper Methods
+- (BOOL)textFieldShouldUpdate:(UITextField *)textField {
+    [self updateUI];
+    switch (textField.tag) {
+        case 1:
+            return [self.usernameTextField hasText];
+            break;
+        case 2:
+            return [self isValidPassword:self.passwordTextField.text];
+            break;
+
+        default:
+            break;
+    }
+    return YES;
+}
+
+- (void)updateUI {
+    self.loginButton.enabled = ([self.usernameTextField hasText] && [self isValidPassword:self.passwordTextField.text]);
+}
+
+- (BOOL)isValidPassword:(NSString *)password {
+    return ((password.length > 6) &&
+            ([password rangeOfString:@" "].length == 0));
+}
+
+#pragma mark - IBAction Methods
+- (IBAction)editingBeganOnTextField:(UITextField *)textField {
+    [self updateUI];
 }
 
 - (IBAction)onLoginButtonPressed:(UIButton *)sender {
@@ -40,13 +100,13 @@
 
     __weak LoginViewController *weakSelf = self;
 
-    [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
+    [SuperUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser * _Nullable user, NSError * _Nullable error) {
 
         [self.spinner stopAnimating];
 
         // TODO present user friendly error description
-        alertTitle = (error == nil) ? @"Success" :  @"Error";
-        alertMessage = (error == nil) ? @"Logged In"  : error.description;
+        alertTitle   = (error) ? @"Error" : @"Success";
+        alertMessage = (error) ? error.localizedDescription : @"Logged In";
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
@@ -60,17 +120,17 @@
                                                                  NSString * storyboardName = @"Main";
                                                                  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
                                                                  SuperProfileViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Profile"];
-                                                                 
+
                                                                  [weakSelf presentViewController:vc animated:YES completion:nil];
                                                              }];
             [alert addAction:okButton];
-
+            
             [weakSelf presentViewController:alert animated:YES completion:nil];
-
+            
         });
-
+        
     }];
-
+    
 }
 
 - (IBAction) unwindToLogin:(UIStoryboardSegue *)segue {
