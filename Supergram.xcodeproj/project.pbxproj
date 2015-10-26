@@ -44,6 +44,7 @@
 		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; };
 		E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */; };
 		E0A410A41BDD99A800AC5C3D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A31BDD99A800AC5C3D /* Post.m */; };
+		E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,8 @@
 		E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		E0A410A21BDD99A800AC5C3D /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		E0A410A31BDD99A800AC5C3D /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		E0A410A51BDDD37400AC5C3D /* ThumbnailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailCollectionViewCell.h; sourceTree = "<group>"; };
+		E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,8 @@
 				E01CFDD01BD99777004E1874 /* AllFeedViewController.m */,
 				E01CFDD51BD99E42004E1874 /* SuperProfileViewController.h */,
 				E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */,
+				E0A410A51BDDD37400AC5C3D /* ThumbnailCollectionViewCell.h */,
+				E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */,
 				E01CFDD81BD99EBF004E1874 /* LoginViewController.h */,
 				E01CFDD91BD99EBF004E1874 /* LoginViewController.m */,
 				E01CFDDB1BD99EEF004E1874 /* ResetPasswordViewController.h */,
@@ -449,6 +454,7 @@
 				E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */,
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
 				E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */,
+				E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */,
 				E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */,
 				E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */,
 				CB21253F1BD98F3B00AA824B /* main.m in Sources */,

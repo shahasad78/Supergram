@@ -7,6 +7,7 @@
 //
 
 #import "Post.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation Post
 
@@ -16,4 +17,11 @@
 @dynamic likesCount;
 @dynamic commentCount;
 
++ (void)load {
+    [self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+    return @"Post";
+}
 @end

@@ -11,7 +11,10 @@
 #import <Foundation/Foundation.h>
 
 @class SuperUser;
-@interface Post : PFObject
+@interface Post : PFObject <PFSubclassing>
+
++ (NSString *)parseClassName;
+
 @property SuperUser *author;
 @property PFFile *media;
 @property NSString *title;
