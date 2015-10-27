@@ -57,32 +57,44 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-aL-yCv">
-                        <rect key="frame" x="307" y="8" width="286" height="286"/>
+                        <rect key="frame" x="304" y="8" width="286" height="286"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDT-ki-w3L">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDT-ki-w3L">
                                 <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRQ-N4-4JG">
-                                <rect key="frame" x="8" y="242" width="102" height="36"/>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRQ-N4-4JG">
+                                <rect key="frame" x="8" y="252" width="82" height="26"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-Tv-cRr">
-                                        <rect key="frame" x="0.0" y="3" width="32" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <state key="normal" title="Heart"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hcount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Gq-62B">
-                                        <rect key="frame" x="29" y="8" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-Kl-cV5">
-                                        <rect key="frame" x="62" y="3" width="32" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="More"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="U3u-Xa-Leg">
+                                        <rect key="frame" x="5" y="2" width="72" height="22"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-Tv-cRr">
+                                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="6DL-Va-xfZ"/>
+                                                    <constraint firstAttribute="width" constant="22" id="kfF-pU-dYe"/>
+                                                </constraints>
+                                                <state key="normal" image="heartWhite"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Gq-62B">
+                                                <rect key="frame" x="26" y="0.0" width="20" height="22"/>
+                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-Kl-cV5">
+                                                <rect key="frame" x="50" y="0.0" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="6pu-d9-2mn"/>
+                                                    <constraint firstAttribute="width" constant="22" id="ix1-AD-xbd"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" image="more"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,6 +120,11 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aHH-5b-krt" secondAttribute="bottom" constant="7" id="6Ca-Ka-8CC"/>
+                <constraint firstItem="aHH-5b-krt" firstAttribute="leading" secondItem="nfq-DE-qan" secondAttribute="leading" constant="8" id="IRe-A0-7OZ"/>
+                <constraint firstItem="aHH-5b-krt" firstAttribute="top" secondItem="nfq-DE-qan" secondAttribute="top" constant="7" id="eUW-aQ-dYn"/>
+            </constraints>
             <size key="customSize" width="875" height="300"/>
             <connections>
                 <outlet property="commentButton" destination="YLV-HX-BgZ" id="TY5-vU-C5p"/>
@@ -117,6 +134,12 @@
                 <outlet property="imageView" destination="YDT-ki-w3L" id="6rK-Ux-S2b"/>
                 <outlet property="moreButton" destination="2cP-Kl-cV5" id="xCz-dk-hXo"/>
                 <outlet property="moreOptionsView" destination="px0-GF-j5n" id="Atd-g3-JCA"/>
+                <outlet property="onCommentButtonPressed" destination="YLV-HX-BgZ" id="JVV-pE-aBH"/>
+                <outlet property="onDeleteButtonPressed" destination="9Sw-3F-5iv" id="wpK-OB-6qQ"/>
+                <outlet property="onHeartButtonPressed" destination="HWW-Tv-cRr" id="LUJ-Qr-4Mv"/>
+                <outlet property="onMoreButtonPressed" destination="2cP-Kl-cV5" id="pKT-Y8-bAM"/>
+                <outlet property="onReportButtonPressed" destination="ZnE-d3-Dfa" id="zG5-qb-aqO"/>
+                <outlet property="onShareButtonPressed" destination="hxW-JC-G9m" id="NeH-WS-q6f"/>
                 <outlet property="postPropertyContainer" destination="gRQ-N4-4JG" id="MI2-0L-nYA"/>
                 <outlet property="profilePicture" destination="j4w-Tb-q8Y" id="Byk-29-14C"/>
                 <outlet property="profileView" destination="aHH-5b-krt" id="d8V-76-ESq"/>
@@ -126,4 +149,8 @@
             <point key="canvasLocation" x="771" y="446"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="heartWhite" width="32" height="32"/>
+        <image name="more" width="32" height="32"/>
+    </resources>
 </document>

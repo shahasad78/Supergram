@@ -27,6 +27,12 @@
 @property (weak, nonatomic) IBOutlet UIView *profileView;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 
+@property (weak, nonatomic) IBOutlet UIButton *onHeartButtonPressed;
 
+@property (weak, nonatomic) IBOutlet UIButton *onMoreButtonPressed;
+@property (weak, nonatomic) IBOutlet UIButton *onShareButtonPressed;
+@property (weak, nonatomic) IBOutlet UIButton *onCommentButtonPressed;
+@property (weak, nonatomic) IBOutlet UIButton *onReportButtonPressed;
+@property (weak, nonatomic) IBOutlet UIButton *onDeleteButtonPressed;
 
 @end
