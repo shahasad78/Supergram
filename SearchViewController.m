@@ -7,16 +7,16 @@
 //
 
 #import "SearchViewController.h"
+#import "SuperProfileViewController.h"
 #import <Parse/Parse.h>
 #import "SuperUser.h"
 
-@interface SearchViewController () <UISearchBarDelegate, UISearchResultsUpdating>
+@interface SearchViewController () <UISearchBarDelegate>
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property NSMutableArray *filteredUsers;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *userSearchBar;
-@property BOOL isSearching;
 
 @end
 
@@ -25,45 +25,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.filteredUsers = [NSMutableArray new];
-   // [self initializeSearchController];
 }
-
-//- (void) updateSearchResultsForSearchController:(UISearchController *)searchController
-//{
-//    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-//    [query whereKey:@"username" equalTo: searchController.searchBar.text];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
-//
-//        for (SuperUser *user in users) {
-//            [self.filteredUsers addObject:user];
-//            //  NSLog(@"%@", result.objectId);
-//        }
-//
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.tableView reloadData];
-//        });
-//    }];
-//}
-
-//- (void) initializeSearchController
-//{
-//    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-//    self.definesPresentationContext = YES;
-//    self.searchController.dimsBackgroundDuringPresentation = NO;
-//    self.searchController.searchBar.placeholder = @"Search people";
-//    [self.searchController.searchBar sizeToFit];
-//    self.searchController.searchBar.tintColor = [UIColor whiteColor];
-//    self.tableView.tableHeaderView = self.searchController.searchBar;
-//    self.searchController.searchResultsUpdater = self;
-//    self.searchController.searchBar.delegate = self;
-//}
 
 #pragma mark - searchBar
 - (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-
+    [self.filteredUsers removeAllObjects];
+    
     if ([searchBar.text length] != 0)
     {
+
 
         PFQuery *queryUsername = [PFQuery queryWithClassName:@"_User"];
         [queryUsername whereKey:@"username" containsString:searchBar.text];
@@ -89,13 +60,13 @@
         }];
 
     }
+
+    [searchBar resignFirstResponder];
 }
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    self.isSearching = YES;
-    
+- (void) searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -109,6 +80,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self filteredUsers].count;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+
+    SuperProfileViewController *vc = segue.destinationViewController;
+    vc.searchedUser = [self.filteredUsers objectAtIndex:indexPath.row];
 }
 
 @end

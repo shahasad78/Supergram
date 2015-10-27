@@ -493,6 +493,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Omh-SM-h4M" kind="show" id="K7B-qb-Oq4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -528,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1890" y="1987"/>
+            <point key="canvasLocation" x="2266" y="1969"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="btN-DM-QMo">
@@ -816,6 +819,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="editProfileImageBtn" destination="5EQ-Gq-R6u" id="fhN-MU-UYp"/>
+                        <outlet property="editUserSettings" destination="ufv-iu-zXN" id="vKa-Qv-MJe"/>
                         <outlet property="mediaCollection" destination="p1v-LH-HF3" id="DbS-KV-Ooh"/>
                         <outlet property="profileImage" destination="9eh-YR-FL1" id="meE-5e-OGe"/>
                         <outlet property="usernameLabel" destination="xTp-86-Sil" id="UJU-fJ-KDH"/>
@@ -971,7 +975,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DM8-Ii-exb" id="39g-bK-QWD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1016,6 +1020,9 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="selectPhoto:" destination="psA-yh-Usp" eventType="touchUpInside" id="l1u-TO-mfW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEk-Au-B5c">
                                         <rect key="frame" x="155" y="0.0" width="105" height="30"/>
@@ -1029,6 +1036,9 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCameraButtonClicked:" destination="psA-yh-Usp" eventType="touchUpInside" id="cWi-Ys-0WN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1455,7 +1465,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCell" id="Nds-zP-9pq" customClass="SGPostCollectionViewCell">
-                                        <rect key="frame" x="115.5" y="64" width="369" height="295"/>
+                                        <rect key="frame" x="116" y="64" width="369" height="295"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="369" height="295"/>
@@ -1519,7 +1529,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXv-a6-P8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="1987"/>
+            <point key="canvasLocation" x="1421" y="1969"/>
         </scene>
     </scenes>
     <resources>
@@ -1529,4 +1539,7 @@
         <image name="user" width="126" height="126"/>
         <image name="userHome" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="K7B-qb-Oq4"/>
+    </inferredMetricsTieBreakers>
 </document>

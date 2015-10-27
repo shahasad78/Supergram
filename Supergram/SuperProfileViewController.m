@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UICollectionView *mediaCollection;
 @property (weak, nonatomic) IBOutlet UIButton *editProfileImageBtn;
+@property SuperUser *userView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editUserSettings;
 
 @property NSMutableArray *userMedia;
 @end
@@ -29,8 +31,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    PFUser *user = [PFUser currentUser];
-     self.userMedia = [[NSMutableArray alloc] init];
+    self.userView = [SuperUser currentUser];
+
+    if (self.searchedUser != nil) {
+        if (self.searchedUser != self.userView) {
+            self.userView = self.searchedUser;
+            self.editProfileImageBtn.hidden = true;
+            self.navigationItem.rightBarButtonItem.enabled = NO;
+        }
+    } else {
+        self.editProfileImageBtn.hidden = false;
+    }
+
+    self.userMedia = [[NSMutableArray alloc] init];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(self.mediaCollection.frame.size.width/3 - 10, self.mediaCollection.frame.size.width/3 - 10);
@@ -46,23 +59,23 @@
 
     // If the current visitor is not logged in, show the login scene
 
-    if (user == nil ) {
+    if (self.userView == nil ) {
         [self showLogInScreen];
     }  else {
 
     // Show the current visitor's username
-    if (user.username) {
-        self.usernameLabel.text = user.username;
+    if (self.userView.username) {
+        self.usernameLabel.text = self.userView.username;
     }
 
-    if (user[@"profilePic"]) {
-        self.profileImage.file = user[@"profilePic"];
+    if (self.userView[@"profilePic"]) {
+        self.profileImage.file = self.userView[@"profilePic"];
 
         [self.profileImage loadInBackground];
     }
 
         PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-        [query whereKey:@"author" equalTo:user];
+        [query whereKey:@"author" equalTo:self.userView];
         [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
             for (Post *result in posts) {
