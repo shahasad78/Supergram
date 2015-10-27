@@ -73,6 +73,7 @@
 
         PFFile *imageFile = [PFFile fileWithData:imageData];
         SuperUser *user = [SuperUser currentUser];
+
         Post *post = [Post objectWithClassName:@"Post"];
         post.media = imageFile;
         post.author = user;
@@ -89,7 +90,15 @@
                 [alert addAction:okButton];
 
                 [self presentViewController:alert animated:YES completion:nil];
+            } else {
+                if (succeeded) {
+
+                    [user incrementKey:@"postCount"];
+                    [user saveInBackground];
+                }
+
             }
+            
             
         }];
 

@@ -492,6 +492,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wiv-0V-qAy">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5bP-rG-Ogs"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EHI-Zd-PNf"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -809,7 +813,7 @@
                                     <constraint firstAttribute="width" secondItem="v2j-ri-Lgj" secondAttribute="height" multiplier="1:1" id="jFS-Md-lLb"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pl2-fP-7B6">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pl2-fP-7B6">
                                 <rect key="frame" x="282" y="281" width="37" height="37"/>
                                 <color key="color" red="0.97254901959999995" green="0.93333333330000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
@@ -971,7 +975,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-jI-GSD">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-jI-GSD">
                                 <rect key="frame" x="282" y="281" width="37" height="37"/>
                                 <color key="color" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
@@ -1392,6 +1396,10 @@
                                         <color key="backgroundColor" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="njW-Ec-0ak" id="h7C-Zp-LmW"/>
+                                    <outlet property="delegate" destination="njW-Ec-0ak" id="rwK-Bn-IUh"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
