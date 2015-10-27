@@ -13,121 +13,125 @@
                 <rect key="frame" x="0.0" y="0.0" width="900" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="px0-GF-j5n">
-                        <rect key="frame" x="601" y="8" width="291" height="284"/>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfF-Zc-qKL">
+                        <rect key="frame" x="-12" y="-12" width="924" height="326"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxW-JC-G9m">
-                                <rect key="frame" x="99" y="48" width="93" height="30"/>
-                                <color key="backgroundColor" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                <state key="normal" title="Share">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLV-HX-BgZ">
-                                <rect key="frame" x="53" y="104" width="127" height="30"/>
-                                <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                <state key="normal" title="Comment">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnE-d3-Dfa">
-                                <rect key="frame" x="125" y="159" width="106" height="30"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.93333333330000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                <state key="normal" title="Report">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sw-3F-5iv">
-                                <rect key="frame" x="53" y="214" width="106" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.60146082006624768" blue="0.55409972691737064" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-aL-yCv">
-                        <rect key="frame" x="304" y="8" width="286" height="286"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDT-ki-w3L">
-                                <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
-                            </imageView>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRQ-N4-4JG">
-                                <rect key="frame" x="8" y="252" width="82" height="26"/>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="px0-GF-j5n">
+                                <rect key="frame" x="613" y="20" width="291" height="284"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="U3u-Xa-Leg">
-                                        <rect key="frame" x="5" y="2" width="72" height="22"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-Tv-cRr">
-                                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="6DL-Va-xfZ"/>
-                                                    <constraint firstAttribute="width" constant="22" id="kfF-pU-dYe"/>
-                                                </constraints>
-                                                <state key="normal" image="heartWhite"/>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Gq-62B">
-                                                <rect key="frame" x="26" y="0.0" width="20" height="22"/>
-                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="10"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-Kl-cV5">
-                                                <rect key="frame" x="50" y="0.0" width="22" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="6pu-d9-2mn"/>
-                                                    <constraint firstAttribute="width" constant="22" id="ix1-AD-xbd"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="more"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxW-JC-G9m">
+                                        <rect key="frame" x="99" y="48" width="93" height="30"/>
+                                        <color key="backgroundColor" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                        <state key="normal" title="Share">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLV-HX-BgZ">
+                                        <rect key="frame" x="53" y="104" width="127" height="30"/>
+                                        <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                        <state key="normal" title="Comment">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnE-d3-Dfa">
+                                        <rect key="frame" x="125" y="159" width="106" height="30"/>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.93333333330000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                        <state key="normal" title="Report">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sw-3F-5iv">
+                                        <rect key="frame" x="53" y="214" width="106" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.60146082006624768" blue="0.55409972691737064" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <view alpha="0.59999999999999998" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aHH-5b-krt">
-                        <rect key="frame" x="8" y="8" width="286" height="286"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4w-Tb-q8Y">
-                                <rect key="frame" x="83" y="83" width="120" height="120"/>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-aL-yCv">
+                                <rect key="frame" x="316" y="20" width="286" height="286"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDT-ki-w3L">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
+                                    </imageView>
+                                    <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRQ-N4-4JG">
+                                        <rect key="frame" x="8" y="252" width="82" height="26"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="U3u-Xa-Leg">
+                                                <rect key="frame" x="5" y="2" width="72" height="22"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWW-Tv-cRr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="6DL-Va-xfZ"/>
+                                                            <constraint firstAttribute="width" constant="22" id="kfF-pU-dYe"/>
+                                                        </constraints>
+                                                        <state key="normal" image="heartWhite"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkk-Gq-62B">
+                                                        <rect key="frame" x="26" y="0.0" width="20" height="22"/>
+                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="10"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cP-Kl-cV5">
+                                                        <rect key="frame" x="50" y="0.0" width="22" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="6pu-d9-2mn"/>
+                                                            <constraint firstAttribute="width" constant="22" id="ix1-AD-xbd"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <state key="normal" image="more"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZb-R3-5V2">
+                                        <rect key="frame" x="28" y="43" width="240" height="128"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aHH-5b-krt">
+                                <rect key="frame" x="20" y="20" width="286" height="286"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j4w-Tb-q8Y">
+                                        <rect key="frame" x="83" y="83" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="W7p-9l-8Aq"/>
+                                            <constraint firstAttribute="width" constant="120" id="n85-gV-HWQ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="W7p-9l-8Aq"/>
-                                    <constraint firstAttribute="width" constant="120" id="n85-gV-HWQ"/>
+                                    <constraint firstItem="j4w-Tb-q8Y" firstAttribute="centerY" secondItem="aHH-5b-krt" secondAttribute="centerY" id="MPa-fw-ZUg"/>
+                                    <constraint firstItem="j4w-Tb-q8Y" firstAttribute="centerX" secondItem="aHH-5b-krt" secondAttribute="centerX" id="iih-GH-CLW"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="j4w-Tb-q8Y" firstAttribute="centerY" secondItem="aHH-5b-krt" secondAttribute="centerY" id="MPa-fw-ZUg"/>
-                            <constraint firstItem="j4w-Tb-q8Y" firstAttribute="centerX" secondItem="aHH-5b-krt" secondAttribute="centerX" id="iih-GH-CLW"/>
-                        </constraints>
-                    </view>
+                    </scrollView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="aHH-5b-krt" secondAttribute="bottom" constant="7" id="6Ca-Ka-8CC"/>
-                <constraint firstItem="aHH-5b-krt" firstAttribute="leading" secondItem="nfq-DE-qan" secondAttribute="leading" constant="8" id="IRe-A0-7OZ"/>
-                <constraint firstItem="aHH-5b-krt" firstAttribute="top" secondItem="nfq-DE-qan" secondAttribute="top" constant="7" id="eUW-aQ-dYn"/>
-            </constraints>
             <size key="customSize" width="875" height="300"/>
             <connections>
                 <outlet property="commentButton" destination="YLV-HX-BgZ" id="TY5-vU-C5p"/>
+                <outlet property="dangerousImage" destination="LZb-R3-5V2" id="OM7-i6-3p3"/>
                 <outlet property="deleteButton" destination="9Sw-3F-5iv" id="QKL-kU-J09"/>
                 <outlet property="heartButton" destination="HWW-Tv-cRr" id="P7g-DL-LYw"/>
                 <outlet property="heartCount" destination="Gkk-Gq-62B" id="ROc-XO-GF6"/>

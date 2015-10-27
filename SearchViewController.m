@@ -1,18 +1,18 @@
 //
-//  AllFeedViewController.m
+//  SearchViewController.m
 //  Supergram
 //
-//  Created by Rumiya Murtazina on 10/22/15.
+//  Created by Rumiya Murtazina on 10/27/15.
 //  Copyright © 2015 Shotty Shack Games. All rights reserved.
 //
 
-#import "AllFeedViewController.h"
+#import "SearchViewController.h"
 
-@interface AllFeedViewController ()
+@interface SearchViewController ()
 
 @end
 
-@implementation AllFeedViewController
+@implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

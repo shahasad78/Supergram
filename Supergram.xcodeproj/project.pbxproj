@@ -33,7 +33,6 @@
 		E01CFDC71BD99556004E1874 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDC61BD99556004E1874 /* libsqlite3.tbd */; };
 		E01CFDC91BD9956B004E1874 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDC81BD9956B004E1874 /* Accounts.framework */; };
 		E01CFDCB1BD99572004E1874 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDCA1BD99572004E1874 /* Social.framework */; };
-		E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD01BD99777004E1874 /* AllFeedViewController.m */; };
 		E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD31BD998B8004E1874 /* SuperUser.m */; };
 		E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */; };
 		E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD91BD99EBF004E1874 /* LoginViewController.m */; };
@@ -47,6 +46,8 @@
 		E09A4BEE1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BED1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m */; };
 		E09A4BF11BDF072B00E3EBE8 /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */; };
 		E09A4BF41BDF4FF600E3EBE8 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF31BDF4FF600E3EBE8 /* Comment.m */; };
+		E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */; };
+		E09A4BFA1BDFD1E900E3EBE8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */; };
 		E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */; };
 		E0A410A41BDD99A800AC5C3D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A31BDD99A800AC5C3D /* Post.m */; };
 		E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */; };
@@ -103,8 +104,6 @@
 		E01CFDC61BD99556004E1874 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E01CFDC81BD9956B004E1874 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E01CFDCA1BD99572004E1874 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		E01CFDCF1BD99777004E1874 /* AllFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllFeedViewController.h; sourceTree = "<group>"; };
-		E01CFDD01BD99777004E1874 /* AllFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllFeedViewController.m; sourceTree = "<group>"; };
 		E01CFDD21BD998B8004E1874 /* SuperUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperUser.h; sourceTree = "<group>"; };
 		E01CFDD31BD998B8004E1874 /* SuperUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperUser.m; sourceTree = "<group>"; };
 		E01CFDD51BD99E42004E1874 /* SuperProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperProfileViewController.h; sourceTree = "<group>"; };
@@ -130,6 +129,10 @@
 		E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostDetailViewController.m; sourceTree = "<group>"; };
 		E09A4BF21BDF4FF600E3EBE8 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		E09A4BF31BDF4FF600E3EBE8 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		E09A4BF51BDFD11E00E3EBE8 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		E09A4BF81BDFD1E900E3EBE8 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ../SearchViewController.h; sourceTree = "<group>"; };
+		E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ../SearchViewController.m; sourceTree = "<group>"; };
 		E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		E0A410A21BDD99A800AC5C3D /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
@@ -294,8 +297,6 @@
 				E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */,
 				E09A4BEC1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.h */,
 				E09A4BED1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m */,
-				E01CFDCF1BD99777004E1874 /* AllFeedViewController.h */,
-				E01CFDD01BD99777004E1874 /* AllFeedViewController.m */,
 				E01CFDD51BD99E42004E1874 /* SuperProfileViewController.h */,
 				E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */,
 				E0A410A51BDDD37400AC5C3D /* ThumbnailCollectionViewCell.h */,
@@ -312,6 +313,10 @@
 				E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */,
 				E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */,
 				E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */,
+				E09A4BF51BDFD11E00E3EBE8 /* FeedViewController.h */,
+				E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */,
+				E09A4BF81BDFD1E900E3EBE8 /* SearchViewController.h */,
+				E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -475,12 +480,13 @@
 				E09A4BC61BDE8E8100E3EBE8 /* SGConstants.m in Sources */,
 				E09A4BF11BDF072B00E3EBE8 /* PostDetailViewController.m in Sources */,
 				CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */,
+				E09A4BFA1BDFD1E900E3EBE8 /* SearchViewController.m in Sources */,
 				E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */,
 				E09A4BF41BDF4FF600E3EBE8 /* Comment.m in Sources */,
 				E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */,
 				E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */,
+				E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */,
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
-				E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */,
 				E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */,
 				E09A4BC91BDE8EE100E3EBE8 /* NSString+ValidationUtility.m in Sources */,
 				E09A4BEE1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m in Sources */,

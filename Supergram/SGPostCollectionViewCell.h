@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *heartCount;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *dangerousImage;
 
 @property (weak, nonatomic) IBOutlet UIButton *heartButton;
 @property (weak, nonatomic) IBOutlet UIView *postPropertyContainer;
