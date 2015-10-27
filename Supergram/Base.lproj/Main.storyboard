@@ -809,6 +809,10 @@
                                     <constraint firstAttribute="width" secondItem="v2j-ri-Lgj" secondAttribute="height" multiplier="1:1" id="jFS-Md-lLb"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pl2-fP-7B6">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" red="0.97254901959999995" green="0.93333333330000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -817,7 +821,9 @@
                             <constraint firstItem="gNo-MQ-mP3" firstAttribute="top" secondItem="suk-mB-ckp" secondAttribute="bottom" constant="20" id="XoI-y8-IBa"/>
                             <constraint firstItem="v2j-ri-Lgj" firstAttribute="leading" secondItem="Q1l-1Q-YkW" secondAttribute="leading" id="gWP-Du-GkN"/>
                             <constraint firstItem="v2j-ri-Lgj" firstAttribute="top" secondItem="6e5-w0-YJh" secondAttribute="bottom" id="rNN-IE-WD9"/>
+                            <constraint firstItem="pl2-fP-7B6" firstAttribute="centerY" secondItem="Q1l-1Q-YkW" secondAttribute="centerY" id="taX-Y8-a4a"/>
                             <constraint firstItem="suk-mB-ckp" firstAttribute="centerX" secondItem="Q1l-1Q-YkW" secondAttribute="centerX" id="wr5-0P-gVl"/>
+                            <constraint firstItem="pl2-fP-7B6" firstAttribute="centerX" secondItem="Q1l-1Q-YkW" secondAttribute="centerX" id="xCV-w0-kNA"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -839,6 +845,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="v2j-ri-Lgj" id="fG7-um-9sh"/>
+                        <outlet property="spinner" destination="pl2-fP-7B6" id="AW2-gp-JfJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcB-pP-m1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -964,6 +971,10 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-jI-GSD">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -971,8 +982,10 @@
                             <constraint firstItem="v0h-Nn-G89" firstAttribute="centerX" secondItem="qSC-QR-6rq" secondAttribute="centerX" id="9eq-kR-Hn4"/>
                             <constraint firstItem="N0l-FW-NBn" firstAttribute="leading" secondItem="qSC-QR-6rq" secondAttribute="leading" id="F5r-Zs-ByP"/>
                             <constraint firstItem="N0l-FW-NBn" firstAttribute="top" secondItem="57n-vV-8ZO" secondAttribute="bottom" id="Fpe-2F-40n"/>
+                            <constraint firstItem="ImV-jI-GSD" firstAttribute="centerX" secondItem="qSC-QR-6rq" secondAttribute="centerX" id="I0z-0E-Gfg"/>
                             <constraint firstItem="N0l-FW-NBn" firstAttribute="top" secondItem="qSC-QR-6rq" secondAttribute="top" id="OP4-jv-EVe"/>
                             <constraint firstAttribute="trailing" secondItem="N0l-FW-NBn" secondAttribute="trailing" id="hVK-NK-O8a"/>
+                            <constraint firstItem="ImV-jI-GSD" firstAttribute="centerY" secondItem="qSC-QR-6rq" secondAttribute="centerY" id="k1K-Av-r7Q"/>
                             <constraint firstAttribute="trailing" secondItem="N0l-FW-NBn" secondAttribute="trailing" id="rwn-xJ-ghp"/>
                             <constraint firstItem="N0l-FW-NBn" firstAttribute="leading" secondItem="qSC-QR-6rq" secondAttribute="leading" id="xPo-no-C5i"/>
                         </constraints>
@@ -1000,6 +1013,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="N0l-FW-NBn" id="BY6-q9-Z1S"/>
+                        <outlet property="spinner" destination="ImV-jI-GSD" id="bNq-Bx-xOD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKa-K5-gHk" userLabel="First Responder" sceneMemberID="firstResponder"/>

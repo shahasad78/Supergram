@@ -14,6 +14,7 @@
 
 @interface ImagePickerViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property UIImagePickerController *picker;
 @property UIImage *chosenImage;
 @end
