@@ -9,6 +9,7 @@
 #import "SuperProfileViewController.h"
 #import "LoginViewController.h"
 #import "ThumbnailCollectionViewCell.h"
+#import "PostDetailViewController.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "Post.h"
@@ -102,14 +103,7 @@
 
     return cell;
 }
-//- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-//
-//    return  CGSizeMake(self.collectionView.frame.size.width/3, self.collectionView.frame.size.width/3);
-//}
 
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-//    return UIEdgeInsetsMake(5, 5, 5, 5);
-//}
 
 
 #pragma mark - segue
@@ -129,6 +123,18 @@
 - (IBAction) unwindToProfile:(UIStoryboardSegue *)segue {
 
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UICollectionViewCell *)sender {
+
+    if ([segue.identifier isEqualToString:@"PostDetailSegue"])
+    {
+        PostDetailViewController *vc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.mediaCollection indexPathForCell:sender];
+        vc.post = [self.userMedia objectAtIndex:indexPath.row];
+    }
+    
+}
+
 
 
 @end
