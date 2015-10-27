@@ -12,9 +12,11 @@
 @implementation SuperUser
 
 @dynamic profilePic;
-
-+ (NSString *)parseClassName {
-    return @"SuperUser";
++ (void) load {
+    [self registerSubclass];
 }
+//+ (NSString *)parseClassName {
+//    return @"SuperUser";
+//}
 
 @end
