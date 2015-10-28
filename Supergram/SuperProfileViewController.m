@@ -62,10 +62,24 @@
 
     // If the current visitor is not logged in, show the login scene
 
-    if (self.userView == nil ) {
+    if (self.userView == nil) {
         [self showLogInScreen];
     }  else {
+        [self setupUI];
+    }
+}
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (nil == self.userView) {
+        [self showLogInScreen];
+    } else {
+        [self setupUI];
+    }
+}
+
+#pragma mark - Helper Methods
+- (void) setupUI {
     // Show the current visitor's username
     if (self.userView.username) {
         self.usernameLabel.text = self.userView.username;
@@ -73,26 +87,24 @@
         self.fullnameLabel.text = [NSString stringWithFormat:@"%@ %@", self.userView.firstName , self.userView.lastName];
     }
 
-    if (self.userView[@"profilePic"]) {
-        self.profileImage.file = self.userView[@"profilePic"];
+    if (self.userView[kSuperUserAttributeKey.profilePic]) {
+        self.profileImage.file = self.userView[kSuperUserAttributeKey.profilePic];
 
         [self.profileImage loadInBackground];
     }
 
-        PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-        [query whereKey:@"author" equalTo:self.userView];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query whereKey:@"author" equalTo:self.userView];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
-            for (Post *result in posts) {
-                [self.userMedia addObject:result];
-            }
+        for (Post *result in posts) {
+            [self.userMedia addObject:result];
+        }
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.mediaCollection reloadData];
-            });
-        }];
-
-     }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.mediaCollection reloadData];
+        });
+    }];
 }
 
 #pragma mark - Collection View

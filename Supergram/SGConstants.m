@@ -27,7 +27,8 @@ const struct kSuperUserAttributeKey kSuperUserAttributeKey = {
     .firstName  = @"firstName",
     .lastName   = @"lastName",
     .username   = @"userName",
-    .email      = @"email"
+    .email      = @"email",
+    .bio        = @"bio"
 };
 
 

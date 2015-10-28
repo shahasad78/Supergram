@@ -35,6 +35,7 @@ extern const struct kSuperUserAttributeKey {
     __unsafe_unretained NSString *const lastName;
     __unsafe_unretained NSString *const username;
     __unsafe_unretained NSString *const email;
+    __unsafe_unretained NSString *const bio;
 } kSuperUserAttributeKey;
 
 /*!

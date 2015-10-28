@@ -12,22 +12,38 @@
 #import <Parse/Parse.h>
 
 @interface UserSettingsViewController()
+
 @property (weak, nonatomic) IBOutlet UITextField *fullnameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextField *bioTextField;
 @property (weak, nonatomic) IBOutlet UINavigationItem *viewTitle;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
+// Parse Data properties
 @property SuperUser *userView;
 //@property CGPoint originalCenter;
 
 @end
+
+
 @implementation UserSettingsViewController
 
-
+#pragma mark - View Life Cycle Methods
 - (void) viewDidLoad{
     [super viewDidLoad];
 
+    [self setupUI];
+}
+
+
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self setupUI];
+}
+
+- (void) setupUI {
     self.userView = [SuperUser currentUser];
     self.usernameLabel.text = self.userView.username;
     self.emailLabel.text = self.userView.email;
@@ -38,9 +54,8 @@
         PFObject *foundUser = object;
 
         self.fullnameTextField.text = [NSString stringWithFormat:@"%@ %@", foundUser[@"firstName"] , foundUser[@"lastName"]];
-        self.bioTextField.text = foundUser[@"bio"];
+        self.bioTextField.text = foundUser[kSuperUserAttributeKey.bio];
     }];
-
 }
 
 - (IBAction)onFullNamePressed:(UITextField *)sender {
