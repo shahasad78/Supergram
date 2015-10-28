@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Omh-SM-h4M">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+=======
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8qx-Kd-5vZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+>>>>>>> imagePickerWithVerify
     </dependencies>
     <scenes>
         <!--Reset Password View Controller-->
@@ -491,6 +498,10 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<<<<<<< HEAD
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+=======
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wiv-0V-qAy">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
@@ -555,6 +566,7 @@
                             <constraint firstItem="Z9V-gS-sS1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="j3g-c0-1qe"/>
                             <constraint firstItem="wiv-0V-qAy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kew-BZ-Kfd"/>
                         </constraints>
+>>>>>>> imagePickerWithVerify
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="tgD-Et-jZ2"/>
                     <connections>
@@ -631,7 +643,11 @@
                                 <rect key="frame" x="193" y="84" width="215" height="215"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTp-86-Sil">
+<<<<<<< HEAD
+                                        <rect key="frame" x="15" y="170" width="241" height="34"/>
+=======
                                         <rect key="frame" x="8" y="143" width="199" height="34"/>
+>>>>>>> imagePickerWithVerify
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="241" id="0Cb-hQ-Qgh"/>
@@ -649,8 +665,13 @@
                                             </mask>
                                         </variation>
                                     </label>
+<<<<<<< HEAD
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="9eh-YR-FL1">
+                                        <rect key="frame" x="75" y="34" width="120" height="120"/>
+=======
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="9eh-YR-FL1" customClass="PFImageView">
                                         <rect key="frame" x="47" y="15" width="120" height="120"/>
+>>>>>>> imagePickerWithVerify
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="CU7-SJ-9DD"/>
@@ -665,10 +686,16 @@
                                             </mask>
                                         </variation>
                                     </imageView>
+<<<<<<< HEAD
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pU-8k-Vhu">
+                                        <rect key="frame" x="83" y="245" width="105" height="30"/>
+                                        <animations/>
+=======
                                     <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-Gq-R6u">
                                         <rect key="frame" x="120" y="90" width="22" height="22"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+>>>>>>> imagePickerWithVerify
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="jhO-WB-ayy"/>
                                             <constraint firstAttribute="height" constant="22" id="zZm-qD-fhX"/>
@@ -868,7 +895,11 @@
                             </view>
                         </subviews>
                         <animations/>
+<<<<<<< HEAD
+                        <color key="backgroundColor" red="1" green="0.75394853949999996" blue="0.34447615129999998" alpha="1" colorSpace="calibratedRGB"/>
+=======
                         <color key="backgroundColor" red="0.97254901959999995" green="0.91631909072843487" blue="0.39679608461176374" alpha="1" colorSpace="calibratedRGB"/>
+>>>>>>> imagePickerWithVerify
                         <constraints>
                             <constraint firstItem="RMC-C2-W7I" firstAttribute="centerX" secondItem="dMP-hU-d9R" secondAttribute="centerX" id="4m0-ol-a1q"/>
                             <constraint firstItem="p1v-LH-HF3" firstAttribute="leading" secondItem="dMP-hU-d9R" secondAttribute="leading" id="Ca2-Cc-P7b"/>

@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-
+#import <ParseUI/ParseUI.h>
+#import "SuperUser.h"
+#import "SGConstants.h"
 @interface AppDelegate ()
 
 @end
@@ -17,14 +19,26 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+
+    // Initialize Parse
     [Parse enableLocalDatastore];
+
+    // Register PFObject
+    [PFObject class];
+
+    // Register PFImageView
+    [PFImageView class];
+
+    // Register SuperUser
+    //    [SuperUser registerSubclass];
 
     // Initialize Parse.
     [Parse setApplicationId:@"eFIbDZnfVynVVtx93oAjp9NCccf2YadqW0FYBbsx" clientKey:@"lUtdnu9s9GzuIvqqdPBSTqPq6dIMyqz47WC4HH1Z"];
 
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+    
     return YES;
 }
 

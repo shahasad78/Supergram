@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SuperUser.h"
 
 @interface SuperProfileViewController : UIViewController
+
+@property SuperUser *searchedUser;
 
 @end

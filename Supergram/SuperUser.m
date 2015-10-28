@@ -7,9 +7,22 @@
 //
 
 #import "SuperUser.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation SuperUser
 
-@dynamic profilePicture;
+@dynamic profilePic;
+@dynamic firstName;
+@dynamic lastName;
+@dynamic bio;
+@dynamic postCount;
+@dynamic followerCount;
+@dynamic followingCount;
 
++ (void) load {
+    [self registerSubclass];
+}
+//+ (NSString *)parseClassName {
+//    return @"SuperUser";
+//}
 @end

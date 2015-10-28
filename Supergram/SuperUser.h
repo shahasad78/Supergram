@@ -7,7 +7,16 @@
 //
 
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
+#import "SGConstants.h"
 
-@interface SuperUser : PFUser
-@property UIImage *profilePicture;
+@interface SuperUser : PFUser <PFSubclassing>
+@property PFFile *profilePic;
+@property NSString *firstName;
+@property NSString *lastName;
+@property NSString *bio;
+@property NSNumber *postCount;
+@property NSNumber *followingCount;
+@property NSNumber *followerCount;
+
 @end
