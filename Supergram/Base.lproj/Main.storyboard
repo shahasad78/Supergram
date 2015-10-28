@@ -626,13 +626,19 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-Gq-R6u">
+                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-Gq-R6u">
                                         <rect key="frame" x="120" y="90" width="22" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="jhO-WB-ayy"/>
                                             <constraint firstAttribute="height" constant="22" id="zZm-qD-fhX"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="psA-yh-Usp" kind="show" id="0eh-SI-IWW"/>
                                         </connections>
@@ -656,6 +662,16 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF5-dh-AFl">
+                                        <rect key="frame" x="170" y="8" width="37" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Follow">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onFollowButtonPressed:" destination="Omh-SM-h4M" eventType="touchUpInside" id="13S-B3-Oas"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -669,10 +685,12 @@
                                     <constraint firstItem="xTp-86-Sil" firstAttribute="centerX" secondItem="9eh-YR-FL1" secondAttribute="centerX" constant="0.5" id="Gk7-aq-Y9S"/>
                                     <constraint firstAttribute="height" constant="215" id="RLL-ue-kVg"/>
                                     <constraint firstAttribute="trailing" secondItem="sys-bn-U3K" secondAttribute="trailing" constant="4" id="SIh-hc-2ve"/>
+                                    <constraint firstAttribute="trailing" secondItem="IF5-dh-AFl" secondAttribute="trailing" constant="8" id="clb-x0-Ele"/>
                                     <constraint firstAttribute="trailing" secondItem="xTp-86-Sil" secondAttribute="trailing" constant="8" id="gkc-ez-P3D"/>
                                     <constraint firstItem="9eh-YR-FL1" firstAttribute="centerX" secondItem="RMC-C2-W7I" secondAttribute="centerX" id="jZU-u1-8hS"/>
                                     <constraint firstItem="xTp-86-Sil" firstAttribute="leading" secondItem="RMC-C2-W7I" secondAttribute="leading" constant="8" id="nEl-nL-u7l"/>
                                     <constraint firstItem="xTp-86-Sil" firstAttribute="top" secondItem="9eh-YR-FL1" secondAttribute="bottom" constant="8" id="p5f-ZJ-yFI"/>
+                                    <constraint firstItem="IF5-dh-AFl" firstAttribute="top" secondItem="RMC-C2-W7I" secondAttribute="top" constant="8" id="qFd-SZ-2Dp"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -766,7 +784,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="posts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXC-oW-Vny">
-                                                <rect key="frame" x="0.0" y="23" width="51" height="17"/>
+                                                <rect key="frame" x="0.0" y="22" width="51" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="51" id="0nP-B5-Od4"/>
                                                 </constraints>
@@ -820,6 +838,8 @@
                     <connections>
                         <outlet property="editProfileImageBtn" destination="5EQ-Gq-R6u" id="fhN-MU-UYp"/>
                         <outlet property="editUserSettings" destination="ufv-iu-zXN" id="vKa-Qv-MJe"/>
+                        <outlet property="followButton" destination="IF5-dh-AFl" id="cXj-7G-Ae5"/>
+                        <outlet property="fullnameLabel" destination="sys-bn-U3K" id="CmK-Cc-Eo7"/>
                         <outlet property="mediaCollection" destination="p1v-LH-HF3" id="DbS-KV-Ooh"/>
                         <outlet property="profileImage" destination="9eh-YR-FL1" id="meE-5e-OGe"/>
                         <outlet property="usernameLabel" destination="xTp-86-Sil" id="UJU-fJ-KDH"/>

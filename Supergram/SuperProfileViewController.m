@@ -14,6 +14,7 @@
 #import <ParseUI/ParseUI.h>
 #import "Post.h"
 #import "SuperUser.h"
+#import "Activity.h"
 
 @interface SuperProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -22,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *editProfileImageBtn;
 @property SuperUser *userView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editUserSettings;
+@property (weak, nonatomic) IBOutlet UILabel *fullnameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *followButton;
 
 @property NSMutableArray *userMedia;
 @end
@@ -65,6 +68,8 @@
     // Show the current visitor's username
     if (self.userView.username) {
         self.usernameLabel.text = self.userView.username;
+
+        self.fullnameLabel.text = [NSString stringWithFormat:@"%@ %@", self.userView.firstName , self.userView.lastName];
     }
 
     if (self.userView[@"profilePic"]) {
@@ -78,11 +83,7 @@
         [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
             for (Post *result in posts) {
-                //Post *post;
-               // post.media = [result  objectForKey:@"media"];
-//                PFFile *image = [result  objectForKey:@"media"];
                 [self.userMedia addObject:result];
-               //  NSLog(@"%@", result.objectId);
             }
 
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -116,6 +117,36 @@
     return cell;
 }
 
+#pragma mark - Following/Unfollowing
+- (IBAction)onFollowButtonPressed:(UIButton *)sender {
+//
+//    SuperUser *user = [SuperUser currentUser];
+//
+//    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (error) {
+//            // Handle error
+//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+//                                                                           message:@"Unable to save an error."
+//                                                                    preferredStyle:UIAlertControllerStyleAlert];
+//            UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
+//                                                               style:UIAlertActionStyleDefault
+//                                                             handler:nil];
+//            [alert addAction:okButton];
+//
+//            [self presentViewController:alert animated:YES completion:nil];
+//        } else {
+//            if (succeeded) {
+//
+//                [user incrementKey:@"postCount"];
+//                [user saveInBackground];
+//            }
+//            
+//        }
+//        
+//        
+//    }];
+//    
+}
 
 
 #pragma mark - segue

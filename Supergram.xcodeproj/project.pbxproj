@@ -48,6 +48,7 @@
 		E09A4BF41BDF4FF600E3EBE8 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF31BDF4FF600E3EBE8 /* Comment.m */; };
 		E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */; };
 		E09A4BFA1BDFD1E900E3EBE8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */; };
+		E09A4C1D1BE125F100E3EBE8 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4C1C1BE125F100E3EBE8 /* Activity.m */; };
 		E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */; };
 		E0A410A41BDD99A800AC5C3D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A31BDD99A800AC5C3D /* Post.m */; };
 		E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */; };
@@ -133,6 +134,8 @@
 		E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		E09A4BF81BDFD1E900E3EBE8 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ../SearchViewController.h; sourceTree = "<group>"; };
 		E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ../SearchViewController.m; sourceTree = "<group>"; };
+		E09A4C1B1BE125F100E3EBE8 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E09A4C1C1BE125F100E3EBE8 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		E0A410A21BDD99A800AC5C3D /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				E01CFDD31BD998B8004E1874 /* SuperUser.m */,
 				E0A410A21BDD99A800AC5C3D /* Post.h */,
 				E0A410A31BDD99A800AC5C3D /* Post.m */,
+				E09A4C1B1BE125F100E3EBE8 /* Activity.h */,
+				E09A4C1C1BE125F100E3EBE8 /* Activity.m */,
 				E09A4BF21BDF4FF600E3EBE8 /* Comment.h */,
 				E09A4BF31BDF4FF600E3EBE8 /* Comment.m */,
 				E01CFDE41BD9AC89004E1874 /* Helper */,
@@ -488,6 +493,7 @@
 				E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */,
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
 				E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */,
+				E09A4C1D1BE125F100E3EBE8 /* Activity.m in Sources */,
 				E09A4BC91BDE8EE100E3EBE8 /* NSString+ValidationUtility.m in Sources */,
 				E09A4BEE1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m in Sources */,
 				E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */,
