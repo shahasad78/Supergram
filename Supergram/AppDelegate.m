@@ -7,11 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "SuperUser.h"
+#import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
-@import Parse;
-@import Bolts;
-
+#import "SuperUser.h"
+#import "SGConstants.h"
 @interface AppDelegate ()
 
 @end

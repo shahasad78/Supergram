@@ -12,11 +12,14 @@
 #import <Parse/Parse.h>
 
 @interface UserSettingsViewController()
-@property (weak, nonatomic) IBOutlet UILabel *fullnameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *fullnameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bioLabel;
+@property (weak, nonatomic) IBOutlet UITextField *bioTextField;
 @property (weak, nonatomic) IBOutlet UINavigationItem *viewTitle;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property SuperUser *userView;
+//@property CGPoint originalCenter;
 
 @end
 @implementation UserSettingsViewController
@@ -24,20 +27,113 @@
 
 - (void) viewDidLoad{
     [super viewDidLoad];
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.77 green:0.33 blue:0.42 alpha:1.0];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar
-     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    self.navigationController.navigationBar.translucent = NO;
-    SuperUser *user = [SuperUser currentUser];
+
+    self.userView = [SuperUser currentUser];
+    self.usernameLabel.text = self.userView.username;
+    self.emailLabel.text = self.userView.email;
+
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query whereKey:@"username" equalTo:self.userView.username];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        PFObject *foundUser = object;
+
+        self.fullnameTextField.text = [NSString stringWithFormat:@"%@ %@", foundUser[@"firstName"] , foundUser[@"lastName"]];
+        self.bioTextField.text = foundUser[@"bio"];
+    }];
+
 }
 
-- (IBAction) unwindToUserSettings:(UIStoryboardSegue *)segue {
+- (IBAction)onFullNamePressed:(UITextField *)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Change Full Name" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *_Nonnull textField){
+        textField.placeholder = @"First Name";
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *_Nonnull textField){
+        textField.placeholder = @"Last Name";
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+
+    UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"Update" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+
+        UITextField *firstTextField = [[alertController textFields] firstObject];
+        UITextField *lastTextField = [[alertController textFields] lastObject];
+
+        [self.spinner startAnimating];
+
+        [self.userView setObject:firstTextField.text forKey:@"firstName"];
+        [self.userView setObject:lastTextField.text forKey:@"lastName"];
+
+        [self.userView saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+            [self.spinner stopAnimating];
+
+            if (error) {
+                //handle error
+            } else {
+                self.fullnameTextField.text = [NSString stringWithFormat:@"%@ %@", firstTextField.text, lastTextField.text];
+            }
+        }];
+
+    }];
+
+    [alertController addAction:cancelAction];
+    [alertController addAction:updateAction];
+
+    [self presentViewController:alertController animated:true completion:nil];
 
 }
-- (IBAction)onChangePasswordPressed:(UIButton *)sender {
+- (IBAction)onBioTextFieldPressed:(UITextField *)sender {
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Change Bio" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *_Nonnull textField){
+        textField.placeholder = @"Bio";
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+
+    UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"Update" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+
+        UITextField *firstTextField = [[alertController textFields] firstObject];
+
+        [self.spinner startAnimating];
+
+        [self.userView setObject:firstTextField.text forKey:@"bio"];
+
+        [self.userView saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self.spinner stopAnimating];
+
+            if (error) {
+                //handle error
+            } else {
+                self.bioTextField.text = firstTextField.text;
+            }
+        }];
+
+    }];
+
+    [alertController addAction:cancelAction];
+    [alertController addAction:updateAction];
+
+    [self presentViewController:alertController animated:true completion:nil];
+}
+- (IBAction)onResetPasswordPressed:(UIButton *)sender {
+    [self.spinner startAnimating];
+    [PFUser requestPasswordResetForEmailInBackground:self.userView.email];
+
+    [self.spinner stopAnimating];
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Password Reset"
+                                                                   message:[NSString stringWithFormat:@"An email containing information on how to reset your password has been sent to %@.", self.userView.email]
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:okButton];
+
+    [self presentViewController:alert animated:YES completion:nil];
 
 }
+
+
 - (IBAction)onLogOutButtonPressed:(UIButton *)sender {
     // Send a request to log out a user
     [SuperUser logOutInBackground];

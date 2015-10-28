@@ -39,9 +39,20 @@
 		E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD91BD99EBF004E1874 /* LoginViewController.m */; };
 		E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */; };
 		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; };
-		E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */; };
 		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; };
 		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; };
+		E09A4BC61BDE8E8100E3EBE8 /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BC51BDE8E8100E3EBE8 /* SGConstants.m */; };
+		E09A4BC91BDE8EE100E3EBE8 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BC81BDE8EE100E3EBE8 /* NSString+ValidationUtility.m */; };
+		E09A4BEB1BDEF10300E3EBE8 /* SGPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09A4BEA1BDEF10300E3EBE8 /* SGPostCell.xib */; };
+		E09A4BEE1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BED1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m */; };
+		E09A4BF11BDF072B00E3EBE8 /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */; };
+		E09A4BF41BDF4FF600E3EBE8 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF31BDF4FF600E3EBE8 /* Comment.m */; };
+		E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */; };
+		E09A4BFA1BDFD1E900E3EBE8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */; };
+		E09A4C1D1BE125F100E3EBE8 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4C1C1BE125F100E3EBE8 /* Activity.m */; };
+		E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */; };
+		E0A410A41BDD99A800AC5C3D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A31BDD99A800AC5C3D /* Post.m */; };
+		E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,12 +118,33 @@
 		E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
 		E01CFDDE1BD99F3A004E1874 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		E01CFDE11BD9AC73004E1874 /* NSString+ValidationUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ValidationUtility.h"; sourceTree = "<group>"; };
-		E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ValidationUtility.m"; sourceTree = "<group>"; };
 		E05F80411BDB1BB600B8DD21 /* UserSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsViewController.h; sourceTree = "<group>"; };
 		E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsViewController.m; sourceTree = "<group>"; };
 		E05F80441BDB403A00B8DD21 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
 		E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerViewController.m; sourceTree = "<group>"; };
+		E09A4BC41BDE8E3200E3EBE8 /* SGConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGConstants.h; sourceTree = "<group>"; };
+		E09A4BC51BDE8E8100E3EBE8 /* SGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConstants.m; sourceTree = "<group>"; };
+		E09A4BC71BDE8EE100E3EBE8 /* NSString+ValidationUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ValidationUtility.h"; sourceTree = "<group>"; };
+		E09A4BC81BDE8EE100E3EBE8 /* NSString+ValidationUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ValidationUtility.m"; sourceTree = "<group>"; };
+		E09A4BEA1BDEF10300E3EBE8 /* SGPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGPostCell.xib; sourceTree = "<group>"; };
+		E09A4BEC1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPostCollectionViewCell.h; sourceTree = "<group>"; };
+		E09A4BED1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPostCollectionViewCell.m; sourceTree = "<group>"; };
+		E09A4BEF1BDF072B00E3EBE8 /* PostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostDetailViewController.h; sourceTree = "<group>"; };
+		E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostDetailViewController.m; sourceTree = "<group>"; };
+		E09A4BF21BDF4FF600E3EBE8 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		E09A4BF31BDF4FF600E3EBE8 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		E09A4BF51BDFD11E00E3EBE8 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		E09A4BF81BDFD1E900E3EBE8 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ../SearchViewController.h; sourceTree = "<group>"; };
+		E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ../SearchViewController.m; sourceTree = "<group>"; };
+		E09A4C1B1BE125F100E3EBE8 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		E09A4C1C1BE125F100E3EBE8 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
+		E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
+		E0A410A21BDD99A800AC5C3D /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		E0A410A31BDD99A800AC5C3D /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		E0A410A51BDDD37400AC5C3D /* ThumbnailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailCollectionViewCell.h; sourceTree = "<group>"; };
+		E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +226,8 @@
 		CB21253D1BD98F3B00AA824B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E09A4BC41BDE8E3200E3EBE8 /* SGConstants.h */,
+				E09A4BC51BDE8E8100E3EBE8 /* SGConstants.m */,
 				CB2125401BD98F3B00AA824B /* AppDelegate.h */,
 				CB2125411BD98F3B00AA824B /* AppDelegate.m */,
 				CB2125491BD98F3B00AA824B /* Assets.xcassets */,
@@ -255,6 +289,12 @@
 			children = (
 				E01CFDD21BD998B8004E1874 /* SuperUser.h */,
 				E01CFDD31BD998B8004E1874 /* SuperUser.m */,
+				E0A410A21BDD99A800AC5C3D /* Post.h */,
+				E0A410A31BDD99A800AC5C3D /* Post.m */,
+				E09A4C1B1BE125F100E3EBE8 /* Activity.h */,
+				E09A4C1C1BE125F100E3EBE8 /* Activity.m */,
+				E09A4BF21BDF4FF600E3EBE8 /* Comment.h */,
+				E09A4BF31BDF4FF600E3EBE8 /* Comment.m */,
 				E01CFDE41BD9AC89004E1874 /* Helper */,
 			);
 			name = Model;
@@ -263,8 +303,14 @@
 		E01CFDCD1BD99622004E1874 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E09A4BEF1BDF072B00E3EBE8 /* PostDetailViewController.h */,
+				E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */,
+				E09A4BEC1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.h */,
+				E09A4BED1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m */,
 				E01CFDD51BD99E42004E1874 /* SuperProfileViewController.h */,
 				E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */,
+				E0A410A51BDDD37400AC5C3D /* ThumbnailCollectionViewCell.h */,
+				E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */,
 				E01CFDD81BD99EBF004E1874 /* LoginViewController.h */,
 				E01CFDD91BD99EBF004E1874 /* LoginViewController.m */,
 				E01CFDDB1BD99EEF004E1874 /* ResetPasswordViewController.h */,
@@ -275,6 +321,12 @@
 				E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */,
 				E05F80441BDB403A00B8DD21 /* ImagePickerViewController.h */,
 				E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */,
+				E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */,
+				E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */,
+				E09A4BF51BDFD11E00E3EBE8 /* FeedViewController.h */,
+				E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */,
+				E09A4BF81BDFD1E900E3EBE8 /* SearchViewController.h */,
+				E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -283,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2125461BD98F3B00AA824B /* Main.storyboard */,
+				E09A4BEA1BDEF10300E3EBE8 /* SGPostCell.xib */,
 				CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */,
 			);
 			name = Layout;
@@ -291,8 +344,8 @@
 		E01CFDE41BD9AC89004E1874 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				E01CFDE11BD9AC73004E1874 /* NSString+ValidationUtility.h */,
-				E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */,
+				E09A4BC71BDE8EE100E3EBE8 /* NSString+ValidationUtility.h */,
+				E09A4BC81BDE8EE100E3EBE8 /* NSString+ValidationUtility.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -406,6 +459,7 @@
 				CB21254D1BD98F3B00AA824B /* LaunchScreen.storyboard in Resources */,
 				CB21254A1BD98F3B00AA824B /* Assets.xcassets in Resources */,
 				CB2125481BD98F3B00AA824B /* Main.storyboard in Resources */,
+				E09A4BEB1BDEF10300E3EBE8 /* SGPostCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,17 +484,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A410A41BDD99A800AC5C3D /* Post.m in Sources */,
 				E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */,
 				E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */,
-				CB2125B71BDC677C00AA824B /* SGConstants.m in Sources */,
+				E09A4BC61BDE8E8100E3EBE8 /* SGConstants.m in Sources */,
+				E09A4BF11BDF072B00E3EBE8 /* PostDetailViewController.m in Sources */,
 				CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */,
+				E09A4BFA1BDFD1E900E3EBE8 /* SearchViewController.m in Sources */,
 				E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */,
+				E09A4BF41BDF4FF600E3EBE8 /* Comment.m in Sources */,
 				E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */,
 				E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */,
+				E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */,
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
+				E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */,
+				E09A4C1D1BE125F100E3EBE8 /* Activity.m in Sources */,
+				E09A4BC91BDE8EE100E3EBE8 /* NSString+ValidationUtility.m in Sources */,
+				E09A4BEE1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m in Sources */,
 				E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */,
+				E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */,
 				CB21253F1BD98F3B00AA824B /* main.m in Sources */,
-				E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

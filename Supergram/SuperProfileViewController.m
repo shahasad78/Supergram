@@ -14,18 +14,18 @@
 #import <ParseUI/ParseUI.h>
 #import "Post.h"
 #import "SuperUser.h"
+#import "Activity.h"
 
-@interface SuperProfileViewController () <UICollectionViewDataSource,
-UICollectionViewDelegate,
-UICollectionViewDelegateFlowLayout>
-
-// IBOutlet Properties
+@interface SuperProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UICollectionView *mediaCollection;
 @property (weak, nonatomic) IBOutlet UIButton *editProfileImageBtn;
+@property SuperUser *userView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editUserSettings;
+@property (weak, nonatomic) IBOutlet UILabel *fullnameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *followButton;
 
-// Data model properties
 @property NSMutableArray *userMedia;
 @end
 
@@ -35,7 +35,18 @@ UICollectionViewDelegateFlowLayout>
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    PFUser *user = [PFUser currentUser];
+    self.userView = [SuperUser currentUser];
+
+    if (self.searchedUser != nil) {
+        if (self.searchedUser != self.userView) {
+            self.userView = self.searchedUser;
+            self.editProfileImageBtn.hidden = true;
+            self.navigationItem.rightBarButtonItem.enabled = NO;
+        }
+    } else {
+        self.editProfileImageBtn.hidden = false;
+    }
+
     self.userMedia = [[NSMutableArray alloc] init];
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -44,29 +55,32 @@ UICollectionViewDelegateFlowLayout>
     flowLayout.minimumInteritemSpacing = 10.0f;
     flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 10.0f, 5.0f, 10.0f);
 
+
+//
     self.mediaCollection.collectionViewLayout = flowLayout;
 
 
     // If the current visitor is not logged in, show the login scene
 
-    if (user == nil ) {
+    if (self.userView == nil ) {
         [self showLogInScreen];
     }  else {
 
-        // Show the current visitor's username
-        if (user.username) {
-            self.usernameLabel.text = user.username;
-        }
+    // Show the current visitor's username
+    if (self.userView.username) {
+        self.usernameLabel.text = self.userView.username;
 
-        if (user[kSuperUserAttributeKey.profilePic]) {
+        self.fullnameLabel.text = [NSString stringWithFormat:@"%@ %@", self.userView.firstName , self.userView.lastName];
+    }
 
-            self.profileImage.file = user[kSuperUserAttributeKey.profilePic];
+    if (self.userView[@"profilePic"]) {
+        self.profileImage.file = self.userView[@"profilePic"];
 
-            [self.profileImage loadInBackground];
-        }
+        [self.profileImage loadInBackground];
+    }
 
         PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-        [query whereKey:@"author" equalTo:user];
+        [query whereKey:@"author" equalTo:self.userView];
         [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
             for (Post *result in posts) {
@@ -78,13 +92,13 @@ UICollectionViewDelegateFlowLayout>
             });
         }];
 
-    }
+     }
 }
 
 #pragma mark - Collection View
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.userMedia.count;
+   return self.userMedia.count;
 }
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -97,13 +111,43 @@ UICollectionViewDelegateFlowLayout>
 
     cell.thumbnailImage.file = post.media;
 
-    [cell.thumbnailImage loadInBackground];
+   [cell.thumbnailImage loadInBackground];
 
 
 
     return cell;
 }
 
+#pragma mark - Following/Unfollowing
+- (IBAction)onFollowButtonPressed:(UIButton *)sender {
+//
+//    SuperUser *user = [SuperUser currentUser];
+//
+//    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (error) {
+//            // Handle error
+//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+//                                                                           message:@"Unable to save an error."
+//                                                                    preferredStyle:UIAlertControllerStyleAlert];
+//            UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
+//                                                               style:UIAlertActionStyleDefault
+//                                                             handler:nil];
+//            [alert addAction:okButton];
+//
+//            [self presentViewController:alert animated:YES completion:nil];
+//        } else {
+//            if (succeeded) {
+//
+//                [user incrementKey:@"postCount"];
+//                [user saveInBackground];
+//            }
+//            
+//        }
+//        
+//        
+//    }];
+//    
+}
 
 
 #pragma mark - segue

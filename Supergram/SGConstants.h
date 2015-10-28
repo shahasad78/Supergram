@@ -70,4 +70,3 @@ extern const struct kSegueIdentifiers {
     __unsafe_unretained NSString *const postDetail;
     __unsafe_unretained NSString *const userSettings;
 } kSegueIdentifiers;
-

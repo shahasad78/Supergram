@@ -17,8 +17,6 @@ UINavigationControllerDelegate>
 // IBOutlet properties
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
-
-// Image properties
 @property UIImagePickerController *picker;
 @property UIImage *chosenImage;
 
@@ -112,8 +110,9 @@ UINavigationControllerDelegate>
         }];
 
         // Execute the unwind segue and go back to the user profile screen
+
         [self dismissViewControllerAnimated:YES completion:nil];
-        //        [self performSegueWithIdentifier:@"unwindToProfile" sender:self];
+//        [self performSegueWithIdentifier:@"unwindToProfile" sender:self];
 
     } else {
 
