@@ -11,6 +11,7 @@
 #import <ParseUI/ParseUI.h>
 #import "SuperUser.h"
 #import "SGConstants.h"
+#import "Activity.h"
 @interface AppDelegate ()
 
 @end

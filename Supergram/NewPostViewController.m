@@ -6,17 +6,27 @@
 //  Copyright © 2015 Shotty Shack Games. All rights reserved.
 //
 
-#import "NewPostViewController.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "NewPostViewController.h"
 #import "Post.h"
 #import "SuperUser.h"
+#import "Activity.h"
 
 @interface NewPostViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+// IBOutlet Properties
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
+// Image properties
 @property UIImagePickerController *picker;
 @property UIImage *chosenImage;
+
+// Parse objects
+@property Activity *activity;
+@property SuperUser *user;
+
 @end
 
 @implementation NewPostViewController
@@ -24,13 +34,16 @@
 #pragma mark - View Life Cycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 
+    // Grab current user
+    self.user = [SuperUser currentUser];
+
+    // Initialize ImagePicker Controller
     self.picker = [[UIImagePickerController alloc] init];
     self.picker.delegate = self;
+    self.picker.allowsEditing = YES;
 
     self.imageView.image = [UIImage imageNamed:@"default_placeholder"];
-   // self.imageView.frame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.width);
 
 }
 
@@ -51,22 +64,17 @@
 
 #pragma mark - IBAction Methods
 - (IBAction)onCameraButtonClicked:(UIButton *)sender {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 
-    [self presentViewController:picker animated:YES completion:NULL];
+    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+
+    [self presentViewController:self.picker animated:YES completion:NULL];
 }
 
 - (IBAction)selectPhoto:(UIButton *)sender {
 
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
-    [self presentViewController:picker animated:YES completion:NULL];
+    [self presentViewController:self.picker animated:YES completion:NULL];
 
 
 }
@@ -92,11 +100,11 @@
         NSData *imageData = UIImageJPEGRepresentation(self.chosenImage, 0.0);
 
         PFFile *imageFile = [PFFile fileWithData:imageData];
-        SuperUser *user = [SuperUser currentUser];
+//        SuperUser *user = [SuperUser currentUser];
 
         Post *post = [Post objectWithClassName:@"Post"];
         post.media = imageFile;
-        post.author = user;
+        post.author = self.user;
 
         [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
@@ -106,10 +114,20 @@
             } else {
 
                 if (succeeded) {
-
-                    [user incrementKey:kSuperUserAttributeKey.postCount];
-                    [user saveInBackground];
+                    
+                    [self.user incrementKey:kSuperUserAttributeKey.postCount];
+                    [self.user saveInBackground];
                     self.imageView.image = [UIImage imageNamed:@"default_placeholder"];
+
+                    // Save New Activity
+                    self.activity = [Activity object];
+                    self.activity[kActivityKey.fromUser]    = self.user;
+                    self.activity[kActivityKey.toUser]      = self.user;
+                    self.activity[kActivityKey.type]        = kActivityType.post;
+                    self.activity[kActivityKey.post]        = post;
+
+                    [self.activity saveInBackground];
+                    
                     [self performSegueWithIdentifier:@"ExitToUserProfile" sender:self];
                 }
 

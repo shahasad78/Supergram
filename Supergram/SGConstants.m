@@ -37,12 +37,12 @@ const struct kSuperUserAttributeKey kSuperUserAttributeKey = {
 // Post Attribute Key Constants
 // --------------------------------------------------------------------
 const struct kPostAttributeKey kPostAttributeKey = {
-    .post       = @"Post",
-    .title      = @"title",
-    .media      = @"media",
-    .author     = @"author",
-    .likesCount = @"likesCount",
-    .commentCount = @"commentCount"
+    .post           = @"Post",
+    .title          = @"title",
+    .media          = @"media",
+    .author         = @"author",
+    .likesCount     = @"likesCount",
+    .commentCount   = @"commentCount"
 };
 
 // --------------------------------------------------------------------
@@ -59,4 +59,26 @@ const struct kSegueIdentifiers kSegueIdentifiers = {
     .selectPhoto    = @"SelectPhotoSegue",
     .postDetail     = @"PostDetailSegue",
     .userSettings   = @"UserSettingsSegue"
+};
+
+// --------------------------------------------------------------------
+// Activity Class Constants
+// --------------------------------------------------------------------
+const struct kActivityKey kActivityKey = {
+    // Field keys
+    .type       = @"activityType",
+    .fromUser   = @"fromUser",
+    .toUser     = @"toUser",
+    .post       = @"post",
+    .photo      = @"photo",
+};
+
+const struct kActivityType kActivityType = {
+    // Type values
+    .like       = @"like",
+    .post       = @"post",
+    .follow     = @"follow",
+    .comment    = @"comment",
+    .joined     = @"joined"
+
 };

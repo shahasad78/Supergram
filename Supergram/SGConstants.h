@@ -72,3 +72,23 @@ extern const struct kSegueIdentifiers {
     __unsafe_unretained NSString *const postDetail;
     __unsafe_unretained NSString *const userSettings;
 } kSegueIdentifiers;
+
+#pragma mark - Activity Class
+extern const struct kActivityKey {
+    // Field keys
+    __unsafe_unretained NSString *const type;
+    __unsafe_unretained NSString *const fromUser;
+    __unsafe_unretained NSString *const toUser;
+    __unsafe_unretained NSString *const post;
+    __unsafe_unretained NSString *const photo;
+
+} kActivityKey;
+
+extern const struct kActivityType {
+    // Type values
+    __unsafe_unretained NSString *const like;
+    __unsafe_unretained NSString *const post;
+    __unsafe_unretained NSString *const follow;
+    __unsafe_unretained NSString *const comment;
+    __unsafe_unretained NSString *const joined;
+} kActivityType;
