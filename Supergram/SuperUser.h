@@ -12,5 +12,11 @@
 
 @interface SuperUser : PFUser <PFSubclassing>
 @property PFFile *profilePic;
+@property NSString *firstName;
+@property NSString *lastName;
+@property NSString *bio;
+@property NSNumber *postCount;
+@property NSNumber *followingCount;
+@property NSNumber *followerCount;
 
 @end

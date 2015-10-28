@@ -47,7 +47,6 @@
 
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(self.mediaCollection.frame.size.width/3 - 10, self.mediaCollection.frame.size.width/3 - 10);
-   // flowLayout.itemSize = CGSizeMake(100, 100);
     flowLayout.minimumLineSpacing = 10.0f;
     flowLayout.minimumInteritemSpacing = 10.0f;
     flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 10.0f, 5.0f, 10.0f);

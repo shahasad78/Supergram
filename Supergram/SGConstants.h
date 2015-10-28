@@ -51,4 +51,22 @@ extern const struct kPostAttributeKey {
     __unsafe_unretained NSString *const commentCount;
 } kPostAttributeKey;
 
+/*!
+ * @namespace kCommenttAttributeKey
+ * @abstract Namespace to hold Comment attribute keys.
+ * @updated 2015-25-10
+ */
+extern const struct kCommentAttributeKey {
+    __unsafe_unretained NSString *const content;
+} kCommentAttributeKey;
 
+/*!
+ * @namespace kSegueIdentifiers
+ * @abstract Namespace to hold Segue Identifiers
+ * @updated 2015-25-10
+ */
+extern const struct kSegueIdentifiers {
+    __unsafe_unretained NSString *const selectPhoto;
+    __unsafe_unretained NSString *const postDetail;
+    __unsafe_unretained NSString *const userSettings;
+} kSegueIdentifiers;

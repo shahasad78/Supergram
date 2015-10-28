@@ -12,6 +12,13 @@
 @implementation SuperUser
 
 @dynamic profilePic;
+@dynamic firstName;
+@dynamic lastName;
+@dynamic bio;
+@dynamic postCount;
+@dynamic followerCount;
+@dynamic followingCount;
+
 + (void) load {
     [self registerSubclass];
 }

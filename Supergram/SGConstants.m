@@ -42,3 +42,19 @@ const struct kPostAttributeKey kPostAttributeKey = {
     .likesCount = @"likesCount",
     .commentCount = @"commentCount"
 };
+
+// --------------------------------------------------------------------
+// Comment Attribute Key Constants
+// --------------------------------------------------------------------
+const struct kCommentAttributeKey kCommentAttributeKey = {
+    .content    = @"content"
+};
+
+// --------------------------------------------------------------------
+// Segue Identifier Constants
+// --------------------------------------------------------------------
+const struct kSegueIdentifiers kSegueIdentifiers = {
+    .selectPhoto    = @"SelectPhotoSegue",
+    .postDetail     = @"PostDetailSegue",
+    .userSettings   = @"UserSettingsSegue"
+};
