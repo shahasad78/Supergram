@@ -8,7 +8,10 @@
 
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "SGConstants.h"
 
-@interface SuperUser : PFUser
+@interface SuperUser : PFUser <PFSubclassing>
+
 @property PFFile *profilePic;
+
 @end

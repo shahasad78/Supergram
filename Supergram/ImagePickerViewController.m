@@ -7,63 +7,73 @@
 //
 
 #import "ImagePickerViewController.h"
-//#import <AVFoundation/AVFoundation.h>
-//#import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "SuperUser.h"
 
-@interface ImagePickerViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ImagePickerViewController () <UIImagePickerControllerDelegate,
+UINavigationControllerDelegate>
+
+// IBOutlet properties
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+
+// Image properties
 @property UIImagePickerController *picker;
 @property UIImage *chosenImage;
+
+@property (strong, nonatomic) SuperUser *user;
+
 @end
+
 @implementation ImagePickerViewController
 
+#pragma mark - View Life Cycle Methods
 - (void) viewDidLoad{
     [super viewDidLoad];
 
     self.picker = [[UIImagePickerController alloc] init];
     self.picker.delegate = self;
+    self.picker.allowsEditing = YES;
 
-    PFUser *user = [PFUser currentUser];
-    if (user[@"profilePic"]) {
-        self.imageView.file = user[@"profilePic"];
-
+    self.user = [SuperUser currentUser];
+    if (self.user[kSuperUserAttributeKey.profilePic]) {
+        self.imageView.file = self.user[kSuperUserAttributeKey.profilePic];
         [self.imageView loadInBackground];
     }
 
 
     // if camera is not available
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                       message:@"Device has no camera"
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:nil];
-        [alert addAction:okButton];
-
-        [self presentViewController:alert animated:YES completion:nil];
+        [self presentAlertControllerWithTitle:@"Error" message:@"Device has no camera" andButtonName:@"Okay!"];
     }
 }
-- (IBAction)onCameraButtonClicked:(UIButton *)sender {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
 
-    [self presentViewController:picker animated:YES completion:NULL];
+#pragma mark - Helper Methods
+- (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message andButtonName:(NSString *)buttonName{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:buttonName
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:okButton];
+
+    [self presentViewController:alert animated:YES completion:NULL];
+
+}
+
+#pragma mark - IBAction Methods
+- (IBAction)onCameraButtonClicked:(UIButton *)sender {
+    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+
+    [self presentViewController:self.picker animated:YES completion:NULL];
 }
 
 - (IBAction)selectPhoto:(UIButton *)sender {
+    self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-
-    [self presentViewController:picker animated:YES completion:NULL];
+    [self presentViewController:self.picker animated:YES completion:NULL];
 
 
 }
@@ -91,44 +101,27 @@
         [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
                 if (succeeded) {
-                    PFUser *user = [PFUser currentUser];
-                    //user[@"profilePic"] = imageFile;
-                    [user setObject:imageFile forKey:@"profilePic"];
-                    [user saveInBackground];
+                    self.user = [SuperUser currentUser];
+                    [self.user setObject:imageFile forKey:kSuperUserAttributeKey.profilePic];
+                    [self.user saveInBackground];
                 }
             } else {
                 // Handle error
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                               message:@"Unable to save an error."
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
-                                                                   style:UIAlertActionStyleDefault
-                                                                 handler:nil];
-                [alert addAction:okButton];
-
-                [self presentViewController:alert animated:YES completion:nil];
-            }        
+                [self presentAlertControllerWithTitle:@"Error" message:@"Unable to save image" andButtonName:@"Okay!"];
+            }
         }];
 
         // Execute the unwind segue and go back to the user profile screen
-        //[self performSegueWithIdentifier:@"unwindToProfile" sender:self];
         [self dismissViewControllerAnimated:YES completion:nil];
+        //        [self performSegueWithIdentifier:@"unwindToProfile" sender:self];
 
     } else {
 
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                       message:@"Please select a photo."
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:nil];
-        [alert addAction:okButton];
-
-        [self presentViewController:alert animated:YES completion:nil];
-
+        [self presentAlertControllerWithTitle:@"Error" message:@"Please Select a photo" andButtonName:@"Okay!"];
+        
     }
-
-
+    
+    
 }
 
 

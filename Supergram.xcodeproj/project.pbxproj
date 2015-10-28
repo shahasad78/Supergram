@@ -14,13 +14,14 @@
 		CB21254D1BD98F3B00AA824B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */; };
 		CB2125581BD98F3B00AA824B /* SupergramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125571BD98F3B00AA824B /* SupergramTests.m */; };
 		CB2125631BD98F3B00AA824B /* SupergramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125621BD98F3B00AA824B /* SupergramUITests.m */; };
-		E01CFDAD1BD9932A004E1874 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA61BD9932A004E1874 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDAE1BD9932A004E1874 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA71BD9932A004E1874 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDAF1BD9932A004E1874 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA81BD9932A004E1874 /* ParseCrashReporting.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDB01BD9932A004E1874 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA91BD9932A004E1874 /* ParseFacebookUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDB11BD9932A004E1874 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAA1BD9932A004E1874 /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDB21BD9932A004E1874 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAB1BD9932A004E1874 /* ParseTwitterUtils.framework */; settings = {ASSET_TAGS = (); }; };
-		E01CFDB31BD9932A004E1874 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAC1BD9932A004E1874 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		CB2125B71BDC677C00AA824B /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125B61BDC677C00AA824B /* SGConstants.m */; };
+		E01CFDAD1BD9932A004E1874 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA61BD9932A004E1874 /* Bolts.framework */; };
+		E01CFDAE1BD9932A004E1874 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA71BD9932A004E1874 /* Parse.framework */; };
+		E01CFDAF1BD9932A004E1874 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA81BD9932A004E1874 /* ParseCrashReporting.framework */; };
+		E01CFDB01BD9932A004E1874 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA91BD9932A004E1874 /* ParseFacebookUtils.framework */; };
+		E01CFDB11BD9932A004E1874 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAA1BD9932A004E1874 /* ParseFacebookUtilsV4.framework */; };
+		E01CFDB21BD9932A004E1874 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAB1BD9932A004E1874 /* ParseTwitterUtils.framework */; };
+		E01CFDB31BD9932A004E1874 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDAC1BD9932A004E1874 /* ParseUI.framework */; };
 		E01CFDB51BD994F9004E1874 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDB41BD994F9004E1874 /* AudioToolbox.framework */; };
 		E01CFDB71BD994FF004E1874 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDB61BD994FF004E1874 /* CFNetwork.framework */; };
 		E01CFDB91BD99507004E1874 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDB81BD99507004E1874 /* CoreGraphics.framework */; };
@@ -33,15 +34,14 @@
 		E01CFDC71BD99556004E1874 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDC61BD99556004E1874 /* libsqlite3.tbd */; };
 		E01CFDC91BD9956B004E1874 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDC81BD9956B004E1874 /* Accounts.framework */; };
 		E01CFDCB1BD99572004E1874 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDCA1BD99572004E1874 /* Social.framework */; };
-		E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD01BD99777004E1874 /* AllFeedViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD31BD998B8004E1874 /* SuperUser.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD91BD99EBF004E1874 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */; settings = {ASSET_TAGS = (); }; };
-		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD31BD998B8004E1874 /* SuperUser.m */; };
+		E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */; };
+		E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD91BD99EBF004E1874 /* LoginViewController.m */; };
+		E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */; };
+		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; };
+		E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDE21BD9AC73004E1874 /* NSString+ValidationUtility.m */; };
+		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; };
+		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +76,8 @@
 		CB21255E1BD98F3B00AA824B /* SupergramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupergramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2125621BD98F3B00AA824B /* SupergramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupergramUITests.m; sourceTree = "<group>"; };
 		CB2125641BD98F3B00AA824B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB2125B61BDC677C00AA824B /* SGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConstants.m; sourceTree = "<group>"; };
+		CB2125B81BDC679700AA824B /* SGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConstants.h; sourceTree = "<group>"; };
 		E01CFDA61BD9932A004E1874 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E01CFDA71BD9932A004E1874 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E01CFDA81BD9932A004E1874 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -95,8 +97,6 @@
 		E01CFDC61BD99556004E1874 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E01CFDC81BD9956B004E1874 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E01CFDCA1BD99572004E1874 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		E01CFDCF1BD99777004E1874 /* AllFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllFeedViewController.h; sourceTree = "<group>"; };
-		E01CFDD01BD99777004E1874 /* AllFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllFeedViewController.m; sourceTree = "<group>"; };
 		E01CFDD21BD998B8004E1874 /* SuperUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperUser.h; sourceTree = "<group>"; };
 		E01CFDD31BD998B8004E1874 /* SuperUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperUser.m; sourceTree = "<group>"; };
 		E01CFDD51BD99E42004E1874 /* SuperProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperProfileViewController.h; sourceTree = "<group>"; };
@@ -199,6 +199,8 @@
 				CB2125491BD98F3B00AA824B /* Assets.xcassets */,
 				CB21254E1BD98F3B00AA824B /* Info.plist */,
 				CB21253E1BD98F3B00AA824B /* main.m */,
+				CB2125B81BDC679700AA824B /* SGConstants.h */,
+				CB2125B61BDC677C00AA824B /* SGConstants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -261,8 +263,6 @@
 		E01CFDCD1BD99622004E1874 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E01CFDCF1BD99777004E1874 /* AllFeedViewController.h */,
-				E01CFDD01BD99777004E1874 /* AllFeedViewController.m */,
 				E01CFDD51BD99E42004E1874 /* SuperProfileViewController.h */,
 				E01CFDD61BD99E42004E1874 /* SuperProfileViewController.m */,
 				E01CFDD81BD99EBF004E1874 /* LoginViewController.h */,
@@ -364,7 +364,7 @@
 				TargetAttributes = {
 					CB2125391BD98F3B00AA824B = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = RYF7YHAMY5;
+						DevelopmentTeam = 8NT726EKLP;
 					};
 					CB2125521BD98F3B00AA824B = {
 						CreatedOnToolsVersion = 7.1;
@@ -432,12 +432,12 @@
 			files = (
 				E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */,
 				E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */,
+				CB2125B71BDC677C00AA824B /* SGConstants.m in Sources */,
 				CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */,
 				E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */,
 				E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */,
 				E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */,
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
-				E01CFDD11BD99777004E1874 /* AllFeedViewController.m in Sources */,
 				E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */,
 				CB21253F1BD98F3B00AA824B /* main.m in Sources */,
 				E01CFDE31BD9AC73004E1874 /* NSString+ValidationUtility.m in Sources */,

@@ -10,8 +10,12 @@
 
 @interface NSString (ValidationUtility)
 
-+ (BOOL) validateEmailWithString:(NSString *)emailString;
-+ (BOOL) validateUsernameWithString:(NSString *)usernameString;
-+ (BOOL) validatePasswordWithString:(NSString *)passwordString;
++ (BOOL) isValidEmailAddress:(NSString *)emailAddress;
++ (BOOL) isValidUsername:(NSString *)username;
++ (BOOL) isValidPassword:(NSString *)password;
+
+- (BOOL) isValidEmailAddress;
+- (BOOL) isValidUsername;
+- (BOOL) isValidPassword;
 
 @end
