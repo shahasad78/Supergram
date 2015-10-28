@@ -122,7 +122,7 @@
 //
 //    SuperUser *user = [SuperUser currentUser];
 //
-//    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 //        if (error) {
 //            // Handle error
 //            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
