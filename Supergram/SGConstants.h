@@ -31,6 +31,7 @@ extern const struct kPFObjectAttributeKey {
 
 extern const struct kSuperUserAttributeKey {
     __unsafe_unretained NSString *const profilePic;
+    __unsafe_unretained NSString *const postCount;
     __unsafe_unretained NSString *const firstName;
     __unsafe_unretained NSString *const lastName;
     __unsafe_unretained NSString *const username;

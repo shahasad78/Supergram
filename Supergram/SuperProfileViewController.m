@@ -177,7 +177,7 @@
 }
 
 - (IBAction) unwindToProfile:(UIStoryboardSegue *)segue {
-
+    [self setupUI];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UICollectionViewCell *)sender {

@@ -24,6 +24,7 @@ const struct kPFObjectAttributeKey kPFObjectAttributeKey = {
 // --------------------------------------------------------------------
 const struct kSuperUserAttributeKey kSuperUserAttributeKey = {
     .profilePic = @"profilePic",
+    .postCount  = @"postCount",
     .firstName  = @"firstName",
     .lastName   = @"lastName",
     .username   = @"userName",

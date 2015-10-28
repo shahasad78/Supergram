@@ -21,6 +21,7 @@
 
 @implementation NewPostViewController
 
+#pragma mark - View Life Cycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -31,6 +32,21 @@
 
 }
 
+#pragma mark - Helper Methods
+- (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message andButtonName:(NSString *)buttonName{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:buttonName
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:okButton];
+
+    [self presentViewController:alert animated:YES completion:NULL];
+    
+}
+
+#pragma mark - IBAction Methods
 - (IBAction)onCameraButtonClicked:(UIButton *)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -52,6 +68,7 @@
 
 }
 
+#pragma mark - ImagePicker Controller Methods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
     self.chosenImage = info[UIImagePickerControllerEditedImage];
@@ -80,21 +97,16 @@
 
         [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
-                // Handle error
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                               message:@"Unable to save an error."
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
-                                                                   style:UIAlertActionStyleDefault
-                                                                 handler:nil];
-                [alert addAction:okButton];
 
-                [self presentViewController:alert animated:YES completion:nil];
+                [self presentAlertControllerWithTitle:@"Error" message:@"Unable to save image" andButtonName:@"Okay!"];
+
             } else {
+
                 if (succeeded) {
 
-                    [user incrementKey:@"postCount"];
+                    [user incrementKey:kSuperUserAttributeKey.postCount];
                     [user saveInBackground];
+                    [self performSegueWithIdentifier:@"ExitToUserProfile" sender:self];
                 }
 
             }
@@ -102,24 +114,10 @@
             
         }];
 
-        // Execute the unwind segue and go back to the user profile screen
-
-        [self dismissViewControllerAnimated:YES completion:nil];
-
-      //  [self performSegueWithIdentifier:@"unwindToProfileFromPost" sender:self];
-        
     } else {
 
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                       message:@"Please select a photo."
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:nil];
-        [alert addAction:okButton];
+        [self presentAlertControllerWithTitle:@"Error" message:@"Please select a photo" andButtonName:@"Okay!"];
 
-        [self presentViewController:alert animated:YES completion:nil];
-        
     }
     
     

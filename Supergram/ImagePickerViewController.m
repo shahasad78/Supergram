@@ -101,7 +101,10 @@ UINavigationControllerDelegate>
                 if (succeeded) {
                     self.user = [SuperUser currentUser];
                     [self.user setObject:imageFile forKey:kSuperUserAttributeKey.profilePic];
-                    [self.user saveInBackground];
+                    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+
+                    }];
+                    [self performSegueWithIdentifier:@"ExitToProfileScreen" sender:self];
                 }
             } else {
                 // Handle error
@@ -120,6 +123,12 @@ UINavigationControllerDelegate>
         
     }
     
+    
+}
+
+#pragma mark - Navigation Methods
+
+- (void)unwindForSegue:(UIStoryboardSegue *)unwindSegue towardsViewController:(UIViewController *)subsequentVC {
     
 }
 
