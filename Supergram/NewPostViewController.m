@@ -28,9 +28,12 @@
 
     self.picker = [[UIImagePickerController alloc] init];
     self.picker.delegate = self;
+
+    self.imageView.image = [UIImage imageNamed:@"default_placeholder"];
    // self.imageView.frame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, self.view.bounds.size.width);
 
 }
+
 
 #pragma mark - Helper Methods
 - (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message andButtonName:(NSString *)buttonName{
@@ -106,6 +109,7 @@
 
                     [user incrementKey:kSuperUserAttributeKey.postCount];
                     [user saveInBackground];
+                    self.imageView.image = [UIImage imageNamed:@"default_placeholder"];
                     [self performSegueWithIdentifier:@"ExitToUserProfile" sender:self];
                 }
 
