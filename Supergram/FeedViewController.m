@@ -189,4 +189,34 @@
     cell.moreView.hidden = NO;
 }
 
+- (void) didTappedDelete:(PostCollectionViewCell *)cell
+{
+    // Get a pointer to the Post object
+    Post *aPost;
+    aPost = cell.post;
+    
+    // Check to see that the user is the owner of the post
+    // TODO: create an if statement to check if user is the creator
+    
+    // Create an array of the selected Items
+    NSArray *selectedItemsIndexPaths = [self.feedCollectionView indexPathsForSelectedItems];
+    
+    // Remove the Post from the mutable array
+    [self.posts removeObject:aPost];
+    
+    // Remove the Post from the collection view
+    [self.feedCollectionView reloadData];
+    
+    // Remove the Post from Parse in the background
+    [aPost deleteInBackground];
+    
+    // Reload the collection view
+    
+    
+    
+    
+}
+
+
+
 @end
