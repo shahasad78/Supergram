@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+#pragma mark - PFObject Attributes
+
 /*!
  * @namespace kPFObjectAttributeKey
  * @abstract Namespace to hold PFUser attribute keys.
  * @updated 2015-24-10
  */
-
 extern const struct kPFObjectAttributeKey {
     __unsafe_unretained NSString *const objectId;
     __unsafe_unretained NSString *const updatedAt;
@@ -22,13 +24,15 @@ extern const struct kPFObjectAttributeKey {
     __unsafe_unretained NSString *const ACL;
 } kPFObjectAttributeKey;
 
+#pragma mark - SuperUser Attributes
+
+extern NSString *const superUserClass;
 
 /*!
  * @namespace kSuperUserAttributeKey
  * @abstract Namespace to hold SuperUser attribute keys.
  * @updated 2015-24-10
  */
-
 extern const struct kSuperUserAttributeKey {
     __unsafe_unretained NSString *const followingCount;
     __unsafe_unretained NSString *const followerCount;
@@ -41,15 +45,18 @@ extern const struct kSuperUserAttributeKey {
     __unsafe_unretained NSString *const bio;
 } kSuperUserAttributeKey;
 
+
+#pragma mark - Post Class Attributes
+extern NSString *const kPostClass;
 /*!
  * @namespace kPostAttributeKey
  * @abstract Namespace to hold Post attribute keys.
- * @updated 2015-25-10
+ * @updated 2015-29-10
  */
-extern NSString *const kPostClass;
 
 extern const struct kPostAttributeKey {
     __unsafe_unretained NSString *const post;
+    __unsafe_unretained NSString *const likes;
     __unsafe_unretained NSString *const title;
     __unsafe_unretained NSString *const media;
     __unsafe_unretained NSString *const author;
@@ -64,6 +71,7 @@ extern const struct kPostAttributeKey {
  */
 extern NSString *const kCommentClass;
 extern const struct kCommentAttributeKey {
+    __unsafe_unretained NSString *const parent;
     __unsafe_unretained NSString *const content;
 } kCommentAttributeKey;
 
@@ -73,24 +81,33 @@ extern const struct kCommentAttributeKey {
  * @updated 2015-25-10
  */
 extern const struct kSegueIdentifiers {
-    __unsafe_unretained NSString *const selectPhoto;
     __unsafe_unretained NSString *const postDetail;
+    __unsafe_unretained NSString *const selectPhoto;
     __unsafe_unretained NSString *const userSettings;
 } kSegueIdentifiers;
 
 #pragma mark - Activity Class
 extern NSString *const kActivityClass;
-
+/*!
+ * @namespace kActivityKey
+ * @abstract Namespace to hold Activity Attribute Keys
+ * @updated 2015-25-10
+ */
 extern const struct kActivityKey {
     // Field keys
-    __unsafe_unretained NSString *const type;
-    __unsafe_unretained NSString *const fromUser;
-    __unsafe_unretained NSString *const toUser;
     __unsafe_unretained NSString *const post;
+    __unsafe_unretained NSString *const type;
     __unsafe_unretained NSString *const photo;
+    __unsafe_unretained NSString *const toUser;
+    __unsafe_unretained NSString *const fromUser;
 
 } kActivityKey;
 
+/*!
+ * @namespace kActivityType
+ * @abstract Namespace to hold Activity Type Keys such as like and follow
+ * @updated 2015-25-10
+ */
 extern const struct kActivityType {
     // Type values
     __unsafe_unretained NSString *const like;
