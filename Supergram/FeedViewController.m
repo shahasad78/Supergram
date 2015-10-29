@@ -23,8 +23,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *feedCollectionView;
 
 // Data Model
-@property NSMutableArray *posts;
-
+@property (strong, nonatomic) NSMutableArray *posts;
+@property (strong, nonatomic) NSMutableArray *likes;
 // Parse Properties
 @property SuperUser *user;
 @property Activity *activity;
@@ -74,29 +74,32 @@
 - (void) feedQuery {
     // Query for the friends the current user is following
     PFQuery *followingActivitiesQuery = [PFQuery queryWithClassName:kActivityClass];
-    [followingActivitiesQuery whereKey:@"activityType" equalTo:@"follow"];
+    [followingActivitiesQuery whereKey:kActivityKey.type equalTo:kActivityType.follow];
     [followingActivitiesQuery whereKey:@"fromUser" equalTo:self.user];
 
     // Using the activities from the query above, we find all of the photos taken by
     // the friends the current user is following
     PFQuery *photosFromFollowedUsersQuery = [PFQuery queryWithClassName:kPostClass];
-    [photosFromFollowedUsersQuery whereKey:@"author" matchesKey:@"toUser" inQuery:followingActivitiesQuery];
-    [photosFromFollowedUsersQuery whereKeyExists:@"media"];
+    [photosFromFollowedUsersQuery whereKey:kPostAttributeKey.author matchesKey:kActivityKey.toUser inQuery:followingActivitiesQuery];
+    [photosFromFollowedUsersQuery whereKeyExists:kPostAttributeKey.media];
 
     // We create a second query for the current user's photos
     PFQuery *photosFromCurrentUserQuery = [PFQuery queryWithClassName:kPostClass];
-    [photosFromCurrentUserQuery whereKey:@"author" equalTo:self.user];
-    [photosFromCurrentUserQuery whereKeyExists:@"media"];
+    [photosFromCurrentUserQuery whereKey:kPostAttributeKey.author equalTo:self.user];
+    [photosFromCurrentUserQuery whereKeyExists:kPostAttributeKey.media];
+
+    // TODO: enumerate through posts and query activity to determine whether it has been liked by the current user.
 
     // We create a final compound query that will find all of the photos that were
     // taken by the user's friends or by the user
     PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:photosFromFollowedUsersQuery, photosFromCurrentUserQuery, nil]];
-    [query includeKey:@"author"];
+    [query includeKey:kPostAttributeKey.author];
     [query orderByDescending:@"createdAt"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
         for (Post *result in posts) {
+
             [self.posts addObject:result];
         }
 
