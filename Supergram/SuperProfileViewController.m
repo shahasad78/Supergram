@@ -131,8 +131,11 @@
     [query whereKey:kActivityKey.type equalTo:kActivityType.follow];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (nil != objects && !error) {
-            NSString *followTitle = (objects.count > 0) ? @"Unfollow" : @"Follow";
-            [self.followButton setTitle:followTitle forState:UIControlStateNormal];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString *followTitle = (objects.count > 0) ? @"Unfollow" : @"Follow";
+                [self.followButton setTitle:followTitle forState:UIControlStateNormal];
+                [self.mediaCollection reloadData];
+            });
         }
     }];
 }
