@@ -898,8 +898,11 @@
                         <outlet property="editProfileImageBtn" destination="5EQ-Gq-R6u" id="fhN-MU-UYp"/>
                         <outlet property="editUserSettings" destination="ufv-iu-zXN" id="vKa-Qv-MJe"/>
                         <outlet property="followButton" destination="IF5-dh-AFl" id="cXj-7G-Ae5"/>
+                        <outlet property="followerCountLabel" destination="Eku-hy-QkP" id="j8u-6x-eD6"/>
+                        <outlet property="followingCountLabel" destination="BfW-he-x0I" id="Y6J-hU-PXk"/>
                         <outlet property="fullnameLabel" destination="sys-bn-U3K" id="CmK-Cc-Eo7"/>
                         <outlet property="mediaCollection" destination="p1v-LH-HF3" id="DbS-KV-Ooh"/>
+                        <outlet property="postCountLabel" destination="Nei-Xw-lSb" id="4xE-Be-PHT"/>
                         <outlet property="profileImage" destination="9eh-YR-FL1" id="meE-5e-OGe"/>
                         <outlet property="usernameLabel" destination="xTp-86-Sil" id="UJU-fJ-KDH"/>
                     </connections>

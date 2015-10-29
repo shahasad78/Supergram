@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editUserSettings;
 @property (weak, nonatomic) IBOutlet UILabel *fullnameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *followButton;
+@property (weak, nonatomic) IBOutlet UILabel *postCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followerCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followingCountLabel;
 
 @property NSMutableArray *userMedia;
 @end
