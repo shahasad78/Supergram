@@ -39,6 +39,8 @@ const struct kSuperUserAttributeKey kSuperUserAttributeKey = {
 // --------------------------------------------------------------------
 // Post Attribute Key Constants
 // --------------------------------------------------------------------
+NSString *const kPostClass = @"Post";
+
 const struct kPostAttributeKey kPostAttributeKey = {
     .post           = @"Post",
     .title          = @"title",

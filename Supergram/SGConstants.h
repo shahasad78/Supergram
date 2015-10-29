@@ -46,6 +46,8 @@ extern const struct kSuperUserAttributeKey {
  * @abstract Namespace to hold Post attribute keys.
  * @updated 2015-25-10
  */
+extern NSString *const kPostClass;
+
 extern const struct kPostAttributeKey {
     __unsafe_unretained NSString *const post;
     __unsafe_unretained NSString *const title;
