@@ -22,7 +22,7 @@ const struct kPFObjectAttributeKey kPFObjectAttributeKey = {
 // --------------------------------------------------------------------
 // Super User Attribute Key Constants
 // --------------------------------------------------------------------
-NSString *const SuperUserClass = @"SuperUser";
+NSString *const kSuperUserClass = @"SuperUser";
 
 const struct kSuperUserAttributeKey kSuperUserAttributeKey = {
 
