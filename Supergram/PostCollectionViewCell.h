@@ -16,6 +16,10 @@
 @optional
 - (void) didTappedCell:(PostCollectionViewCell *)cell;
 - (void) didTappedMore:(PostCollectionViewCell *)cell;
+- (void) didTappedShare:(PostCollectionViewCell *)cell;
+- (void) didTappedComment:(PostCollectionViewCell *)cell;
+- (void) didTappedReport:(PostCollectionViewCell *)cell;
+- (void) didTappedDelete:(PostCollectionViewCell *)cell;
 @end
 
 @interface PostCollectionViewCell : UICollectionViewCell
