@@ -13,6 +13,7 @@
 
 @interface Activity : PFObject <PFSubclassing>
 
+
 + (NSString *)parseClassName;
 @property NSString *activityType;
 @property NSString *content;

@@ -19,7 +19,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="57C-TM-42T" customClass="PFImageView">
                                 <rect key="frame" x="7" y="7" width="286" height="286"/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="danger" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-ve-8wx">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="danger" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-ve-8wx">
                                 <rect key="frame" x="7" y="-19" width="286" height="338"/>
                             </imageView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnF-3S-nAl">
@@ -149,8 +149,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="tzB-T7-HjI"/>
                                         <exclude reference="5IA-P3-ZCL"/>
+                                        <exclude reference="tzB-T7-HjI"/>
                                     </mask>
                                 </variation>
                             </button>
