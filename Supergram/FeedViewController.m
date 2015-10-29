@@ -137,6 +137,8 @@
     cell.post = post;
     cell.postImage.file = post.media;
     cell.heartCount.text = [NSString stringWithFormat:@"%lu", post.likesCount];
+    cell.userPic.file = post.author.profilePic;
+    cell.usernameLabel.text = post.author.username;
 
     if (post.isFlagged) {
         // toggle "dangerous" image
@@ -226,6 +228,9 @@
     
     // Remove the Post from the mutable array
     [self.posts removeObject:aPost];
+
+    // dismiss moreView
+    cell.moreView.hidden = YES;
     
     // Reload the collection view
     [self.feedCollectionView reloadData];
