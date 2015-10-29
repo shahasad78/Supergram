@@ -16,6 +16,7 @@
 @property NSString *lastName;
 @property NSString *bio;
 @property NSNumber *postCount;
+@property NSMutableArray *likedPosts;
 @property NSNumber *followingCount;
 @property NSNumber *followerCount;
 

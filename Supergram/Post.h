@@ -18,6 +18,7 @@
 @property SuperUser *author;
 @property PFFile *media;
 @property NSString *title;
+@property NSMutableArray *likes;
 @property NSInteger *likesCount;
 @property NSInteger *commentCount;
 

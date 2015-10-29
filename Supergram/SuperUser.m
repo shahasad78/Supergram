@@ -14,6 +14,7 @@
 @dynamic profilePic;
 @dynamic firstName;
 @dynamic lastName;
+@dynamic likedPosts;
 @dynamic bio;
 @dynamic postCount;
 @dynamic followerCount;

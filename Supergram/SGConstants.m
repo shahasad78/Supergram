@@ -28,6 +28,7 @@ const struct kSuperUserAttributeKey kSuperUserAttributeKey = {
 
     .followingCount = @"followingCount",
     .followerCount  = @"followerCount",
+    .likedPosts     = @"likedPosts",
     .profilePic     = @"profilePic",
     .postCount      = @"postCount",
     .firstName      = @"firstName",

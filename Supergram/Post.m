@@ -14,6 +14,7 @@
 @dynamic author;
 @dynamic media;
 @dynamic title;
+@dynamic likes;
 @dynamic likesCount;
 @dynamic commentCount;
 

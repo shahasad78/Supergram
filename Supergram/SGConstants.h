@@ -36,6 +36,7 @@ extern NSString *const superUserClass;
 extern const struct kSuperUserAttributeKey {
     __unsafe_unretained NSString *const followingCount;
     __unsafe_unretained NSString *const followerCount;
+    __unsafe_unretained NSString *const likedPosts;
     __unsafe_unretained NSString *const profilePic;
     __unsafe_unretained NSString *const postCount;
     __unsafe_unretained NSString *const firstName;

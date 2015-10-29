@@ -40,6 +40,8 @@
     self.posts = [[NSMutableArray alloc] init];
     self.user = [SuperUser currentUser];
 
+    
+
     [self setupUI];
     [self feedQuery];
 }
@@ -89,18 +91,31 @@
     [photosFromCurrentUserQuery whereKeyExists:kPostAttributeKey.media];
 
     // TODO: enumerate through posts and query activity to determine whether it has been liked by the current user.
+//    PFQuery *
 
     // We create a final compound query that will find all of the photos that were
     // taken by the user's friends or by the user
     PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:photosFromFollowedUsersQuery, photosFromCurrentUserQuery, nil]];
     [query includeKey:kPostAttributeKey.author];
-    [query orderByDescending:@"createdAt"];
+    [query orderByDescending:kPFObjectAttributeKey.createdAt];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
         for (Post *result in posts) {
 
             [self.posts addObject:result];
+
+            PFQuery *searchLikesQuery = [PFQuery queryWithClassName:kPostClass];
+//            [searchLikesQuery includeKey:kPostAttributeKey.likes];
+            [searchLikesQuery whereKey:kPostAttributeKey.likes equalTo:self.user];
+            [searchLikesQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                if (objects) {
+                    if (objects.count > 0) {
+                        NSLog(@"User liked this post");
+                    }
+                }
+            }];
+//            SuperUser *foundUser = [searchLikesQuery ]
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -156,6 +171,7 @@
     if (cell.heartButton.selected) {
 
         [aPost incrementKey:kPostAttributeKey.likesCount];
+        [aPost addObject:self.user forKey:@"likes"];
         [aPost saveInBackground];
 
         // Save New Activity
