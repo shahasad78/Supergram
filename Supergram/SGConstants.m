@@ -22,6 +22,8 @@ const struct kPFObjectAttributeKey kPFObjectAttributeKey = {
 // --------------------------------------------------------------------
 // Super User Attribute Key Constants
 // --------------------------------------------------------------------
+NSString *const superUserClass = @"SuperUser";
+
 const struct kSuperUserAttributeKey kSuperUserAttributeKey = {
 
     .followingCount = @"followingCount",
@@ -43,6 +45,7 @@ NSString *const kPostClass = @"Post";
 
 const struct kPostAttributeKey kPostAttributeKey = {
     .post           = @"Post",
+    .likes          = @"likes",
     .title          = @"title",
     .media          = @"media",
     .author         = @"author",
@@ -56,7 +59,8 @@ const struct kPostAttributeKey kPostAttributeKey = {
 NSString *const kCommentClass = @"Comment";
 
 const struct kCommentAttributeKey kCommentAttributeKey = {
-    .content    = @"content"
+    .content    = @"content",
+    .parent     = @"parent"
 };
 
 // --------------------------------------------------------------------
