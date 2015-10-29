@@ -15,6 +15,8 @@
 
 + (NSString *)parseClassName;
 
+
+@property BOOL isFlagged;
 @property SuperUser *author;
 @property PFFile *media;
 @property NSString *title;

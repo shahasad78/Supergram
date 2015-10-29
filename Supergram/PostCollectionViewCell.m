@@ -41,6 +41,7 @@
 }
 
 - (IBAction)onReportButtonPressed:(UIButton *)sender {
+    
     // toggle "dangerous" image
     self.dangerImage.hidden = NO;
 
@@ -49,6 +50,8 @@
 
     // hide like more view
     self.likeMoreView.hidden = YES;
+    
+    [self.delegate didTappedReport:self];
 }
 
 @synthesize postImage, heartButton;

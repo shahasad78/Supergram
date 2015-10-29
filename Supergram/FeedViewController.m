@@ -138,6 +138,29 @@
     cell.postImage.file = post.media;
     cell.heartCount.text = [NSString stringWithFormat:@"%lu", post.likesCount];
 
+    if (post.isFlagged) {
+        // toggle "dangerous" image
+        cell.dangerImage.hidden = NO;
+        
+        // hide moreView view
+        cell.moreView.hidden = YES;
+        
+        // hide like more view
+        cell.likeMoreView.hidden = YES;
+    } else {
+        
+        // toggle "dangerous" image
+        cell.dangerImage.hidden = YES;
+        
+        // show moreView view
+        cell.moreView.hidden = YES;
+        
+        // show like more view
+        cell.likeMoreView.hidden = NO;
+        
+    }
+    
+    
     [cell.postImage loadInBackground];
     
     return cell;
@@ -204,19 +227,26 @@
     // Remove the Post from the mutable array
     [self.posts removeObject:aPost];
     
-    // Remove the Post from the collection view
+    // Reload the collection view
     [self.feedCollectionView reloadData];
     
     // Remove the Post from Parse in the background
     [aPost deleteInBackground];
-    
-    // Reload the collection view
-    
-    
-    
-    
+
 }
 
-
+- (void) didTappedReport:(PostCollectionViewCell *)cell
+{
+    
+    // Get a pointer to the Post object
+    Post *aPost;
+    aPost = cell.post;
+    
+    aPost.isFlagged = YES;
+    
+    [aPost saveInBackground];
+    [self.feedCollectionView reloadData];
+    
+}
 
 @end
