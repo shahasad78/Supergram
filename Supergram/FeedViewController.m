@@ -73,19 +73,19 @@
 
 - (void) feedQuery {
     // Query for the friends the current user is following
-    PFQuery *followingActivitiesQuery = [PFQuery queryWithClassName:@"Activity"];
+    PFQuery *followingActivitiesQuery = [PFQuery queryWithClassName:kActivityClass];
     [followingActivitiesQuery whereKey:@"activityType" equalTo:@"follow"];
-    [followingActivitiesQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    [followingActivitiesQuery whereKey:@"fromUser" equalTo:self.user];
 
     // Using the activities from the query above, we find all of the photos taken by
     // the friends the current user is following
-    PFQuery *photosFromFollowedUsersQuery = [PFQuery queryWithClassName:@"Post"];
+    PFQuery *photosFromFollowedUsersQuery = [PFQuery queryWithClassName:kPostClass];
     [photosFromFollowedUsersQuery whereKey:@"author" matchesKey:@"toUser" inQuery:followingActivitiesQuery];
     [photosFromFollowedUsersQuery whereKeyExists:@"media"];
 
     // We create a second query for the current user's photos
-    PFQuery *photosFromCurrentUserQuery = [PFQuery queryWithClassName:@"Post"];
-    [photosFromCurrentUserQuery whereKey:@"author" equalTo:[PFUser currentUser]];
+    PFQuery *photosFromCurrentUserQuery = [PFQuery queryWithClassName:kPostClass];
+    [photosFromCurrentUserQuery whereKey:@"author" equalTo:self.user];
     [photosFromCurrentUserQuery whereKeyExists:@"media"];
 
     // We create a final compound query that will find all of the photos that were

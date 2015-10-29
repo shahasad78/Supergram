@@ -62,6 +62,7 @@ extern const struct kPostAttributeKey {
  * @abstract Namespace to hold Comment attribute keys.
  * @updated 2015-25-10
  */
+extern NSString *const kCommentClass;
 extern const struct kCommentAttributeKey {
     __unsafe_unretained NSString *const content;
 } kCommentAttributeKey;

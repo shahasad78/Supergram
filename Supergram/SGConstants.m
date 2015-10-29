@@ -53,6 +53,8 @@ const struct kPostAttributeKey kPostAttributeKey = {
 // --------------------------------------------------------------------
 // Comment Attribute Key Constants
 // --------------------------------------------------------------------
+NSString *const kCommentClass = @"Comment";
+
 const struct kCommentAttributeKey kCommentAttributeKey = {
     .content    = @"content"
 };

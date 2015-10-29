@@ -94,7 +94,7 @@
         self.followButton.hidden = true;
     }
     self.editProfileImageBtn.hidden = (self.searchedUser != nil) && (self.searchedUser != self.userView);
-    self.followButton.hidden = (self.userView == [SuperUser currentUser]);
+    self.followButton.hidden = (self.userView == self.user);
 
 
     // Show the current visitor's username
@@ -109,8 +109,9 @@
 
         [self.profileImage loadInBackground];
     }
+    
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    PFQuery *query = [PFQuery queryWithClassName:kPostClass];
     [query whereKey:@"author" equalTo:self.userView];
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
