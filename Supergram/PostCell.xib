@@ -92,6 +92,94 @@
                             <constraint firstAttribute="trailing" secondItem="57C-TM-42T" secondAttribute="trailing" constant="7" id="xMw-Bp-5vU"/>
                         </constraints>
                     </view>
+                    <view alpha="0.60000002384185791" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GDN-ne-X6U">
+                        <rect key="frame" x="4" y="8" width="291" height="284"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-WV-UZt">
+                                <rect key="frame" x="123" y="49" width="93" height="30"/>
+                                <color key="backgroundColor" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="PXf-Dz-Byq"/>
+                                    <constraint firstAttribute="height" constant="30" id="weR-0z-qd5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGG-Kk-sW3">
+                                <rect key="frame" x="40" y="104" width="111" height="30"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                <state key="normal" title="Comment">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TH-k9-Ka9">
+                                <rect key="frame" x="53" y="214" width="106" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.60146082010000002" blue="0.55409972689999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gFR-dM-gJJ"/>
+                                    <constraint firstAttribute="width" constant="106" id="o3S-R1-d5s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPZ-dR-ai7">
+                                <rect key="frame" x="261" y="8" width="22" height="22"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5IA-P3-ZCL"/>
+                                    <constraint firstAttribute="width" constant="30" id="tzB-T7-HjI"/>
+                                    <constraint firstAttribute="height" constant="22" id="xep-y5-2Em"/>
+                                    <constraint firstAttribute="width" constant="22" id="zua-c4-Qtb"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="close"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tzB-T7-HjI"/>
+                                        <exclude reference="5IA-P3-ZCL"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hW-t8-Iux">
+                                <rect key="frame" x="110" y="156" width="106" height="30"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.93333333330000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="8H3-Nr-ufp"/>
+                                    <constraint firstAttribute="height" constant="30" id="rui-Ca-by6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                <state key="normal" title="Report">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YJb-WV-UZt" firstAttribute="top" secondItem="GDN-ne-X6U" secondAttribute="top" constant="49" id="0Ph-sX-ZaM"/>
+                            <constraint firstAttribute="trailing" secondItem="YJb-WV-UZt" secondAttribute="trailing" constant="75" id="JK2-vE-78J"/>
+                            <constraint firstItem="wPZ-dR-ai7" firstAttribute="top" secondItem="GDN-ne-X6U" secondAttribute="top" constant="8" id="PMd-Fg-5QC"/>
+                            <constraint firstAttribute="trailing" secondItem="4hW-t8-Iux" secondAttribute="trailing" constant="75" id="gEu-d1-tbA"/>
+                            <constraint firstItem="0TH-k9-Ka9" firstAttribute="leading" secondItem="GDN-ne-X6U" secondAttribute="leading" constant="53" id="gxW-Sv-Mdf"/>
+                            <constraint firstAttribute="trailing" secondItem="wPZ-dR-ai7" secondAttribute="trailing" constant="8" id="o6t-Iy-QFg"/>
+                            <constraint firstItem="4hW-t8-Iux" firstAttribute="top" secondItem="hGG-Kk-sW3" secondAttribute="bottom" constant="22" id="q1O-rR-SjN"/>
+                            <constraint firstItem="0TH-k9-Ka9" firstAttribute="top" secondItem="4hW-t8-Iux" secondAttribute="bottom" constant="28" id="u47-go-gho"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -115,6 +203,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="close" width="64" height="64"/>
         <image name="danger" width="600" height="338"/>
         <image name="heartRed" width="32" height="32"/>
         <image name="heartWhite" width="32" height="32"/>

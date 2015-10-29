@@ -16,21 +16,25 @@
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfF-Zc-qKL">
                         <rect key="frame" x="-12" y="-12" width="924" height="326"/>
                         <subviews>
-                            <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="px0-GF-j5n">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="px0-GF-j5n">
                                 <rect key="frame" x="613" y="20" width="291" height="284"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxW-JC-G9m">
-                                        <rect key="frame" x="99" y="48" width="93" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxW-JC-G9m">
+                                        <rect key="frame" x="123" y="49" width="93" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="93" id="P1z-eB-wo9"/>
+                                            <constraint firstAttribute="height" constant="30" id="Q7Y-64-HtM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                                         <state key="normal" title="Share">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLV-HX-BgZ">
-                                        <rect key="frame" x="53" y="104" width="127" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLV-HX-BgZ">
+                                        <rect key="frame" x="40" y="104" width="111" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.27450980390000002" green="0.74509803919999995" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
@@ -39,20 +43,14 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnE-d3-Dfa">
-                                        <rect key="frame" x="125" y="159" width="106" height="30"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.97254901959999995" green="0.93333333330000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                        <state key="normal" title="Report">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sw-3F-5iv">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sw-3F-5iv">
                                         <rect key="frame" x="53" y="214" width="106" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="0.60146082006624768" blue="0.55409972691737064" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="c7p-cO-Aec"/>
+                                            <constraint firstAttribute="width" constant="106" id="v81-MM-2Sr"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Delete">
@@ -60,9 +58,56 @@
                                             <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVe-KG-kW9">
+                                        <rect key="frame" x="261" y="8" width="22" height="22"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="DBK-3k-0cM"/>
+                                            <constraint firstAttribute="width" constant="30" id="F9V-JN-AoR"/>
+                                            <constraint firstAttribute="height" constant="30" id="Fm0-lv-qAv"/>
+                                            <constraint firstAttribute="height" constant="22" id="kYW-Zl-eq6"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="close"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="F9V-JN-AoR"/>
+                                                <exclude reference="Fm0-lv-qAv"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnE-d3-Dfa">
+                                        <rect key="frame" x="110" y="156" width="106" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.93333333330000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5Cy-hU-Vh8"/>
+                                            <constraint firstAttribute="width" constant="106" id="RKz-DR-TlQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                        <state key="normal" title="Report">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9Sw-3F-5iv" firstAttribute="leading" secondItem="px0-GF-j5n" secondAttribute="leading" constant="53" id="DaJ-sy-TfS"/>
+                                    <constraint firstItem="WVe-KG-kW9" firstAttribute="top" secondItem="px0-GF-j5n" secondAttribute="top" constant="8" id="E3O-1j-euG"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZnE-d3-Dfa" secondAttribute="trailing" constant="75" id="Irs-ny-9gW"/>
+                                    <constraint firstItem="9Sw-3F-5iv" firstAttribute="top" secondItem="ZnE-d3-Dfa" secondAttribute="bottom" constant="28" id="TYI-Zo-m5r"/>
+                                    <constraint firstAttribute="trailing" secondItem="hxW-JC-G9m" secondAttribute="trailing" constant="75" id="VP7-IT-0gf"/>
+                                    <constraint firstItem="hxW-JC-G9m" firstAttribute="top" secondItem="px0-GF-j5n" secondAttribute="top" constant="49" id="i8U-dQ-xi9"/>
+                                    <constraint firstItem="ZnE-d3-Dfa" firstAttribute="top" secondItem="YLV-HX-BgZ" secondAttribute="bottom" constant="22" id="xVn-bc-ifU"/>
+                                    <constraint firstAttribute="trailing" secondItem="WVe-KG-kW9" secondAttribute="trailing" constant="8" id="yH5-JS-EgG"/>
+                                </constraints>
                             </view>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGw-aL-yCv">
                                 <rect key="frame" x="316" y="20" width="286" height="286"/>
@@ -172,6 +217,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="close" width="64" height="64"/>
         <image name="heartWhite" width="32" height="32"/>
         <image name="more" width="32" height="32"/>
     </resources>
