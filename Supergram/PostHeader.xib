@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="huq-ow-LuF">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QvK-qC-U8t">
+                    <rect key="frame" x="6" y="6" width="38" height="38"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="38" id="S3a-EW-94q"/>
+                        <constraint firstAttribute="height" constant="38" id="ygB-Hn-V6R"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T5-G6-fNH">
+                    <rect key="frame" x="52" y="14" width="219" height="21"/>
+                    <animations/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLY-24-ElK">
+                    <rect key="frame" x="279" y="9" width="32" height="32"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="0bz-sj-80R"/>
+                        <constraint firstAttribute="width" constant="32" id="Wtz-3H-0iN"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="FollowUser"/>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.3569260747803189" green="0.58580135723860582" blue="0.44645882240532853" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="QvK-qC-U8t" firstAttribute="top" secondItem="huq-ow-LuF" secondAttribute="top" constant="6" id="4kB-cB-Yn5"/>
+                <constraint firstItem="jLY-24-ElK" firstAttribute="leading" secondItem="8T5-G6-fNH" secondAttribute="trailing" constant="8" id="JcC-sO-C0f"/>
+                <constraint firstAttribute="bottom" secondItem="jLY-24-ElK" secondAttribute="bottom" constant="9" id="Q03-bf-e3e"/>
+                <constraint firstAttribute="bottom" secondItem="QvK-qC-U8t" secondAttribute="bottom" constant="6" id="VU7-D2-C4e"/>
+                <constraint firstAttribute="bottom" secondItem="8T5-G6-fNH" secondAttribute="bottom" constant="15" id="WCL-uB-qO6"/>
+                <constraint firstItem="jLY-24-ElK" firstAttribute="top" secondItem="huq-ow-LuF" secondAttribute="top" constant="9" id="aDW-d6-lAC"/>
+                <constraint firstItem="8T5-G6-fNH" firstAttribute="centerY" secondItem="huq-ow-LuF" secondAttribute="centerY" id="ck6-ni-8D6"/>
+                <constraint firstAttribute="trailing" secondItem="jLY-24-ElK" secondAttribute="trailing" constant="9" id="dVX-BO-jRp"/>
+                <constraint firstItem="8T5-G6-fNH" firstAttribute="top" secondItem="huq-ow-LuF" secondAttribute="top" constant="14" id="k1c-SA-YEN"/>
+                <constraint firstItem="8T5-G6-fNH" firstAttribute="leading" secondItem="QvK-qC-U8t" secondAttribute="trailing" constant="8" id="m6Q-IT-U3P"/>
+                <constraint firstItem="QvK-qC-U8t" firstAttribute="leading" secondItem="huq-ow-LuF" secondAttribute="leading" constant="6" id="y7E-4V-xt0"/>
+            </constraints>
+            <point key="canvasLocation" x="242" y="328"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="FollowUser" width="32" height="32"/>
+    </resources>
+</document>

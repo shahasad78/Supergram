@@ -27,6 +27,29 @@
 
     [self.delegate didTappedCell:self];
 }
+- (IBAction)onCloseMVButtonPressed:(UIButton *)sender {
+    self.moreView.hidden = YES;
+}
+- (IBAction)onShareButtonPressed:(UIButton *)sender {
+    [self.delegate didTappedShare:self];
+}
+- (IBAction)onCommentButtonPressed:(UIButton *)sender {
+    [self.delegate didTappedComment:self];
+}
+- (IBAction)onDeleteButtonPressed:(UIButton *)sender {
+    [self.delegate didTappedDelete:self];
+}
+
+- (IBAction)onReportButtonPressed:(UIButton *)sender {
+    // toggle "dangerous" image
+    self.dangerImage.hidden = NO;
+
+    // hide moreView view
+    self.moreView.hidden = YES;
+
+    // hide like more view
+    self.likeMoreView.hidden = YES;
+}
 
 @synthesize postImage, heartButton;
 
