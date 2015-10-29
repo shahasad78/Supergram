@@ -92,10 +92,10 @@
                             <constraint firstAttribute="trailing" secondItem="57C-TM-42T" secondAttribute="trailing" constant="7" id="xMw-Bp-5vU"/>
                         </constraints>
                     </view>
-                    <view alpha="0.60000002384185791" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GDN-ne-X6U">
-                        <rect key="frame" x="4" y="8" width="291" height="284"/>
+                    <view hidden="YES" alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDN-ne-X6U">
+                        <rect key="frame" x="7" y="7" width="286" height="286"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-WV-UZt">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJb-WV-UZt">
                                 <rect key="frame" x="123" y="49" width="93" height="30"/>
                                 <color key="backgroundColor" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -131,7 +131,7 @@
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPZ-dR-ai7">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPZ-dR-ai7">
                                 <rect key="frame" x="261" y="8" width="22" height="22"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -149,8 +149,8 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="tzB-T7-HjI"/>
                                         <exclude reference="5IA-P3-ZCL"/>
+                                        <exclude reference="tzB-T7-HjI"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -187,7 +187,11 @@
                 <constraint firstItem="bHS-QJ-CWx" firstAttribute="top" secondItem="bsN-vE-chB" secondAttribute="top" id="9Qr-bJ-fl2"/>
                 <constraint firstAttribute="bottom" secondItem="bHS-QJ-CWx" secondAttribute="bottom" id="JWv-tt-i3f"/>
                 <constraint firstItem="bHS-QJ-CWx" firstAttribute="leading" secondItem="bsN-vE-chB" secondAttribute="leading" id="Xpr-Yb-omt"/>
+                <constraint firstAttribute="trailing" secondItem="GDN-ne-X6U" secondAttribute="trailing" constant="7" id="cNN-0V-MmO"/>
+                <constraint firstAttribute="bottom" secondItem="GDN-ne-X6U" secondAttribute="bottom" constant="7" id="hHB-nU-ysW"/>
                 <constraint firstAttribute="trailing" secondItem="bHS-QJ-CWx" secondAttribute="trailing" id="nbM-2K-AbZ"/>
+                <constraint firstItem="GDN-ne-X6U" firstAttribute="leading" secondItem="bsN-vE-chB" secondAttribute="leading" constant="7" id="nz9-D5-qUT"/>
+                <constraint firstItem="GDN-ne-X6U" firstAttribute="top" secondItem="bsN-vE-chB" secondAttribute="top" constant="7" id="yRC-9K-eKF"/>
             </constraints>
             <size key="customSize" width="303" height="306"/>
             <connections>
@@ -196,6 +200,7 @@
                 <outlet property="heartCount" destination="kKy-oW-DvN" id="ezM-Fy-cq5"/>
                 <outlet property="likeMoreView" destination="SnF-3S-nAl" id="ydy-SH-Meb"/>
                 <outlet property="moreButton" destination="nX4-zX-mfw" id="aR1-AB-T0N"/>
+                <outlet property="moreView" destination="GDN-ne-X6U" id="P6G-UW-MXa"/>
                 <outlet property="postImage" destination="57C-TM-42T" id="SL0-gg-2Mb"/>
                 <outlet property="postView" destination="bHS-QJ-CWx" id="l6k-fS-fSO"/>
             </connections>

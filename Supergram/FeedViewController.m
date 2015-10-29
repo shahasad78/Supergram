@@ -132,11 +132,18 @@
     Post *aPost;
     aPost = cell.post;
 
+    // change heart button image
+    if (cell.heartButton.selected) {
+        [cell.heartButton setSelected:NO];
+    } else {
+        [cell.heartButton setSelected:YES];
+    }
+
 }
 
 - (void) didTappedMore:(PostCollectionViewCell *)cell
 {
-    
+    cell.moreView.hidden = NO;
 }
 
 @end

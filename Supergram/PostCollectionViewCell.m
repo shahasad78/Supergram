@@ -10,7 +10,7 @@
 
 @implementation PostCollectionViewCell
 - (IBAction)onHeartButtonPressed:(UIButton *)sender {
-    [self toggleHeartButton];
+
     [self.delegate didTappedCell:self];
 }
 - (IBAction)onMoreButtonPressed:(UIButton *)sender {
@@ -24,19 +24,8 @@
 }
 
 - (void) onDoubleTap {
-    [self toggleHeartButton];
+
     [self.delegate didTappedCell:self];
-}
-
-// change heart button image
-- (void) toggleHeartButton{
-
-    if (self.heartButton.selected) {
-        [self.heartButton setSelected:NO];
-    } else {
-        [self.heartButton setSelected:YES];
-    }
-
 }
 
 @synthesize postImage, heartButton;
