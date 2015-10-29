@@ -14,7 +14,6 @@
 		CB21254D1BD98F3B00AA824B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */; };
 		CB2125581BD98F3B00AA824B /* SupergramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125571BD98F3B00AA824B /* SupergramTests.m */; };
 		CB2125631BD98F3B00AA824B /* SupergramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125621BD98F3B00AA824B /* SupergramUITests.m */; };
-		CB2125B71BDC677C00AA824B /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2125B61BDC677C00AA824B /* SGConstants.m */; };
 		E01CFDAD1BD9932A004E1874 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA61BD9932A004E1874 /* Bolts.framework */; };
 		E01CFDAE1BD9932A004E1874 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA71BD9932A004E1874 /* Parse.framework */; };
 		E01CFDAF1BD9932A004E1874 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA81BD9932A004E1874 /* ParseCrashReporting.framework */; };
@@ -50,6 +49,8 @@
 		E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */; };
 		E09A4BFA1BDFD1E900E3EBE8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */; };
 		E09A4C1D1BE125F100E3EBE8 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4C1C1BE125F100E3EBE8 /* Activity.m */; };
+		E09A4C581BE16DA300E3EBE8 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09A4C571BE16DA300E3EBE8 /* PostCell.xib */; };
+		E09A4C5B1BE16F0B00E3EBE8 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4C5A1BE16F0B00E3EBE8 /* PostCollectionViewCell.m */; };
 		E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */; };
 		E0A410A41BDD99A800AC5C3D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A31BDD99A800AC5C3D /* Post.m */; };
 		E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A410A61BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m */; };
@@ -139,6 +140,9 @@
 		E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ../SearchViewController.m; sourceTree = "<group>"; };
 		E09A4C1B1BE125F100E3EBE8 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		E09A4C1C1BE125F100E3EBE8 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		E09A4C571BE16DA300E3EBE8 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		E09A4C591BE16F0B00E3EBE8 /* PostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
+		E09A4C5A1BE16F0B00E3EBE8 /* PostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
 		E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPostViewController.h; sourceTree = "<group>"; };
 		E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPostViewController.m; sourceTree = "<group>"; };
 		E0A410A21BDD99A800AC5C3D /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
@@ -305,6 +309,10 @@
 			children = (
 				E09A4BEF1BDF072B00E3EBE8 /* PostDetailViewController.h */,
 				E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */,
+				E09A4C591BE16F0B00E3EBE8 /* PostCollectionViewCell.h */,
+				E09A4C5A1BE16F0B00E3EBE8 /* PostCollectionViewCell.m */,
+				E09A4BF51BDFD11E00E3EBE8 /* FeedViewController.h */,
+				E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */,
 				E09A4BEC1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.h */,
 				E09A4BED1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m */,
 				E01CFDD51BD99E42004E1874 /* SuperProfileViewController.h */,
@@ -323,8 +331,6 @@
 				E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */,
 				E0A4109F1BDD802C00AC5C3D /* NewPostViewController.h */,
 				E0A410A01BDD802C00AC5C3D /* NewPostViewController.m */,
-				E09A4BF51BDFD11E00E3EBE8 /* FeedViewController.h */,
-				E09A4BF61BDFD11E00E3EBE8 /* FeedViewController.m */,
 				E09A4BF81BDFD1E900E3EBE8 /* SearchViewController.h */,
 				E09A4BF91BDFD1E900E3EBE8 /* SearchViewController.m */,
 			);
@@ -336,6 +342,7 @@
 			children = (
 				CB2125461BD98F3B00AA824B /* Main.storyboard */,
 				E09A4BEA1BDEF10300E3EBE8 /* SGPostCell.xib */,
+				E09A4C571BE16DA300E3EBE8 /* PostCell.xib */,
 				CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */,
 			);
 			name = Layout;
@@ -417,7 +424,7 @@
 				TargetAttributes = {
 					CB2125391BD98F3B00AA824B = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 8NT726EKLP;
+						DevelopmentTeam = RYF7YHAMY5;
 					};
 					CB2125521BD98F3B00AA824B = {
 						CreatedOnToolsVersion = 7.1;
@@ -458,6 +465,7 @@
 			files = (
 				CB21254D1BD98F3B00AA824B /* LaunchScreen.storyboard in Resources */,
 				CB21254A1BD98F3B00AA824B /* Assets.xcassets in Resources */,
+				E09A4C581BE16DA300E3EBE8 /* PostCell.xib in Resources */,
 				CB2125481BD98F3B00AA824B /* Main.storyboard in Resources */,
 				E09A4BEB1BDEF10300E3EBE8 /* SGPostCell.xib in Resources */,
 			);
@@ -496,6 +504,7 @@
 				E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */,
 				E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */,
 				E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */,
+				E09A4C5B1BE16F0B00E3EBE8 /* PostCollectionViewCell.m in Sources */,
 				E01CFDD71BD99E42004E1874 /* SuperProfileViewController.m in Sources */,
 				E0A410A71BDDD37400AC5C3D /* ThumbnailCollectionViewCell.m in Sources */,
 				E09A4C1D1BE125F100E3EBE8 /* Activity.m in Sources */,
