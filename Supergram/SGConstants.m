@@ -23,13 +23,16 @@ const struct kPFObjectAttributeKey kPFObjectAttributeKey = {
 // Super User Attribute Key Constants
 // --------------------------------------------------------------------
 const struct kSuperUserAttributeKey kSuperUserAttributeKey = {
-    .profilePic = @"profilePic",
-    .postCount  = @"postCount",
-    .firstName  = @"firstName",
-    .lastName   = @"lastName",
-    .username   = @"userName",
-    .email      = @"email",
-    .bio        = @"bio"
+
+    .followingCount = @"followingCount",
+    .followerCount  = @"followerCount",
+    .profilePic     = @"profilePic",
+    .postCount      = @"postCount",
+    .firstName      = @"firstName",
+    .lastName       = @"lastName",
+    .username       = @"userName",
+    .email          = @"email",
+    .bio            = @"bio"
 };
 
 
@@ -64,6 +67,8 @@ const struct kSegueIdentifiers kSegueIdentifiers = {
 // --------------------------------------------------------------------
 // Activity Class Constants
 // --------------------------------------------------------------------
+NSString *const kActivityClass = @"Activity";
+
 const struct kActivityKey kActivityKey = {
     // Field keys
     .type       = @"activityType",

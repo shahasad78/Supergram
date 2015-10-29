@@ -17,16 +17,24 @@
 #import "Activity.h"
 
 @interface SuperProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout>
+
+// IBOutlet properties
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UICollectionView *mediaCollection;
 @property (weak, nonatomic) IBOutlet UIButton *editProfileImageBtn;
-@property SuperUser *userView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editUserSettings;
 @property (weak, nonatomic) IBOutlet UILabel *fullnameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *followButton;
 
+// Data Model properties
 @property NSMutableArray *userMedia;
+
+// Parse properties
+@property SuperUser *userView;
+@property SuperUser *user;
+@property Activity *activity;
+
 @end
 
 @implementation SuperProfileViewController
@@ -36,19 +44,13 @@
     [super viewDidLoad];
 
     self.userView = [SuperUser currentUser];
+    self.user = [SuperUser currentUser];
 
-    if (self.searchedUser != nil) {
-        if (self.searchedUser != self.userView) {
-            self.userView = self.searchedUser;
-            self.editProfileImageBtn.hidden = true;
-            self.navigationItem.rightBarButtonItem.enabled = NO;
-        }
-    } else {
-        self.editProfileImageBtn.hidden = false;
-    }
+
 
     self.userMedia = [[NSMutableArray alloc] init];
 
+    // Set up Collection View
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.itemSize = CGSizeMake(self.mediaCollection.frame.size.width/3 - 10, self.mediaCollection.frame.size.width/3 - 10);
     flowLayout.minimumLineSpacing = 10.0f;
@@ -66,6 +68,7 @@
         [self showLogInScreen];
     }  else {
         [self setupUI];
+
     }
 }
 
@@ -80,6 +83,20 @@
 
 #pragma mark - Helper Methods
 - (void) setupUI {
+    // Show or hide UI elements based on whether the profile belongs to current user
+    if (self.searchedUser != nil) {
+        if (self.searchedUser != self.userView) {
+            self.userView = self.searchedUser;
+            self.navigationItem.rightBarButtonItem.enabled = NO;
+        }
+    } else {
+        self.editProfileImageBtn.hidden = false;
+        self.followButton.hidden = true;
+    }
+    self.editProfileImageBtn.hidden = (self.searchedUser != nil) && (self.searchedUser != self.userView);
+    self.followButton.hidden = (self.userView == [SuperUser currentUser]);
+
+
     // Show the current visitor's username
     if (self.userView.username) {
         self.usernameLabel.text = self.userView.username;
@@ -105,7 +122,33 @@
             [self.mediaCollection reloadData];
         });
     }];
+
+    // TODO: add check logic to toggle text between "follow" and "unfollow"
+    query = [PFQuery queryWithClassName:kActivityClass];
+    [query whereKey:kActivityKey.fromUser equalTo:self.user];
+    [query whereKey:kActivityKey.toUser equalTo:self.userView];
+    [query whereKey:kActivityKey.type equalTo:kActivityType.follow];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (nil != objects && !error) {
+            NSString *followTitle = (objects.count > 0) ? @"Unfollow" : @"Follow";
+            [self.followButton setTitle:followTitle forState:UIControlStateNormal];
+        }
+    }];
 }
+
+- (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message andButtonName:(NSString *)buttonName{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:buttonName
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:okButton];
+
+    [self presentViewController:alert animated:YES completion:NULL];
+    
+}
+
 
 #pragma mark - Collection View
 
@@ -132,6 +175,47 @@
 
 #pragma mark - Following/Unfollowing
 - (IBAction)onFollowButtonPressed:(UIButton *)sender {
+
+    self.followButton.enabled = NO;
+    SuperUser *user = [SuperUser currentUser];
+
+    PFQuery *query = [PFQuery queryWithClassName:kActivityClass];
+    [query whereKey:kActivityKey.fromUser equalTo:[SuperUser currentUser]];
+    [query whereKey:kActivityKey.toUser equalTo:self.userView];
+    [query whereKey:kActivityKey.type equalTo:kActivityType.follow];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects != nil) {
+            if (objects.count > 0) {
+                // User is currently following this profile. Unfollow and remove from activity feed
+                for (Activity *object in objects) {
+                    [user incrementKey:kSuperUserAttributeKey.followingCount byAmount:@(-1)];
+                    [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        self.followButton.enabled = YES;
+                        [self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
+                    }];
+                }
+            } else {
+                // User is not currently following this profile
+                // Create New Activity to reflect a new follow
+                self.activity = [Activity object];
+                self.activity[kActivityKey.fromUser]    = user;
+                self.activity[kActivityKey.toUser]      = self.userView;
+                self.activity[kActivityKey.type]        = kActivityType.follow;
+                [user incrementKey:kSuperUserAttributeKey.followingCount byAmount:@(1)];
+
+                [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
+                        self.followButton.enabled = YES;
+                    });
+                }];
+            }
+        } else if (nil != error) {
+            [self presentAlertControllerWithTitle:@"Error" message:@"Could not access the Network" andButtonName:@"Bummer!"];
+        }
+    }];
+
+
 //
 //    SuperUser *user = [SuperUser currentUser];
 //

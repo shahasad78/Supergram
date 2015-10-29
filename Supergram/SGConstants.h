@@ -30,6 +30,8 @@ extern const struct kPFObjectAttributeKey {
  */
 
 extern const struct kSuperUserAttributeKey {
+    __unsafe_unretained NSString *const followingCount;
+    __unsafe_unretained NSString *const followerCount;
     __unsafe_unretained NSString *const profilePic;
     __unsafe_unretained NSString *const postCount;
     __unsafe_unretained NSString *const firstName;
@@ -74,6 +76,8 @@ extern const struct kSegueIdentifiers {
 } kSegueIdentifiers;
 
 #pragma mark - Activity Class
+extern NSString *const kActivityClass;
+
 extern const struct kActivityKey {
     // Field keys
     __unsafe_unretained NSString *const type;
