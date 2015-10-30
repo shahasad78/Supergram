@@ -3,6 +3,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+<<<<<<< HEAD
+=======
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+>>>>>>> UpdateProfileUI
     </dependencies>
     <scenes>
         <!--Reset Password View Controller-->
@@ -1091,10 +1096,7 @@
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ctL-0J-b26" customClass="PFImageView">
                                 <rect key="frame" x="20" y="82" width="160" height="160"/>
-<<<<<<< HEAD
                                 <animations/>
-=======
->>>>>>> f48adbad9a7f7966792692ef51f959bc0971e7e8
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="Ewf-BU-W8B"/>
                                     <constraint firstAttribute="width" constant="160" id="dxh-4j-J4O"/>
@@ -1102,23 +1104,22 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1R-f8-4kG">
                                 <rect key="frame" x="221" y="124" width="42" height="21"/>
-<<<<<<< HEAD
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-=======
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
->>>>>>> f48adbad9a7f7966792692ef51f959bc0971e7e8
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voF-Kv-YXw">
-                                <rect key="frame" x="219" y="169" width="46" height="30"/>
-<<<<<<< HEAD
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voF-Kv-YXw">
+                                <rect key="frame" x="219" y="169" width="361" height="30"/>
                                 <animations/>
-=======
->>>>>>> f48adbad9a7f7966792692ef51f959bc0971e7e8
-                                <state key="normal" title="Add"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.76470588240000004" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PRn-Uf-GtZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="onAddButtonPressed:" destination="FLc-In-6dM" eventType="touchUpInside" id="cIu-RR-JcL"/>
                                 </connections>
@@ -1130,9 +1131,12 @@
                             <constraint firstItem="aDK-1P-4YH" firstAttribute="top" secondItem="4WG-Iw-qfo" secondAttribute="bottom" id="7UM-sc-QdA"/>
                             <constraint firstItem="4WG-Iw-qfo" firstAttribute="leading" secondItem="Xuf-qD-yDb" secondAttribute="leading" id="9nu-i2-6Nb"/>
                             <constraint firstItem="ctL-0J-b26" firstAttribute="leading" secondItem="Xuf-qD-yDb" secondAttribute="leading" constant="20" id="Cgp-F0-q86"/>
+                            <constraint firstItem="voF-Kv-YXw" firstAttribute="centerY" secondItem="ctL-0J-b26" secondAttribute="centerY" multiplier="1.13" id="E3I-E6-sm8"/>
                             <constraint firstItem="4WG-Iw-qfo" firstAttribute="top" secondItem="ctL-0J-b26" secondAttribute="bottom" constant="18" id="J8L-dm-vjI"/>
                             <constraint firstItem="ctL-0J-b26" firstAttribute="top" secondItem="ChU-Vk-gzg" secondAttribute="bottom" constant="18" id="U4U-ou-DhA"/>
                             <constraint firstItem="ctL-0J-b26" firstAttribute="top" secondItem="ChU-Vk-gzg" secondAttribute="bottom" constant="18" id="UeC-tm-Tpc"/>
+                            <constraint firstItem="voF-Kv-YXw" firstAttribute="leading" secondItem="ctL-0J-b26" secondAttribute="trailing" constant="39" id="cnc-rZ-S5M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="voF-Kv-YXw" secondAttribute="trailing" id="kWf-nd-uAR"/>
                             <constraint firstAttribute="trailing" secondItem="4WG-Iw-qfo" secondAttribute="trailing" id="sNM-lh-a5l"/>
                         </constraints>
                         <variation key="default">
@@ -1656,6 +1660,7 @@
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zF9-FB-jXq">
                                 <rect key="frame" x="281" y="282" width="37" height="37"/>
+                                <animations/>
                             </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FfZ-U5-if1">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
@@ -1710,20 +1715,13 @@
                     <navigationItem key="navigationItem" title="Supergram" id="48d-2W-pQs"/>
                     <connections>
                         <outlet property="feedCollectionView" destination="FfZ-U5-if1" id="XDK-1O-cqr"/>
-<<<<<<< HEAD
-=======
                         <outlet property="spinner" destination="zF9-FB-jXq" id="BeB-7W-yLe"/>
->>>>>>> f48adbad9a7f7966792692ef51f959bc0971e7e8
                         <segue destination="FLc-In-6dM" kind="show" identifier="ShowDetailSegue" id="zz6-yg-bvq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1d-3G-3Gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="4481" y="1969"/>
-=======
             <point key="canvasLocation" x="4532" y="1969"/>
->>>>>>> f48adbad9a7f7966792692ef51f959bc0971e7e8
         </scene>
         <!--Feed-->
         <scene sceneID="Gsy-xu-jgn">
