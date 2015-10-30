@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *postCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *followerCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *followingCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bioLabel;
 
 // Data Model properties
 @property NSMutableArray *userMedia;
@@ -58,23 +59,15 @@
     flowLayout.itemSize = CGSizeMake(self.view.frame.size.width/3 - 10, self.view.frame.size.width/3 - 10);
     flowLayout.minimumLineSpacing = 5.0f;
     flowLayout.minimumInteritemSpacing = 5.0f;
-    flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 10.0f, 5.0f, 10.0f);
+    flowLayout.sectionInset = UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f);
 
     self.mediaCollection.collectionViewLayout = flowLayout;
-
-
-    // If the current visitor is not logged in, show the login scene
-
-    if (self.userView == nil) {
-        [self showLogInScreen];
-    }  else {
-        [self setupUI];
-
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    // If the current visitor is not logged in, show the login scene
     if (nil == self.userView) {
         [self showLogInScreen];
     } else {
@@ -89,6 +82,7 @@
         if (self.searchedUser != self.userView) {
             self.userView = self.searchedUser;
             self.navigationItem.rightBarButtonItem.enabled = NO;
+
         }
     } else {
         self.editProfileImageBtn.hidden = false;
@@ -107,6 +101,12 @@
         self.profileImage.file = self.userView[kSuperUserAttributeKey.profilePic];
         [self.profileImage loadInBackground];
     }
+
+    // Show the current visitor's username
+    self.navigationItem.title = self.userView.username;
+
+    // Show the  current visitor's bio
+    self.bioLabel.text = self.userView.bio;
 
     // Update the FollowerCount Label
     self.followerCountLabel.text = (self.userView.followerCount) ? [@(self.userView.followerCount.integerValue) stringValue] : [@(0) stringValue];
