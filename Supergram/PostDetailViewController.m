@@ -21,13 +21,18 @@
 @property (strong, nonatomic) UIAlertController *commentDialogBox;
 
 // Parse properties
-@property (strong, nonatomic) NSMutableArray *comments;
+@property (strong, nonatomic) NSMutableArray<Comment *> *comments;
+@property (strong, nonatomic) SuperUser *user;
 @end
 
 @implementation PostDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.user = [SuperUser currentUser];
+    PFQuery *authorQuery = [PFQuery queryWithClassName:kPostClass];
+    [authorQuery whereKey:kPostAttributeKey.author equalTo:self.user];
 
     self.postImage.file = self.post.media;
     self.commentCountLabel.text = [@(self.post.commentCount) stringValue];
@@ -71,10 +76,11 @@
         // Grab the text from the comment field and populate a new Comment object
         UITextField *commentField = [weakSelf.commentDialogBox.textFields firstObject];
         Comment *newComment = [Comment object];
+        newComment.author = self.user;
         newComment.content = commentField.text;
-        [weakSelf.comments addObject:newComment];
         newComment.parent = weakSelf.post;
-        
+        [weakSelf.comments addObject:newComment];
+
         [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             [weakSelf updateComments:newComment];
         }];
@@ -152,7 +158,7 @@
 
 #pragma mark - Table View Delegate Methods
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+    return self.user == self.comments[indexPath.row].author;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
