@@ -170,6 +170,21 @@
 
 }
 
+- (void)updateLabels {;
+    PFQuery *followerCountQuery  =[PFQuery queryWithClassName:kActivityClass];
+    [followerCountQuery whereKey:kActivityKey.toUser equalTo:self.userView];
+    [followerCountQuery whereKey:kActivityKey.type equalTo:kActivityType.follow];
+    [followerCountQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects) {
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.followerCountLabel.text = [@(objects.count) stringValue];
+            });
+        }
+    }];
+
+}
+
 - (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message andButtonName:(NSString *)buttonName{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
                                                                    message:message
@@ -226,12 +241,16 @@
                 for (Activity *object in objects) {
                     user.followingCount         = @(user.followingCount.integerValue - 1);
                     [user saveInBackground];
-                    weakSelf.followingCountLabel.text = [@(object.toUser.followingCount.integerValue) stringValue];
+//                    weakSelf.followingCountLabel.text = [@(weakSelf.userView.followingCount.integerValue) stringValue];
+//                    weakSelf.followerCountLabel.text = [@(weakSelf.userView.followerCount.integerValue) stringValue];
+
                     [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                         if (error) {
                             [self presentAlertControllerWithTitle:@"Error" message:@"Could not Authenticate unfollow" andButtonName:@"Are you kidding me?"];
                         }
                         weakSelf.followButton.enabled = YES;
+                        [self updateLabels];
+
                     }];
                 }
             } else {
@@ -245,13 +264,14 @@
                 // Increment respective follower and following counts
                 user.followingCount = @(user.followingCount.integerValue + 1);
                 [user saveInBackground];
-                self.followerCountLabel.text = [@(weakSelf.userView.followerCount.integerValue) stringValue];
+                self.followerCountLabel.text = [@(weakSelf.userView.followerCount.integerValue + 1) stringValue];
 
                 [weakSelf.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     if (error) {
                         [self presentAlertControllerWithTitle:@"Error" message:@"Cannot authenticate User." andButtonName:@"Aww Phooey!"];
                     }
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        [self updateLabels];
                         weakSelf.followButton.enabled = YES;
                     });
                 }];
@@ -260,6 +280,8 @@
             [self presentAlertControllerWithTitle:@"Error" message:@"Could not access the Network" andButtonName:@"Bummer!"];
         }
     }];
+
+
 }
 
 

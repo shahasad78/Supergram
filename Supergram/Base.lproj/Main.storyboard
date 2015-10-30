@@ -495,7 +495,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="wiv-0V-qAy">
-                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -551,7 +551,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wiv-0V-qAy" secondAttribute="bottom" id="0B3-AH-oy1"/>
                             <constraint firstItem="wiv-0V-qAy" firstAttribute="top" secondItem="Z9V-gS-sS1" secondAttribute="bottom" id="Cpo-i0-yhB"/>
                             <constraint firstAttribute="trailing" secondItem="wiv-0V-qAy" secondAttribute="trailing" id="JHf-X0-p3R"/>
-                            <constraint firstItem="wiv-0V-qAy" firstAttribute="top" secondItem="Z9V-gS-sS1" secondAttribute="bottom" id="Jnd-BE-0wc"/>
+                            <constraint firstItem="wiv-0V-qAy" firstAttribute="top" secondItem="Z9V-gS-sS1" secondAttribute="bottom" constant="-44" id="Jnd-BE-0wc"/>
                             <constraint firstAttribute="trailing" secondItem="Z9V-gS-sS1" secondAttribute="trailing" id="KCe-m3-xJ6"/>
                             <constraint firstItem="Z9V-gS-sS1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="V1m-qb-7UD"/>
                             <constraint firstItem="Z9V-gS-sS1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="j3g-c0-1qe"/>
@@ -573,7 +573,7 @@
             </objects>
             <point key="canvasLocation" x="3078" y="1969"/>
         </scene>
-        <!--Activity View Controller-->
+        <!--Recent Activity-->
         <scene sceneID="btN-DM-QMo">
             <objects>
                 <viewController id="nKq-5Y-E5z" customClass="ActivityViewController" sceneMemberID="viewController">
@@ -586,7 +586,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="hOW-kW-fvq">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -594,7 +594,7 @@
                                         <rect key="frame" x="0.0" y="65" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yOt-0v-Xnp" id="xTl-Dp-hpv">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rtl-Cf-Kiy" customClass="PFImageView">
@@ -616,14 +616,14 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsF-Lj-ppA">
                                                     <rect key="frame" x="46" y="12" width="503" height="20"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="RsF-Lj-ppA" firstAttribute="top" secondItem="xTl-Dp-hpv" secondAttribute="top" constant="11" id="3Nu-A7-UwD"/>
+                                                <constraint firstItem="RsF-Lj-ppA" firstAttribute="top" secondItem="xTl-Dp-hpv" secondAttribute="top" constant="5" id="3Nu-A7-UwD"/>
                                                 <constraint firstAttribute="trailing" secondItem="qAu-Dh-xoJ" secondAttribute="trailing" constant="13" id="80w-i4-hbh"/>
                                                 <constraint firstItem="Rtl-Cf-Kiy" firstAttribute="leading" secondItem="xTl-Dp-hpv" secondAttribute="leading" constant="8" id="G5L-5E-g1Y"/>
                                                 <constraint firstItem="Rtl-Cf-Kiy" firstAttribute="top" secondItem="xTl-Dp-hpv" secondAttribute="top" constant="8" id="XwC-Uk-DaV"/>
@@ -649,13 +649,13 @@
                         <animations/>
                         <color key="backgroundColor" red="0.35692607479999999" green="0.58580135720000004" blue="0.44645882240000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rIM-Gz-OVL" firstAttribute="top" secondItem="hOW-kW-fvq" secondAttribute="bottom" id="8in-9z-YWm"/>
-                            <constraint firstItem="hOW-kW-fvq" firstAttribute="leading" secondItem="Vki-Xo-peZ" secondAttribute="leading" id="WQs-WQ-liV"/>
-                            <constraint firstAttribute="trailing" secondItem="hOW-kW-fvq" secondAttribute="trailing" id="d1O-04-855"/>
-                            <constraint firstItem="hOW-kW-fvq" firstAttribute="top" secondItem="y1y-h3-2N3" secondAttribute="bottom" id="l8g-SH-MVj"/>
+                            <constraint firstItem="hOW-kW-fvq" firstAttribute="leading" secondItem="Vki-Xo-peZ" secondAttribute="leading" id="0vf-2f-199"/>
+                            <constraint firstItem="hOW-kW-fvq" firstAttribute="top" secondItem="Vki-Xo-peZ" secondAttribute="top" id="CqU-GG-DWe"/>
+                            <constraint firstAttribute="trailing" secondItem="hOW-kW-fvq" secondAttribute="trailing" id="NwQ-pZ-XfM"/>
+                            <constraint firstItem="rIM-Gz-OVL" firstAttribute="top" secondItem="hOW-kW-fvq" secondAttribute="bottom" id="xBU-GJ-jw3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="r62-6P-sg3"/>
+                    <navigationItem key="navigationItem" title="Recent Activity" id="r62-6P-sg3"/>
                     <connections>
                         <outlet property="tableView" destination="hOW-kW-fvq" id="QMF-ct-1On"/>
                     </connections>
