@@ -51,7 +51,6 @@
     self.user     = [SuperUser currentUser];
     self.userView = [SuperUser currentUser];
 
-
     self.userMedia = [[NSMutableArray alloc] init];
 
     // Set up Collection View
