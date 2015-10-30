@@ -9,6 +9,10 @@
 #import "PostDetailViewController.h"
 
 @interface PostDetailViewController ()
+@property (weak, nonatomic) IBOutlet PFImageView *postImage;
+@property (weak, nonatomic) IBOutlet UILabel *commentCountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -19,5 +23,7 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)onAddButtonPressed:(UIButton *)sender {
+}
 
 @end
