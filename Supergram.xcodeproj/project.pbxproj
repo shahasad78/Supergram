@@ -18,6 +18,7 @@
 		CB96E7461BE2B91900D124A0 /* PostHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB96E7421BE2B91900D124A0 /* PostHeader.xib */; };
 		CB96E7471BE2B91900D124A0 /* ProfileHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB96E7431BE2B91900D124A0 /* ProfileHeader.xib */; };
 		CB96E7481BE2B91900D124A0 /* SGPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB96E7441BE2B91900D124A0 /* SGPostCell.xib */; };
+		CB96E74B1BE2DFE400D124A0 /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = CB96E74A1BE2DFE400D124A0 /* SGConstants.m */; };
 		E01CFDAD1BD9932A004E1874 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA61BD9932A004E1874 /* Bolts.framework */; };
 		E01CFDAE1BD9932A004E1874 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA71BD9932A004E1874 /* Parse.framework */; };
 		E01CFDAF1BD9932A004E1874 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01CFDA81BD9932A004E1874 /* ParseCrashReporting.framework */; };
@@ -44,7 +45,6 @@
 		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; };
 		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; };
 		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; };
-		E09A4BC61BDE8E8100E3EBE8 /* SGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BC51BDE8E8100E3EBE8 /* SGConstants.m */; };
 		E09A4BC91BDE8EE100E3EBE8 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BC81BDE8EE100E3EBE8 /* NSString+ValidationUtility.m */; };
 		E09A4BEE1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BED1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m */; };
 		E09A4BF11BDF072B00E3EBE8 /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */; };
@@ -96,6 +96,8 @@
 		CB96E7421BE2B91900D124A0 /* PostHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostHeader.xib; sourceTree = "<group>"; };
 		CB96E7431BE2B91900D124A0 /* ProfileHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeader.xib; sourceTree = "<group>"; };
 		CB96E7441BE2B91900D124A0 /* SGPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGPostCell.xib; sourceTree = "<group>"; };
+		CB96E7491BE2DFE400D124A0 /* SGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGConstants.h; sourceTree = "<group>"; };
+		CB96E74A1BE2DFE400D124A0 /* SGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConstants.m; sourceTree = "<group>"; };
 		E01CFDA61BD9932A004E1874 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E01CFDA71BD9932A004E1874 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E01CFDA81BD9932A004E1874 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -129,8 +131,6 @@
 		E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsViewController.m; sourceTree = "<group>"; };
 		E05F80441BDB403A00B8DD21 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
 		E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePickerViewController.m; sourceTree = "<group>"; };
-		E09A4BC41BDE8E3200E3EBE8 /* SGConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGConstants.h; sourceTree = "<group>"; };
-		E09A4BC51BDE8E8100E3EBE8 /* SGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGConstants.m; sourceTree = "<group>"; };
 		E09A4BC71BDE8EE100E3EBE8 /* NSString+ValidationUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ValidationUtility.h"; sourceTree = "<group>"; };
 		E09A4BC81BDE8EE100E3EBE8 /* NSString+ValidationUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ValidationUtility.m"; sourceTree = "<group>"; };
 		E09A4BEC1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPostCollectionViewCell.h; sourceTree = "<group>"; };
@@ -234,8 +234,8 @@
 		CB21253D1BD98F3B00AA824B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E09A4BC41BDE8E3200E3EBE8 /* SGConstants.h */,
-				E09A4BC51BDE8E8100E3EBE8 /* SGConstants.m */,
+				CB96E7491BE2DFE400D124A0 /* SGConstants.h */,
+				CB96E74A1BE2DFE400D124A0 /* SGConstants.m */,
 				CB2125401BD98F3B00AA824B /* AppDelegate.h */,
 				CB2125411BD98F3B00AA824B /* AppDelegate.m */,
 				CB2125491BD98F3B00AA824B /* Assets.xcassets */,
@@ -503,7 +503,6 @@
 				E0A410A41BDD99A800AC5C3D /* Post.m in Sources */,
 				E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */,
 				E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */,
-				E09A4BC61BDE8E8100E3EBE8 /* SGConstants.m in Sources */,
 				E09A4BF11BDF072B00E3EBE8 /* PostDetailViewController.m in Sources */,
 				CB2125421BD98F3B00AA824B /* AppDelegate.m in Sources */,
 				E09A4BFA1BDFD1E900E3EBE8 /* SearchViewController.m in Sources */,
@@ -519,6 +518,7 @@
 				E09A4BC91BDE8EE100E3EBE8 /* NSString+ValidationUtility.m in Sources */,
 				E09A4BEE1BDEF70B00E3EBE8 /* SGPostCollectionViewCell.m in Sources */,
 				E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */,
+				CB96E74B1BE2DFE400D124A0 /* SGConstants.m in Sources */,
 				E0A410A11BDD802C00AC5C3D /* NewPostViewController.m in Sources */,
 				CB21253F1BD98F3B00AA824B /* main.m in Sources */,
 			);

@@ -90,8 +90,12 @@
     [photosFromCurrentUserQuery whereKey:kPostAttributeKey.author equalTo:self.user];
     [photosFromCurrentUserQuery whereKeyExists:kPostAttributeKey.media];
 
-    // TODO: enumerate through posts and query activity to determine whether it has been liked by the current user.
-//    PFQuery *
+    // Fetch all the posts the current user has liked
+    PFRelation *relation = [self.user relationForKey:kSuperUserAttributeKey.likedPosts];
+    PFQuery *likesQuery = [relation query];
+    [likesQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        self.likes = objects.mutableCopy;
+    }];
 
     // We create a final compound query that will find all of the photos that were
     // taken by the user's friends or by the user
@@ -102,20 +106,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
         for (Post *result in posts) {
-
             [self.posts addObject:result];
-
-            PFQuery *searchLikesQuery = [PFQuery queryWithClassName:kPostClass];
-//            [searchLikesQuery includeKey:kPostAttributeKey.likes];
-            [searchLikesQuery whereKey:kPostAttributeKey.likes equalTo:self.user];
-            [searchLikesQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-                if (objects) {
-                    if (objects.count > 0) {
-                        NSLog(@"User liked this post");
-                    }
-                }
-            }];
-//            SuperUser *foundUser = [searchLikesQuery ]
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -152,6 +143,7 @@
     cell.post = post;
     cell.postImage.file = post.media;
     cell.heartCount.text = [NSString stringWithFormat:@"%lu", post.likesCount];
+    cell.heartButton.selected = [self.likes containsObject:post];
 
     [cell.postImage loadInBackground];
     
@@ -173,6 +165,11 @@
         [aPost incrementKey:kPostAttributeKey.likesCount];
         [aPost addObject:self.user forKey:@"likes"];
         [aPost saveInBackground];
+
+        // Add like to user's likedPosts
+        PFRelation *relation = [self.user relationForKey:kSuperUserAttributeKey.likedPosts];
+        [relation addObject:aPost];
+        [self.user saveInBackground];
 
         // Save New Activity
         self.activity = [Activity object];
@@ -204,5 +201,35 @@
 {
     cell.moreView.hidden = NO;
 }
+
+- (void) didTappedDelete:(PostCollectionViewCell *)cell
+{
+    // Get a pointer to the Post object
+    Post *aPost;
+    aPost = cell.post;
+    
+    // Check to see that the user is the owner of the post
+    // TODO: create an if statement to check if user is the creator
+    
+    // Create an array of the selected Items
+    NSArray *selectedItemsIndexPaths = [self.feedCollectionView indexPathsForSelectedItems];
+    
+    // Remove the Post from the mutable array
+    [self.posts removeObject:aPost];
+    
+    // Remove the Post from the collection view
+    [self.feedCollectionView reloadData];
+    
+    // Remove the Post from Parse in the background
+    [aPost deleteInBackground];
+    
+    // Reload the collection view
+    
+    
+    
+    
+}
+
+
 
 @end
