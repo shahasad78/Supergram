@@ -234,20 +234,31 @@
     // Check to see that the user is the owner of the post
     // TODO: create an if statement to check if user is the creator
     
-    // Create an array of the selected Items
-    NSArray *selectedItemsIndexPaths = [self.feedCollectionView indexPathsForSelectedItems];
     
-    // Remove the Post from the mutable array
-    [self.posts removeObject:aPost];
-
-    // dismiss moreView
-    cell.moreView.hidden = YES;
-    
-    // Reload the collection view
-    [self.feedCollectionView reloadData];
-    
-    // Remove the Post from Parse in the background
-    [aPost deleteInBackground];
+    if (aPost.author == self.user) {
+        
+        
+        // Create an array of the selected Items
+        // NSArray *selectedItemsIndexPaths = [self.feedCollectionView indexPathsForSelectedItems];
+        
+        // Remove the Post from the mutable array
+        [self.posts removeObject:aPost];
+        
+        // dismiss moreView
+        cell.moreView.hidden = YES;
+        
+        // Reload the collection view
+        [self.feedCollectionView reloadData];
+        
+        // Remove the Post from Parse in the background
+        [aPost deleteInBackground];
+        
+        [self.user incrementKey:kSuperUserAttributeKey.postCount byAmount:@(-1)];
+        
+        [self.user saveInBackground];
+        
+    }
+   
 
 }
 
