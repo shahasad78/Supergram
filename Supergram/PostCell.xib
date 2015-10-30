@@ -21,7 +21,7 @@
                                 <rect key="frame" x="7" y="7" width="286" height="286"/>
                                 <animations/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="danger" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-ve-8wx">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="danger" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-ve-8wx">
                                 <rect key="frame" x="7" y="-19" width="286" height="338"/>
                                 <animations/>
                             </imageView>
