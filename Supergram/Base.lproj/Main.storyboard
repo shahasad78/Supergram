@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Reset Password View Controller-->
@@ -1592,9 +1591,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="8sX-LV-hH9" kind="relationship" relationship="viewControllers" id="66r-ub-Uj0"/>
                         <segue destination="yHK-O4-r6S" kind="relationship" relationship="viewControllers" id="o2Z-o2-nas"/>
                         <segue destination="DbQ-T0-2yR" kind="relationship" relationship="viewControllers" id="IYs-rZ-n0d"/>
-                        <segue destination="8sX-LV-hH9" kind="relationship" relationship="viewControllers" id="66r-ub-Uj0"/>
                         <segue destination="2Yr-NW-vZc" kind="relationship" relationship="viewControllers" id="uEc-lx-jKX"/>
                         <segue destination="jzc-BM-c9W" kind="relationship" relationship="viewControllers" id="diR-Bp-Csh"/>
                     </connections>
@@ -1623,7 +1622,7 @@
             </objects>
             <point key="canvasLocation" x="1379" y="1178"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Supergram-->
         <scene sceneID="eNm-RU-OLe">
             <objects>
                 <viewController id="njW-Ec-0ak" customClass="FeedViewController" sceneMemberID="viewController">
@@ -1635,8 +1634,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zF9-FB-jXq">
+                                <rect key="frame" x="281" y="282" width="37" height="37"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FfZ-U5-if1">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xBW-yL-5UG">
@@ -1647,7 +1649,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCell" id="Nds-zP-9pq" customClass="PostCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="64" width="277" height="295"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="295"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="277" height="295"/>
@@ -1669,11 +1671,13 @@
                         <color key="backgroundColor" red="0.47058823529999999" green="0.7725490196" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FfZ-U5-if1" firstAttribute="top" secondItem="NNQ-Me-aFd" secondAttribute="bottom" id="8x4-Rs-qvQ"/>
-                            <constraint firstItem="C8t-ZN-h3n" firstAttribute="top" secondItem="FfZ-U5-if1" secondAttribute="bottom" id="9lK-bN-cO5"/>
-                            <constraint firstItem="FfZ-U5-if1" firstAttribute="leading" secondItem="1V9-bD-BYX" secondAttribute="leading" id="Eel-9L-a5a"/>
-                            <constraint firstAttribute="trailing" secondItem="FfZ-U5-if1" secondAttribute="trailing" id="Kpl-t4-jNS"/>
-                            <constraint firstItem="FfZ-U5-if1" firstAttribute="top" secondItem="1V9-bD-BYX" secondAttribute="topMargin" id="PSU-Wu-A4h"/>
+                            <constraint firstAttribute="trailing" secondItem="FfZ-U5-if1" secondAttribute="trailing" id="Dbo-56-wgf"/>
+                            <constraint firstItem="zF9-FB-jXq" firstAttribute="centerY" secondItem="1V9-bD-BYX" secondAttribute="centerY" id="Xg0-Em-Pec"/>
                             <constraint firstItem="FfZ-U5-if1" firstAttribute="top" secondItem="NNQ-Me-aFd" secondAttribute="bottom" id="Z6x-Aq-71F"/>
+                            <constraint firstItem="zF9-FB-jXq" firstAttribute="centerX" secondItem="1V9-bD-BYX" secondAttribute="centerX" id="cQp-mb-X95"/>
+                            <constraint firstItem="FfZ-U5-if1" firstAttribute="leading" secondItem="1V9-bD-BYX" secondAttribute="leading" id="fAZ-yS-ay1"/>
+                            <constraint firstItem="FfZ-U5-if1" firstAttribute="top" secondItem="NNQ-Me-aFd" secondAttribute="bottom" id="qNt-FU-LFf"/>
+                            <constraint firstItem="C8t-ZN-h3n" firstAttribute="top" secondItem="FfZ-U5-if1" secondAttribute="bottom" id="qb2-Me-7IL"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1683,21 +1687,22 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" id="cSc-ts-Eia"/>
-                    <navigationItem key="navigationItem" id="48d-2W-pQs"/>
+                    <navigationItem key="navigationItem" title="Supergram" id="48d-2W-pQs"/>
                     <connections>
                         <outlet property="feedCollectionView" destination="FfZ-U5-if1" id="XDK-1O-cqr"/>
+                        <outlet property="spinner" destination="zF9-FB-jXq" id="BeB-7W-yLe"/>
                         <segue destination="FLc-In-6dM" kind="show" identifier="ShowDetailSegue" id="zz6-yg-bvq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1d-3G-3Gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4481" y="1969"/>
+            <point key="canvasLocation" x="4532" y="1969"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Feed-->
         <scene sceneID="Gsy-xu-jgn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8sX-LV-hH9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="MpK-7v-QDe"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="home" id="MpK-7v-QDe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zbB-Og-Zkz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1711,7 +1716,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEz-7H-Az7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3752" y="1969"/>
+            <point key="canvasLocation" x="3726" y="1969"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rhp-xa-JO7">
@@ -1733,11 +1738,11 @@
             </objects>
             <point key="canvasLocation" x="2233" y="1969"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Activity-->
         <scene sceneID="1Fg-Xh-7gO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jzc-BM-c9W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="ndo-bO-37w"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="activity" id="ndo-bO-37w"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OEa-DE-3mP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1756,8 +1761,10 @@
     <resources>
         <image name="FollowUser" width="32" height="32"/>
         <image name="UnfollowUser" width="32" height="32"/>
+        <image name="activity" width="32" height="32"/>
         <image name="bar" width="300" height="20"/>
         <image name="close" width="64" height="64"/>
+        <image name="home" width="32" height="32"/>
         <image name="post" width="32" height="32"/>
         <image name="user" width="126" height="126"/>
         <image name="userHome" width="32" height="32"/>

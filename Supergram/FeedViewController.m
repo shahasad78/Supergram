@@ -28,6 +28,7 @@
 // Parse Properties
 @property SuperUser *user;
 @property Activity *activity;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 
 @end
 
@@ -40,8 +41,12 @@
     self.posts = [[NSMutableArray alloc] init];
     self.user = [SuperUser currentUser];
 
+    [self.spinner startAnimating];
+
     [self setupUI];
     [self feedQuery];
+
+    [self.spinner stopAnimating];
 }
 
 #pragma mark - Helper Methods
@@ -57,18 +62,6 @@
 
     self.feedCollectionView.collectionViewLayout = flowLayout;
 
-//    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-//   // [query whereKey:@"author" equalTo:self.userView];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-//
-//        for (Post *result in posts) {
-//            [self.posts addObject:result];
-//        }
-//
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.feedCollectionView reloadData];
-//        });
-//    }];
 }
 
 - (void) feedQuery {
@@ -142,6 +135,8 @@
     cell.postImage.file = post.media;
     cell.heartCount.text = [NSString stringWithFormat:@"%lu", post.likesCount];
     cell.userPic.file = post.author.profilePic;
+    [cell.userPic loadInBackground];
+
     cell.usernameLabel.text = post.author.username;
     cell.heartButton.selected = [self.likes containsObject:post];
 
