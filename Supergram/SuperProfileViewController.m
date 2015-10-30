@@ -77,6 +77,7 @@
 
 #pragma mark - Helper Methods
 - (void) setupUI {
+    [self.userMedia removeAllObjects];
     // Show or hide UI elements based on whether the profile belongs to current user
     if (self.searchedUser != nil) {
         if (self.searchedUser != self.userView) {
@@ -300,7 +301,7 @@
 }
 
 - (IBAction) unwindToProfile:(UIStoryboardSegue *)segue {
-    [self setupUI];
+   // [self setupUI];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UICollectionViewCell *)sender {
