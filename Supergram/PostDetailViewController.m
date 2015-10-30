@@ -10,6 +10,7 @@
 #import "Post.h"
 #import "Comment.h"
 #import "SuperUser.h"
+#import "Activity.h"
 
 @interface PostDetailViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
@@ -35,25 +36,24 @@
     [super viewWillAppear:animated];
 
     __weak PostDetailViewController *weakSelf = self;
-    PFRelation *relation = [self.post relationForKey:kPostAttributeKey.comments];
-    PFQuery *commentsQuery = [relation query];
-    [commentsQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+
+    PFQuery *commentQuery = [PFQuery queryWithClassName:kCommentClass];
+    [commentQuery whereKey:kCommentAttributeKey.parent equalTo:self.post];
+    [commentQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         weakSelf.comments = objects.mutableCopy;
 
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"cell comments = %@", weakSelf.comments);
+            [self setupUI];
             [weakSelf.tableView reloadData];
         });
     }];
 
+}
 
-//    PFQuery *commentQuery = [PFQuery queryWithClassName:kPostClass];
-//    [commentQuery includeKey:kPostAttributeKey.comments];
-//    [commentQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        self.comments = objects.mutableCopy;
-//        NSLog(@"cell comments = %@", self.comments);
-//        [weakSelf.tableView reloadData];
-//    }];
+#pragma mark - Helper Methods
+- (void) setupUI {
+    self.commentCountLabel.text = [@(self.comments.count) stringValue];
 }
 
 - (IBAction)onAddButtonPressed:(UIButton *)sender {
@@ -79,9 +79,25 @@
         newComment.content = commentField.text;
         newComment.parent = weakSelf.post;
         [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            [weakSelf setupUI];
             [weakSelf.post.comments addObject:newComment];
             [weakSelf.post incrementKey:kPostAttributeKey.commentCount];
-            [weakSelf.post saveInBackground];
+            [weakSelf.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+
+
+            }];
+            // Save new Activity
+            Activity *activity  = [Activity object];
+            activity.toUser     = weakSelf.post.author;
+            activity.fromUser   = [SuperUser currentUser];
+            activity.post       = weakSelf.post;
+            activity.activityType = kActivityType.comment;
+            [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"%@", error.localizedDescription);
+                }
+            }];
+
         }];
         NSLog(@"cell comments = %@", self.comments);
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -114,8 +130,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-
-    cell.textLabel.text = self.comments[indexPath.row];
+    Comment *comment = self.comments[indexPath.row];
+    cell.textLabel.text = comment.content;
     return cell;
 }
 
