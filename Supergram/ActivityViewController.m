@@ -24,6 +24,8 @@
 
 @implementation ActivityViewController
 
+# pragma mark - View Delegates
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,21 +34,13 @@
     
     // Load the activities array
     [self loadUserActivities];
-    
-    //NSLog(@"%@", self.userActivities);
    
 }
 
-# pragma mark - Helper functions
+# pragma mark - Helper methods
 
 - (void)loadUserActivities
 {
-    // Initialize the array
-    
-    
-    // Build the querry
-    
-    // Query for the friends activities
     
     // Make a weak pointer to prevent memory leaks
     __weak ActivityViewController *weakSelf = self;
@@ -62,13 +56,13 @@
     [userActivitiesQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             
+            // Populate the activities array
             weakSelf.userActivities = objects.mutableCopy;
-             NSLog(@"%@", self.userActivities);
             
+            // Get back to the main queue to update the user interface
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
             });
-            
             
         } else {
             // Log details of the failure
@@ -90,13 +84,28 @@
     // Get a pointer to the Activity
     Activity *thisActivity = [self.userActivities objectAtIndex:indexPath.row];
     
-    //Bbuild the label string
-    
+    // Set label to two lines
+    cell.activityLabel.numberOfLines = 2;
     
     // Get and load the User profile pic
     cell.userImage.file = thisActivity.fromUser.profilePic;
     [cell.userImage loadInBackground];
     
+    // Get the post pic and load it in the background
+    // TODO Load the post pic
+    if ([thisActivity.post isDataAvailable]) {
+        if ([thisActivity.post.media isDataAvailable]) {
+            cell.postImage.file = thisActivity.post.media;
+            
+            // cell.userImage.file = cell.postImage.file;
+            // cell.postImage.file = cell.userImage.file;
+            [cell.postImage loadInBackground];
+            
+        }
+       
+    }
+    
+    // Build the label string
     if ([thisActivity.activityType isEqualToString:@"post"]) {
         
         // Set the label for a post
@@ -105,7 +114,7 @@
     } else if ([thisActivity.activityType isEqualToString:@"like"]) {
         
         // Set the label for a like
-        cell.activityLabel.text = [NSString stringWithFormat:@"%@ likes what %@ did there", thisActivity.fromUser.username, thisActivity.toUser.username];
+        cell.activityLabel.text = [NSString stringWithFormat:@"%@ likes what \n%@ did there", thisActivity.fromUser.username, thisActivity.toUser.username];
         
     } else if ([thisActivity.activityType isEqualToString:@"follow"]) {
         
@@ -115,28 +124,19 @@
     } else if ([thisActivity.activityType isEqualToString:@"comment"]) {
         
         // Set the label for a comment
-        cell.activityLabel.text = [NSString stringWithFormat:@"%@ comented on %@'s thing that they did there", thisActivity.fromUser.username, thisActivity.toUser.username];
+        cell.activityLabel.text = [NSString stringWithFormat:@"%@ commented on \n%@'s post", thisActivity.fromUser.username, thisActivity.toUser.username];
         
     } else {
         // Default case
         cell.activityLabel.text = [NSString stringWithFormat:@"No one knows WTF %@ did", thisActivity.fromUser.username];
     }
     
-    
-    
-//    if ([thisActivity.activityType isEqualToString:@"post"]) {
-//        
-//        // Get the post image
-//        cell.postImage.file = thisActivity.post.media;
-//        [cell.postImage loadInBackground];
-//    }
-    
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    //return array cunt
+    //return array count
     return self.userActivities.count;
 }
 
