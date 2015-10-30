@@ -132,8 +132,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (nil != objects && !error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSString *followTitle = (objects.count > 0) ? @"Unfollow" : @"Follow";
-                [self.followButton setTitle:followTitle forState:UIControlStateNormal];
+                self.followButton.selected = (objects.count > 0);
                 [self.mediaCollection reloadData];
             });
         }
@@ -181,6 +180,7 @@
 - (IBAction)onFollowButtonPressed:(UIButton *)sender {
 
     self.followButton.enabled = NO;
+    self.followButton.selected = !self.followButton.selected;
     SuperUser *user = [SuperUser currentUser];
 
     PFQuery *query = [PFQuery queryWithClassName:kActivityClass];
@@ -195,7 +195,6 @@
                     [user incrementKey:kSuperUserAttributeKey.followingCount byAmount:@(-1)];
                     [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                         self.followButton.enabled = YES;
-                        [self.followButton setTitle:@"Follow" forState:UIControlStateNormal];
                     }];
                 }
             } else {
@@ -209,7 +208,6 @@
 
                 [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.followButton setTitle:@"Unfollow" forState:UIControlStateNormal];
                         self.followButton.enabled = YES;
                     });
                 }];
