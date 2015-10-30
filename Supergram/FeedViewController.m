@@ -253,7 +253,7 @@
         // Remove the Post from Parse in the background
         [aPost deleteInBackground];
         
-        [self.user incrementKey:kSuperUserAttributeKey.postCount byAmount:@(-1)];
+        self.user.postCount = @(self.user.postCount.integerValue - 1);
         
         [self.user saveInBackground];
         

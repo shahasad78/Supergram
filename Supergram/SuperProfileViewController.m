@@ -34,9 +34,11 @@
 @property NSMutableArray *userMedia;
 
 // Parse properties
-@property SuperUser *userView;
 @property SuperUser *user;
 @property Activity *activity;
+@property SuperUser *userView;
+@property NSUInteger userViewFollowerCount;
+@property NSUInteger userViewFollowingCount;
 
 @end
 
@@ -46,8 +48,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.user     = [SuperUser currentUser];
     self.userView = [SuperUser currentUser];
-    self.user = [SuperUser currentUser];
 
 
     self.userMedia = [[NSMutableArray alloc] init];
@@ -96,35 +98,43 @@
     self.editProfileImageBtn.hidden = (self.searchedUser != nil) && (self.searchedUser != self.userView);
     self.followButton.hidden = (self.userView == self.user);
 
-
     // Show the current visitor's username
     if (self.userView.username) {
         self.usernameLabel.text = self.userView.username;
-
         self.fullnameLabel.text = [NSString stringWithFormat:@"%@ %@", self.userView.firstName , self.userView.lastName];
     }
-
+    // Show the current profile pic
     if (self.userView[kSuperUserAttributeKey.profilePic]) {
         self.profileImage.file = self.userView[kSuperUserAttributeKey.profilePic];
-
         [self.profileImage loadInBackground];
     }
-    
 
+    // Update the FollowerCount Label
+    self.followerCountLabel.text = (self.userView.followerCount) ? [@(self.userView.followerCount.integerValue) stringValue] : [@(0) stringValue];
+
+    // Update the Following Count label
+    self.followingCountLabel.text = (self.userView.followingCount) ? [@(self.userView.followingCount.integerValue) stringValue] : [@(0) stringValue];
+
+    // Load the profile posts
+    // -------------------------------------------------------------------------------------------------
+    __weak SuperProfileViewController *weakSelf = self;
     PFQuery *query = [PFQuery queryWithClassName:kPostClass];
-    [query whereKey:@"author" equalTo:self.userView];
+    [query whereKey:kPostAttributeKey.author equalTo:self.userView];
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
         for (Post *result in posts) {
-            [self.userMedia addObject:result];
+            [weakSelf.userMedia addObject:result];
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.mediaCollection reloadData];
+            [weakSelf.mediaCollection reloadData];
+            weakSelf.postCountLabel.text = [@(weakSelf.userMedia.count) stringValue];
         });
     }];
+    // *************************************************************************************************
 
-    // TODO: add check logic to toggle text between "follow" and "unfollow"
+    // Follow Activity
+    // -------------------------------------------------------------------------------------------------
     query = [PFQuery queryWithClassName:kActivityClass];
     [query whereKey:kActivityKey.fromUser equalTo:self.user];
     [query whereKey:kActivityKey.toUser equalTo:self.userView];
@@ -132,11 +142,33 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (nil != objects && !error) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.followButton.selected = (objects.count > 0);
-                [self.mediaCollection reloadData];
+                weakSelf.followButton.selected = (objects.count > 0);
+                [weakSelf.mediaCollection reloadData];
             });
         }
     }];
+
+    query = [PFQuery queryWithClassName:kActivityClass];
+    [query whereKey:kActivityKey.fromUser equalTo:self.userView];
+    [query whereKey:kActivityKey.type equalTo:kActivityType.follow];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects) {
+            weakSelf.userViewFollowingCount = objects.count;
+            weakSelf.followingCountLabel.text = [@(weakSelf.userViewFollowingCount) stringValue];
+        }
+    }];
+    query = [PFQuery queryWithClassName:kActivityClass];
+    [query whereKey:kActivityKey.toUser equalTo:self.userView];
+    [query whereKey:kActivityKey.type equalTo:kActivityType.follow];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects) {
+            weakSelf.userViewFollowerCount = objects.count;
+            weakSelf.followerCountLabel.text = [@(weakSelf.userViewFollowerCount) stringValue];
+        }
+    }];
+    // *************************************************************************************************
+
+
 }
 
 - (void)presentAlertControllerWithTitle:(NSString *)title message:(NSString *)message andButtonName:(NSString *)buttonName{
@@ -183,6 +215,7 @@
     self.followButton.selected = !self.followButton.selected;
     SuperUser *user = [SuperUser currentUser];
 
+    __weak SuperProfileViewController *weakSelf = self;
     PFQuery *query = [PFQuery queryWithClassName:kActivityClass];
     [query whereKey:kActivityKey.fromUser equalTo:[SuperUser currentUser]];
     [query whereKey:kActivityKey.toUser equalTo:self.userView];
@@ -192,23 +225,29 @@
             if (objects.count > 0) {
                 // User is currently following this profile. Unfollow and remove from activity feed
                 for (Activity *object in objects) {
-                    [user incrementKey:kSuperUserAttributeKey.followingCount byAmount:@(-1)];
+                    user.followingCount         = @(user.followingCount.integerValue - 1);
+                    object.toUser.followerCount = @(object.toUser.followerCount.integerValue - 1);
+                    weakSelf.followingCountLabel.text = [@(object.toUser.followingCount.integerValue) stringValue];
                     [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                        self.followButton.enabled = YES;
+                        weakSelf.followButton.enabled = YES;
                     }];
                 }
             } else {
                 // User is not currently following this profile
                 // Create New Activity to reflect a new follow
-                self.activity = [Activity object];
-                self.activity[kActivityKey.fromUser]    = user;
-                self.activity[kActivityKey.toUser]      = self.userView;
-                self.activity[kActivityKey.type]        = kActivityType.follow;
-                [user incrementKey:kSuperUserAttributeKey.followingCount byAmount:@(1)];
+                weakSelf.activity = [Activity object];
+                weakSelf.activity[kActivityKey.fromUser]    = user;
+                weakSelf.activity[kActivityKey.toUser]      = weakSelf.userView;
+                weakSelf.activity[kActivityKey.type]        = kActivityType.follow;
+
+                // Increment respective follower and following counts
+                user.followingCount = @(user.followingCount.integerValue + 1);
+                weakSelf.userView.followerCount = @(weakSelf.userView.followerCount.integerValue + 1);
+                self.followerCountLabel.text = [@(weakSelf.userView.followerCount.integerValue) stringValue];
 
                 [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        self.followButton.enabled = YES;
+                        weakSelf.followButton.enabled = YES;
                     });
                 }];
             }
