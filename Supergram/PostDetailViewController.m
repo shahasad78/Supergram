@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) UIAlertController *commentDialogBox;
 
 // Parse properties
 @property (strong, nonatomic) NSMutableArray *comments;
@@ -56,83 +57,87 @@
     self.commentCountLabel.text = [@(self.comments.count) stringValue];
 }
 
+- (void)presentCommentDialogBox {
+    self.commentDialogBox = [UIAlertController alertControllerWithTitle:@"Add Comment"
+                                                                        message:nil
+                                                                 preferredStyle:UIAlertControllerStyleAlert];
+
+    __weak PostDetailViewController *weakSelf = self;
+    __weak UIAlertController *weakCommentDialog = self.commentDialogBox;
+
+    UIAlertAction *save = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        action.enabled = NO;
+
+        // Grab the text from the comment field and populate a new Comment object
+        UITextField *commentField = [weakSelf.commentDialogBox.textFields firstObject];
+        Comment *newComment = [Comment object];
+        newComment.content = commentField.text;
+        [weakSelf.comments addObject:newComment];
+        newComment.parent = weakSelf.post;
+        
+        [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            [weakSelf updateComments:newComment];
+        }];
+
+    }];
+
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    [self.commentDialogBox addAction:cancel];
+    [self.commentDialogBox addAction:save];
+
+    [self.commentDialogBox addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Enter new comment";
+        textField.delegate = weakSelf;
+        [textField addTarget:weakSelf action:@selector(setEnabled:) forControlEvents:UIControlEventEditingChanged];
+
+        weakCommentDialog.actions[1].enabled = NO;
+    }];
+
+    
+    [self presentViewController:self.commentDialogBox animated:YES completion:nil];
+}
+
+- (void)updateComments:(Comment *)newComment {
+    PFRelation *relation = [self.post relationForKey:kPostAttributeKey.comments];
+    [relation addObject:newComment];
+    [self.post incrementKey:kPostAttributeKey.commentCount];
+    [self.post saveInBackground];
+
+    // Save new Activity
+    Activity *activity  = [Activity object];
+    activity.toUser     = self.post.author;
+    activity.fromUser   = [SuperUser currentUser];
+    activity.post       = self.post;
+    activity.activityType = kActivityType.comment;
+    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+
+    [self.tableView reloadData];
+    [self setupUI];
+
+}
+
+#pragma mark - IBAction Methods
 - (IBAction)onAddButtonPressed:(UIButton *)sender {
     [self presentCommentDialogBox];
 }
 
-- (void)presentCommentDialogBox {
-    UIAlertController *commentBox = [UIAlertController alertControllerWithTitle:@"Add Comment"
-                                                                               message:nil
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
 
-    __weak PostDetailViewController *weakSelf = self;
-    [commentBox addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.delegate = weakSelf;
-    }];
-
-    UIAlertAction *save = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-
-        // Grab the text from the comment field and populate a new Comment object
-        UITextField *commentField = [commentBox.textFields firstObject];
-        [weakSelf.comments addObject:commentField.text];
-        Comment *newComment = [Comment object];
-        newComment.content = commentField.text;
-        newComment.parent = weakSelf.post;
-        [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            [weakSelf setupUI];
-            [weakSelf.post.comments addObject:newComment];
-            [weakSelf.post incrementKey:kPostAttributeKey.commentCount];
-            [weakSelf.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-
-
-            }];
-            // Save new Activity
-            Activity *activity  = [Activity object];
-            activity.toUser     = weakSelf.post.author;
-            activity.fromUser   = [SuperUser currentUser];
-            activity.post       = weakSelf.post;
-            activity.activityType = kActivityType.comment;
-            [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                if (error) {
-                    NSLog(@"%@", error.localizedDescription);
-                }
-            }];
-
-        }];
-
-
-        // Save new Activity
-        Activity *activity  = [Activity object];
-        activity.toUser     = weakSelf.post.author;
-        activity.fromUser   = [SuperUser currentUser];
-        activity.post       = weakSelf.post;
-        activity.activityType = kActivityType.comment;
-        [activity saveInBackground];
-
-        NSLog(@"cell comments = %@", self.comments);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.tableView reloadData];
-        });
-    }];
-
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-
-    [commentBox addAction:cancel];
-    [commentBox addAction:save];
-
-    [self presentViewController:commentBox animated:YES completion:nil];
-}
 
 #pragma mark - Text Field Delegate Methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     return YES;
 }
 
-#pragma mark - Table View Delegate Methods
+- (void) setEnabled:(UITextField *)textField {
+    self.commentDialogBox.actions[1].enabled = textField.hasText;
+}
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 1;
-//}
+#pragma mark - Table View Data Source Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.comments.count;
@@ -144,5 +149,25 @@
     cell.textLabel.text = comment.content;
     return cell;
 }
+
+#pragma mark - Table View Delegate Methods
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Comment *commentToDelete = self.comments[indexPath.row];
+        [commentToDelete deleteInBackground];
+        [self.comments removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        self.commentCountLabel.text = [@(self.comments.count) stringValue];
+    }
+}
+
 
 @end
