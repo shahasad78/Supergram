@@ -71,14 +71,16 @@
     }];
 
     UIAlertAction *save = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+        // Grab the text from the comment field and populate a new Comment object
         UITextField *commentField = [commentBox.textFields firstObject];
         [weakSelf.comments addObject:commentField.text];
-        [weakSelf.post incrementKey:kPostAttributeKey.commentCount];
         Comment *newComment = [Comment object];
         newComment.content = commentField.text;
-        [weakSelf.post.comments addObject:newComment];
         newComment.parent = weakSelf.post;
         [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            [weakSelf.post.comments addObject:newComment];
+            [weakSelf.post incrementKey:kPostAttributeKey.commentCount];
             [weakSelf.post saveInBackground];
         }];
         NSLog(@"cell comments = %@", self.comments);
