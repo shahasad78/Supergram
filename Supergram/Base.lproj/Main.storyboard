@@ -581,17 +581,19 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="43" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hOW-kW-fvq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="43" id="yOt-0v-Xnp" customClass="ActivityTableViewCell">
                                         <rect key="frame" x="0.0" y="92" width="600" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yOt-0v-Xnp" id="xTl-Dp-hpv">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rtl-Cf-Kiy" customClass="PFImageView">
                                                     <rect key="frame" x="8" y="4" width="30" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="67z-Fu-Llw"/>
                                                         <constraint firstAttribute="height" constant="30" id="9Br-Id-USa"/>
@@ -599,6 +601,7 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qAu-Dh-xoJ" customClass="PFImageView">
                                                     <rect key="frame" x="557" y="8" width="30" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="XT4-1g-y9i"/>
                                                         <constraint firstAttribute="height" constant="30" id="rJO-8a-95y"/>
@@ -606,11 +609,13 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsF-Lj-ppA">
                                                     <rect key="frame" x="46" y="12" width="503" height="20"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="RsF-Lj-ppA" firstAttribute="top" secondItem="xTl-Dp-hpv" secondAttribute="top" constant="11" id="3Nu-A7-UwD"/>
                                                 <constraint firstAttribute="trailing" secondItem="qAu-Dh-xoJ" secondAttribute="trailing" constant="13" id="80w-i4-hbh"/>
@@ -621,6 +626,7 @@
                                                 <constraint firstItem="qAu-Dh-xoJ" firstAttribute="top" secondItem="xTl-Dp-hpv" secondAttribute="top" constant="8" id="rce-QH-G5j"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <outlet property="activityLabel" destination="RsF-Lj-ppA" id="TjX-eW-Wly"/>
                                             <outlet property="postImage" destination="qAu-Dh-xoJ" id="vqP-mR-fCd"/>
@@ -1097,7 +1103,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DM8-Ii-exb" id="39g-bK-QWD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -1726,6 +1732,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OEa-DE-3mP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
