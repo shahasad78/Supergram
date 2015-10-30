@@ -17,6 +17,7 @@
 @dynamic likes;
 @dynamic likesCount;
 @dynamic commentCount;
+@dynamic isFlagged;
 
 + (void)load {
     [self registerSubclass];

@@ -36,5 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *heartCount;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
 @property (weak, nonatomic) IBOutlet UIView *moreView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *userPic;
 
 @end

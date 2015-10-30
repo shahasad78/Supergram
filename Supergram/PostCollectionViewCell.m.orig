@@ -24,6 +24,10 @@
 }
 
 - (void) onDoubleTap {
+<<<<<<< HEAD
+
+    [self.delegate didTappedCell:self];
+=======
 
     [self.delegate didTappedCell:self];
 }
@@ -41,7 +45,6 @@
 }
 
 - (IBAction)onReportButtonPressed:(UIButton *)sender {
-    
     // toggle "dangerous" image
     self.dangerImage.hidden = NO;
 
@@ -50,8 +53,7 @@
 
     // hide like more view
     self.likeMoreView.hidden = YES;
-    
-    [self.delegate didTappedReport:self];
+>>>>>>> feed
 }
 
 @synthesize postImage, heartButton;
