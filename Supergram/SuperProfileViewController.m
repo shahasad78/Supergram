@@ -26,6 +26,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editUserSettings;
 @property (weak, nonatomic) IBOutlet UILabel *fullnameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *followButton;
+@property (weak, nonatomic) IBOutlet UILabel *postCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followerCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followingCountLabel;
 
 // Data Model properties
 @property NSMutableArray *userMedia;
@@ -47,18 +50,15 @@
     self.user = [SuperUser currentUser];
 
 
-
     self.userMedia = [[NSMutableArray alloc] init];
 
     // Set up Collection View
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake(self.mediaCollection.frame.size.width/3 - 10, self.mediaCollection.frame.size.width/3 - 10);
-    flowLayout.minimumLineSpacing = 10.0f;
-    flowLayout.minimumInteritemSpacing = 10.0f;
+    flowLayout.itemSize = CGSizeMake(self.view.frame.size.width/3 - 10, self.view.frame.size.width/3 - 10);
+    flowLayout.minimumLineSpacing = 5.0f;
+    flowLayout.minimumInteritemSpacing = 5.0f;
     flowLayout.sectionInset = UIEdgeInsetsMake(10.0f, 10.0f, 5.0f, 10.0f);
 
-
-//
     self.mediaCollection.collectionViewLayout = flowLayout;
 
 
@@ -215,35 +215,6 @@
             [self presentAlertControllerWithTitle:@"Error" message:@"Could not access the Network" andButtonName:@"Bummer!"];
         }
     }];
-
-
-//
-//    SuperUser *user = [SuperUser currentUser];
-//
-//    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (error) {
-//            // Handle error
-//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-//                                                                           message:@"Unable to save an error."
-//                                                                    preferredStyle:UIAlertControllerStyleAlert];
-//            UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"Okay!"
-//                                                               style:UIAlertActionStyleDefault
-//                                                             handler:nil];
-//            [alert addAction:okButton];
-//
-//            [self presentViewController:alert animated:YES completion:nil];
-//        } else {
-//            if (succeeded) {
-//
-//                [user incrementKey:@"postCount"];
-//                [user saveInBackground];
-//            }
-//            
-//        }
-//        
-//        
-//    }];
-//    
 }
 
 
