@@ -143,9 +143,12 @@
     cell.post = post;
     cell.postImage.file = post.media;
     cell.heartCount.text = [NSString stringWithFormat:@"%lu", post.likesCount];
-<<<<<<< HEAD
     cell.userPic.file = post.author.profilePic;
     cell.usernameLabel.text = post.author.username;
+<<<<<<< HEAD
+    cell.heartButton.selected = [self.likes containsObject:post];
+=======
+>>>>>>> 3e4e290c53101d1ec5c142a4a55a3a7de206ed9c
 
     if (post.isFlagged) {
         // toggle "dangerous" image
@@ -170,10 +173,6 @@
     }
     
     
-=======
-    cell.heartButton.selected = [self.likes containsObject:post];
-
->>>>>>> LikePersistence
     [cell.postImage loadInBackground];
     
     return cell;
@@ -245,21 +244,15 @@
     
     // Remove the Post from the mutable array
     [self.posts removeObject:aPost];
-<<<<<<< HEAD
 
     // dismiss moreView
     cell.moreView.hidden = YES;
     
     // Reload the collection view
-=======
-    
-    // Remove the Post from the collection view
->>>>>>> LikePersistence
     [self.feedCollectionView reloadData];
     
     // Remove the Post from Parse in the background
     [aPost deleteInBackground];
-<<<<<<< HEAD
 
 }
 
@@ -277,16 +270,4 @@
     
 }
 
-=======
-    
-    // Reload the collection view
-    
-    
-    
-    
-}
-
-
-
->>>>>>> LikePersistence
 @end

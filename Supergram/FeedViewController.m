@@ -40,8 +40,6 @@
     self.posts = [[NSMutableArray alloc] init];
     self.user = [SuperUser currentUser];
 
-    
-
     [self setupUI];
     [self feedQuery];
 }
