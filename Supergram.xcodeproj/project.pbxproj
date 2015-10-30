@@ -43,6 +43,8 @@
 		E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDD91BD99EBF004E1874 /* LoginViewController.m */; };
 		E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */; };
 		E01CFDE01BD99F3A004E1874 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */; };
+		E05570411BE2F2E8004C2570 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05570401BE2F2E8004C2570 /* ActivityViewController.m */; };
+		E05570441BE2FCC6004C2570 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E05570431BE2FCC6004C2570 /* ActivityTableViewCell.m */; };
 		E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */; };
 		E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05F80451BDB403A00B8DD21 /* ImagePickerViewController.m */; };
 		E09A4BC91BDE8EE100E3EBE8 /* NSString+ValidationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E09A4BC81BDE8EE100E3EBE8 /* NSString+ValidationUtility.m */; };
@@ -127,6 +129,10 @@
 		E01CFDDC1BD99EEF004E1874 /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
 		E01CFDDE1BD99F3A004E1874 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		E01CFDDF1BD99F3A004E1874 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		E055703F1BE2F2E8004C2570 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		E05570401BE2F2E8004C2570 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		E05570421BE2FCC6004C2570 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
+		E05570431BE2FCC6004C2570 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewCell.m; sourceTree = "<group>"; };
 		E05F80411BDB1BB600B8DD21 /* UserSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsViewController.h; sourceTree = "<group>"; };
 		E05F80421BDB1BB600B8DD21 /* UserSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsViewController.m; sourceTree = "<group>"; };
 		E05F80441BDB403A00B8DD21 /* ImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerViewController.h; sourceTree = "<group>"; };
@@ -311,6 +317,10 @@
 		E01CFDCD1BD99622004E1874 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E05570421BE2FCC6004C2570 /* ActivityTableViewCell.h */,
+				E05570431BE2FCC6004C2570 /* ActivityTableViewCell.m */,
+				E055703F1BE2F2E8004C2570 /* ActivityViewController.h */,
+				E05570401BE2F2E8004C2570 /* ActivityViewController.m */,
 				E09A4BEF1BDF072B00E3EBE8 /* PostDetailViewController.h */,
 				E09A4BF01BDF072B00E3EBE8 /* PostDetailViewController.m */,
 				E09A4C591BE16F0B00E3EBE8 /* PostCollectionViewCell.h */,
@@ -344,11 +354,11 @@
 		E01CFDCE1BD99679004E1874 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				CB2125461BD98F3B00AA824B /* Main.storyboard */,
 				CB96E7411BE2B91900D124A0 /* PostCell.xib */,
 				CB96E7421BE2B91900D124A0 /* PostHeader.xib */,
 				CB96E7431BE2B91900D124A0 /* ProfileHeader.xib */,
 				CB96E7441BE2B91900D124A0 /* SGPostCell.xib */,
-				CB2125461BD98F3B00AA824B /* Main.storyboard */,
 				CB21254B1BD98F3B00AA824B /* LaunchScreen.storyboard */,
 			);
 			name = Layout;
@@ -501,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0A410A41BDD99A800AC5C3D /* Post.m in Sources */,
+				E05570411BE2F2E8004C2570 /* ActivityViewController.m in Sources */,
 				E01CFDDD1BD99EEF004E1874 /* ResetPasswordViewController.m in Sources */,
 				E01CFDD41BD998B8004E1874 /* SuperUser.m in Sources */,
 				E09A4BF11BDF072B00E3EBE8 /* PostDetailViewController.m in Sources */,
@@ -509,6 +520,7 @@
 				E05F80461BDB403A00B8DD21 /* ImagePickerViewController.m in Sources */,
 				E09A4BF41BDF4FF600E3EBE8 /* Comment.m in Sources */,
 				E01CFDDA1BD99EBF004E1874 /* LoginViewController.m in Sources */,
+				E05570441BE2FCC6004C2570 /* ActivityTableViewCell.m in Sources */,
 				E05F80431BDB1BB600B8DD21 /* UserSettingsViewController.m in Sources */,
 				E09A4BF71BDFD11E00E3EBE8 /* FeedViewController.m in Sources */,
 				E09A4C5B1BE16F0B00E3EBE8 /* PostCollectionViewCell.m in Sources */,
