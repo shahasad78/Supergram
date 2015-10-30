@@ -10,6 +10,7 @@
 #import "Post.h"
 #import "Comment.h"
 #import "SuperUser.h"
+#import "Activity.h"
 
 @interface PostDetailViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
@@ -75,12 +76,23 @@
         [weakSelf.comments addObject:commentField.text];
         [weakSelf.post incrementKey:kPostAttributeKey.commentCount];
         Comment *newComment = [Comment object];
-        newComment.content = commentField.text;
+        newComment.content  = commentField.text;
+        newComment.parent   = weakSelf.post;
         [weakSelf.post.comments addObject:newComment];
-        newComment.parent = weakSelf.post;
-        [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            [weakSelf.post saveInBackground];
+        [weakSelf.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            }];
         }];
+
+
+        // Save new Activity
+        Activity *activity  = [Activity object];
+        activity.toUser     = weakSelf.post.author;
+        activity.fromUser   = [SuperUser currentUser];
+        activity.post       = weakSelf.post;
+        activity.activityType = kActivityType.comment;
+        [activity saveInBackground];
+
         NSLog(@"cell comments = %@", self.comments);
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.tableView reloadData];

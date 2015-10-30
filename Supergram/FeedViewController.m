@@ -162,6 +162,8 @@
         cell.likeMoreView.hidden = NO;
         
     }
+
+    
     
     
     [cell.postImage loadInBackground];
