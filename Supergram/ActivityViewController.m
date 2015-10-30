@@ -84,6 +84,9 @@
     // Get a pointer to the Activity
     Activity *thisActivity = [self.userActivities objectAtIndex:indexPath.row];
     
+    // Set label to two lines
+    cell.activityLabel.numberOfLines = 2;
+    
     // Get and load the User profile pic
     cell.userImage.file = thisActivity.fromUser.profilePic;
     [cell.userImage loadInBackground];
@@ -111,7 +114,7 @@
     } else if ([thisActivity.activityType isEqualToString:@"like"]) {
         
         // Set the label for a like
-        cell.activityLabel.text = [NSString stringWithFormat:@"%@ likes what %@ did there", thisActivity.fromUser.username, thisActivity.toUser.username];
+        cell.activityLabel.text = [NSString stringWithFormat:@"%@ likes what \n%@ did there", thisActivity.fromUser.username, thisActivity.toUser.username];
         
     } else if ([thisActivity.activityType isEqualToString:@"follow"]) {
         
@@ -121,7 +124,7 @@
     } else if ([thisActivity.activityType isEqualToString:@"comment"]) {
         
         // Set the label for a comment
-        cell.activityLabel.text = [NSString stringWithFormat:@"%@ comented on %@'s thing that they did there", thisActivity.fromUser.username, thisActivity.toUser.username];
+        cell.activityLabel.text = [NSString stringWithFormat:@"%@ commented on \n%@'s post", thisActivity.fromUser.username, thisActivity.toUser.username];
         
     } else {
         // Default case
