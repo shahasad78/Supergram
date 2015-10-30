@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h"
+@class Post;
+
 @interface PostDetailViewController : UIViewController
 
 @property Post *post;

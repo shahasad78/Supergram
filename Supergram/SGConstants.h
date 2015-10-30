@@ -61,6 +61,7 @@ extern const struct kPostAttributeKey {
     __unsafe_unretained NSString *const title;
     __unsafe_unretained NSString *const media;
     __unsafe_unretained NSString *const author;
+    __unsafe_unretained NSString *const comments;
     __unsafe_unretained NSString *const likesCount;
     __unsafe_unretained NSString *const commentCount;
 } kPostAttributeKey;
@@ -76,6 +77,8 @@ extern const struct kCommentAttributeKey {
     __unsafe_unretained NSString *const content;
 } kCommentAttributeKey;
 
+
+#pragma mark - Segue Identifier Constants
 /*!
  * @namespace kSegueIdentifiers
  * @abstract Namespace to hold Segue Identifiers
@@ -85,6 +88,7 @@ extern const struct kSegueIdentifiers {
     __unsafe_unretained NSString *const postDetail;
     __unsafe_unretained NSString *const selectPhoto;
     __unsafe_unretained NSString *const userSettings;
+    __unsafe_unretained NSString *const detailView;
 } kSegueIdentifiers;
 
 #pragma mark - Activity Class

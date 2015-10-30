@@ -10,6 +10,7 @@
 #import <ParseUI/ParseUI.h>
 #import "FeedViewController.h"
 #import "PostCollectionViewCell.h"
+#import "PostDetailViewController.h"
 #import "Post.h"
 #import "SuperUser.h"
 #import "Activity.h"
@@ -262,7 +263,7 @@
 
 }
 
-- (void) didTappedReport:(PostCollectionViewCell *)cell
+- (void)didTappedReport:(PostCollectionViewCell *)cell
 {
     
     // Get a pointer to the Post object
@@ -274,6 +275,19 @@
     [aPost saveInBackground];
     [self.feedCollectionView reloadData];
     
+}
+
+- (void)didTappedComment:(PostCollectionViewCell *)cell {
+    [self performSegueWithIdentifier:kSegueIdentifiers.detailView sender:self];
+}
+
+#pragma mark - Navigation Methods
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PostDetailViewController *detailVC = segue.destinationViewController;
+    NSIndexPath *indexPath = [[self.feedCollectionView indexPathsForSelectedItems] firstObject];
+    Post *post = self.posts[indexPath.row];
+    detailVC.post = post;
 }
 
 @end

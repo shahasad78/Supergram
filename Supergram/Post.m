@@ -15,9 +15,10 @@
 @dynamic media;
 @dynamic title;
 @dynamic likes;
+@dynamic comments;
+@dynamic isFlagged;
 @dynamic likesCount;
 @dynamic commentCount;
-@dynamic isFlagged;
 
 + (void)load {
     [self registerSubclass];

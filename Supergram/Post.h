@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <Foundation/Foundation.h>
+#import "SGConstants.h"
 
 @class SuperUser;
 @interface Post : PFObject <PFSubclassing>
@@ -21,7 +22,8 @@
 @property PFFile *media;
 @property NSString *title;
 @property NSMutableArray *likes;
-@property NSInteger *likesCount;
-@property NSInteger *commentCount;
+@property NSMutableArray *comments;
+@property NSUInteger likesCount;
+@property NSUInteger commentCount;
 
 @end

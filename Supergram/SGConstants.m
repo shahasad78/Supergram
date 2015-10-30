@@ -50,6 +50,7 @@ const struct kPostAttributeKey kPostAttributeKey = {
     .title          = @"title",
     .media          = @"media",
     .author         = @"author",
+    .comments       = @"comments",
     .likesCount     = @"likesCount",
     .commentCount   = @"commentCount"
 };
@@ -70,7 +71,8 @@ const struct kCommentAttributeKey kCommentAttributeKey = {
 const struct kSegueIdentifiers kSegueIdentifiers = {
     .selectPhoto    = @"SelectPhotoSegue",
     .postDetail     = @"PostDetailSegue",
-    .userSettings   = @"UserSettingsSegue"
+    .userSettings   = @"UserSettingsSegue",
+    .detailView     = @"ShowDetailSegue"
 };
 
 // --------------------------------------------------------------------
