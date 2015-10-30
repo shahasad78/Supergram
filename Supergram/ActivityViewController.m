@@ -103,7 +103,19 @@
             
         }
        
+    } else if ([thisActivity.toUser isDataAvailable]) {
+        if ([thisActivity.toUser.profilePic isDataAvailable]) {
+            
+            // Load the toUser Profile Pic
+            cell.postImage.file = thisActivity.toUser.profilePic;
+            [cell.postImage loadInBackground];
+            
+        }
+    } else {
+        // No image loaded
+        
     }
+        
     
     // Build the label string
     if ([thisActivity.activityType isEqualToString:@"post"]) {
