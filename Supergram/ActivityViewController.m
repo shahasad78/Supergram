@@ -56,6 +56,7 @@
     [userActivitiesQuery setLimit: 50];
     [userActivitiesQuery includeKey:@"fromUser"];
     [userActivitiesQuery includeKey:@"Post"];
+    [userActivitiesQuery includeKey:@"toUser"];
     
     // Querry the database
     [userActivitiesQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -90,11 +91,38 @@
     Activity *thisActivity = [self.userActivities objectAtIndex:indexPath.row];
     
     //Bbuild the label string
-    cell.activityLabel.text = [NSString stringWithFormat:@"%@ has %@ed stuff", thisActivity.fromUser.username, thisActivity.activityType];
+    
     
     // Get and load the User profile pic
     cell.userImage.file = thisActivity.fromUser.profilePic;
     [cell.userImage loadInBackground];
+    
+    if ([thisActivity.activityType isEqualToString:@"post"]) {
+        
+        // Set the label for a post
+        cell.activityLabel.text = [NSString stringWithFormat:@"%@ posted a new pic", thisActivity.fromUser.username];
+        
+    } else if ([thisActivity.activityType isEqualToString:@"like"]) {
+        
+        // Set the label for a like
+        cell.activityLabel.text = [NSString stringWithFormat:@"%@ likes what %@ did there", thisActivity.fromUser.username, thisActivity.toUser.username];
+        
+    } else if ([thisActivity.activityType isEqualToString:@"follow"]) {
+        
+        // Set the label for a follow
+        cell.activityLabel.text = [NSString stringWithFormat:@"%@ followed %@", thisActivity.fromUser.username, thisActivity.toUser.username];
+        
+    } else if ([thisActivity.activityType isEqualToString:@"comment"]) {
+        
+        // Set the label for a comment
+        cell.activityLabel.text = [NSString stringWithFormat:@"%@ comented on %@'s thing that they did there", thisActivity.fromUser.username, thisActivity.toUser.username];
+        
+    } else {
+        // Default case
+        cell.activityLabel.text = [NSString stringWithFormat:@"No one knows WTF %@ did", thisActivity.fromUser.username];
+    }
+    
+    
     
 //    if ([thisActivity.activityType isEqualToString:@"post"]) {
 //        
