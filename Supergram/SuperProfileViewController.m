@@ -226,9 +226,12 @@
                 // User is currently following this profile. Unfollow and remove from activity feed
                 for (Activity *object in objects) {
                     user.followingCount         = @(user.followingCount.integerValue - 1);
-                    object.toUser.followerCount = @(object.toUser.followerCount.integerValue - 1);
+                    [user saveInBackground];
                     weakSelf.followingCountLabel.text = [@(object.toUser.followingCount.integerValue) stringValue];
                     [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        if (error) {
+                            [self presentAlertControllerWithTitle:@"Error" message:@"Could not Authenticate unfollow" andButtonName:@"Are you kidding me?"];
+                        }
                         weakSelf.followButton.enabled = YES;
                     }];
                 }
@@ -242,10 +245,13 @@
 
                 // Increment respective follower and following counts
                 user.followingCount = @(user.followingCount.integerValue + 1);
-                weakSelf.userView.followerCount = @(weakSelf.userView.followerCount.integerValue + 1);
+                [user saveInBackground];
                 self.followerCountLabel.text = [@(weakSelf.userView.followerCount.integerValue) stringValue];
 
-                [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                [weakSelf.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    if (error) {
+                        [self presentAlertControllerWithTitle:@"Error" message:@"Cannot authenticate User." andButtonName:@"Aww Phooey!"];
+                    }
                     dispatch_async(dispatch_get_main_queue(), ^{
                         weakSelf.followButton.enabled = YES;
                     });
