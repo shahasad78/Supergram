@@ -232,9 +232,6 @@
     aPost = cell.post;
     
     // Check to see that the user is the owner of the post
-    // TODO: create an if statement to check if user is the creator
-    
-    
     if (aPost.author == self.user) {
         
         
@@ -269,8 +266,10 @@
     Post *aPost;
     aPost = cell.post;
     
+    // Set the isFlagged content to yes
     aPost.isFlagged = YES;
     
+    // Save the flagged BOOL
     [aPost saveInBackground];
     [self.feedCollectionView reloadData];
     
