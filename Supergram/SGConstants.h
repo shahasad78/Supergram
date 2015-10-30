@@ -26,7 +26,7 @@ extern const struct kPFObjectAttributeKey {
 
 #pragma mark - SuperUser Attributes
 
-extern NSString *const superUserClass;
+extern NSString *const kSuperUserClass;
 
 /*!
  * @namespace kSuperUserAttributeKey

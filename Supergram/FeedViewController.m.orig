@@ -12,7 +12,6 @@
 #import "PostCollectionViewCell.h"
 #import "Post.h"
 #import "SuperUser.h"
-<<<<<<< HEAD
 #import "Activity.h"
 
 @interface FeedViewController () <UICollectionViewDataSource,
@@ -30,14 +29,6 @@
 @property SuperUser *user;
 @property Activity *activity;
 
-=======
-#import <Parse/Parse.h>
-#import <ParseUI/ParseUI.h>
-
-@interface FeedViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, PostCollectionViewCellDelegate>
-@property (weak, nonatomic) IBOutlet UICollectionView *feedCollectionView;
-@property NSMutableArray *posts;
->>>>>>> 731e74fbb970f5ad6fc035c59ac58876e9c3532e
 @end
 
 @implementation FeedViewController
@@ -47,10 +38,9 @@
     [super viewDidLoad];
 
     self.posts = [[NSMutableArray alloc] init];
-<<<<<<< HEAD
     self.user = [SuperUser currentUser];
-=======
->>>>>>> 731e74fbb970f5ad6fc035c59ac58876e9c3532e
+
+    
 
     [self setupUI];
     [self feedQuery];
@@ -81,7 +71,6 @@
 //            [self.feedCollectionView reloadData];
 //        });
 //    }];
-<<<<<<< HEAD
 }
 
 - (void) feedQuery {
@@ -101,18 +90,22 @@
     [photosFromCurrentUserQuery whereKey:kPostAttributeKey.author equalTo:self.user];
     [photosFromCurrentUserQuery whereKeyExists:kPostAttributeKey.media];
 
-    // TODO: enumerate through posts and query activity to determine whether it has been liked by the current user.
+    // Fetch all the posts the current user has liked
+    PFRelation *relation = [self.user relationForKey:kSuperUserAttributeKey.likedPosts];
+    PFQuery *likesQuery = [relation query];
+    [likesQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        self.likes = objects.mutableCopy;
+    }];
 
     // We create a final compound query that will find all of the photos that were
     // taken by the user's friends or by the user
     PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:photosFromFollowedUsersQuery, photosFromCurrentUserQuery, nil]];
     [query includeKey:kPostAttributeKey.author];
-    [query orderByDescending:@"createdAt"];
+    [query orderByDescending:kPFObjectAttributeKey.createdAt];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
 
         for (Post *result in posts) {
-
             [self.posts addObject:result];
         }
 
@@ -150,85 +143,42 @@
     cell.post = post;
     cell.postImage.file = post.media;
     cell.heartCount.text = [NSString stringWithFormat:@"%lu", post.likesCount];
+<<<<<<< HEAD
+    cell.userPic.file = post.author.profilePic;
+    cell.usernameLabel.text = post.author.username;
 
-    [cell.postImage loadInBackground];
+    if (post.isFlagged) {
+        // toggle "dangerous" image
+        cell.dangerImage.hidden = NO;
+        
+        // hide moreView view
+        cell.moreView.hidden = YES;
+        
+        // hide like more view
+        cell.likeMoreView.hidden = YES;
+    } else {
+        
+        // toggle "dangerous" image
+        cell.dangerImage.hidden = YES;
+        
+        // show moreView view
+        cell.moreView.hidden = YES;
+        
+        // show like more view
+        cell.likeMoreView.hidden = NO;
+        
+    }
     
-    return cell;
-}
-
+    
 =======
-}
+    cell.heartButton.selected = [self.likes containsObject:post];
 
-- (void) feedQuery {
-    // Query for the friends the current user is following
-    PFQuery *followingActivitiesQuery = [PFQuery queryWithClassName:@"Activity"];
-    [followingActivitiesQuery whereKey:@"activityType" equalTo:@"follow"];
-    [followingActivitiesQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
-
-    // Using the activities from the query above, we find all of the photos taken by
-    // the friends the current user is following
-    PFQuery *photosFromFollowedUsersQuery = [PFQuery queryWithClassName:@"Post"];
-    [photosFromFollowedUsersQuery whereKey:@"author" matchesKey:@"toUser" inQuery:followingActivitiesQuery];
-    [photosFromFollowedUsersQuery whereKeyExists:@"media"];
-
-    // We create a second query for the current user's photos
-    PFQuery *photosFromCurrentUserQuery = [PFQuery queryWithClassName:@"Post"];
-    [photosFromCurrentUserQuery whereKey:@"author" equalTo:[PFUser currentUser]];
-    [photosFromCurrentUserQuery whereKeyExists:@"media"];
-
-    // We create a final compound query that will find all of the photos that were
-    // taken by the user's friends or by the user
-    PFQuery *query = [PFQuery orQueryWithSubqueries:[NSArray arrayWithObjects:photosFromFollowedUsersQuery, photosFromCurrentUserQuery, nil]];
-    [query includeKey:@"author"];
-    [query orderByDescending:@"createdAt"];
-
-    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-
-        for (Post *result in posts) {
-            [self.posts addObject:result];
-        }
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.feedCollectionView reloadData];
-        });
-    }];
-
-
-}
-
-#pragma mark - Collection View
-
-- (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.posts.count;
-}
-
-- (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-
-
-    PostCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCell" forIndexPath:indexPath];
-
-    cell.delegate = self;
-
-    if (cell == nil) {
-        // Load the top-level objects from the custom cell XIB.
-        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"PostCell" owner:self options:nil];
-        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
-        cell = [nibArray objectAtIndex:0];
-    }
-
-
-    Post *post = [self.posts objectAtIndex:indexPath.row] ;
-
-    cell.post = post;
-    cell.postImage.file = post.media;
-    cell.heartCount.text = [NSString stringWithFormat:@"%lu", post.likesCount];
-
+>>>>>>> LikePersistence
     [cell.postImage loadInBackground];
     
     return cell;
 }
 
->>>>>>> 731e74fbb970f5ad6fc035c59ac58876e9c3532e
 #pragma - mark Cell Delegate Method
 
 - (void) didTappedCell:(PostCollectionViewCell *)cell
@@ -236,14 +186,19 @@
     Post *aPost;
     aPost = cell.post;
 
-<<<<<<< HEAD
     cell.heartButton.selected = !cell.heartButton.selected;
 
     // If the cell is selected, increment the like count and post new Activity
     if (cell.heartButton.selected) {
 
         [aPost incrementKey:kPostAttributeKey.likesCount];
+        [aPost addObject:self.user forKey:@"likes"];
         [aPost saveInBackground];
+
+        // Add like to user's likedPosts
+        PFRelation *relation = [self.user relationForKey:kSuperUserAttributeKey.likedPosts];
+        [relation addObject:aPost];
+        [self.user saveInBackground];
 
         // Save New Activity
         self.activity = [Activity object];
@@ -267,13 +222,6 @@
                 }
             }
         }];
-=======
-    // change heart button image
-    if (cell.heartButton.selected) {
-        [cell.heartButton setSelected:NO];
-    } else {
-        [cell.heartButton setSelected:YES];
->>>>>>> 731e74fbb970f5ad6fc035c59ac58876e9c3532e
     }
 
 }
@@ -283,4 +231,62 @@
     cell.moreView.hidden = NO;
 }
 
+- (void) didTappedDelete:(PostCollectionViewCell *)cell
+{
+    // Get a pointer to the Post object
+    Post *aPost;
+    aPost = cell.post;
+    
+    // Check to see that the user is the owner of the post
+    // TODO: create an if statement to check if user is the creator
+    
+    // Create an array of the selected Items
+    NSArray *selectedItemsIndexPaths = [self.feedCollectionView indexPathsForSelectedItems];
+    
+    // Remove the Post from the mutable array
+    [self.posts removeObject:aPost];
+<<<<<<< HEAD
+
+    // dismiss moreView
+    cell.moreView.hidden = YES;
+    
+    // Reload the collection view
+=======
+    
+    // Remove the Post from the collection view
+>>>>>>> LikePersistence
+    [self.feedCollectionView reloadData];
+    
+    // Remove the Post from Parse in the background
+    [aPost deleteInBackground];
+<<<<<<< HEAD
+
+}
+
+- (void) didTappedReport:(PostCollectionViewCell *)cell
+{
+    
+    // Get a pointer to the Post object
+    Post *aPost;
+    aPost = cell.post;
+    
+    aPost.isFlagged = YES;
+    
+    [aPost saveInBackground];
+    [self.feedCollectionView reloadData];
+    
+}
+
+=======
+    
+    // Reload the collection view
+    
+    
+    
+    
+}
+
+
+
+>>>>>>> LikePersistence
 @end
