@@ -167,19 +167,6 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yje-NV-XH2">
-                                        <rect key="frame" x="13" y="132" width="245" height="30"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="245" id="JUJ-1K-hZf"/>
-                                            <constraint firstAttribute="height" constant="30" id="zL9-pH-kZI"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="3Yu-Hn-DiC" id="f3R-kc-LQX"/>
-                                        </connections>
-                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cET-LW-Pf9">
                                         <rect key="frame" x="13" y="80" width="245" height="30"/>
                                         <animations/>
@@ -257,6 +244,19 @@
                                         <animations/>
                                         <color key="color" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yje-NV-XH2">
+                                        <rect key="frame" x="13" y="132" width="245" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="245" id="JUJ-1K-hZf"/>
+                                            <constraint firstAttribute="height" constant="30" id="zL9-pH-kZI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3Yu-Hn-DiC" id="f3R-kc-LQX"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -1141,7 +1141,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DM8-Ii-exb" id="39g-bK-QWD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
