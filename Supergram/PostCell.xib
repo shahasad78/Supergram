@@ -21,7 +21,7 @@
                                 <rect key="frame" x="7" y="7" width="286" height="286"/>
                                 <animations/>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="danger" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-ve-8wx">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="danger" translatesAutoresizingMaskIntoConstraints="NO" id="ZMg-ve-8wx">
                                 <rect key="frame" x="0.0" y="-19" width="300" height="338"/>
                                 <animations/>
                             </imageView>
@@ -209,7 +209,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1V-v5-Oie">
                                 <rect key="frame" x="99" y="46" width="142" height="30"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YHi-N6-Upw"/>
                                 </constraints>

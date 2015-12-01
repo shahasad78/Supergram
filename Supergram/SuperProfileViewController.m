@@ -60,6 +60,7 @@
     flowLayout.minimumLineSpacing = 5.0f;
     flowLayout.minimumInteritemSpacing = 5.0f;
     flowLayout.sectionInset = UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f);
+    [flowLayout setHeaderReferenceSize:CGSizeMake(0,0)];
 
     self.mediaCollection.collectionViewLayout = flowLayout;
 }

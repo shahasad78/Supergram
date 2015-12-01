@@ -7,33 +7,47 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
 #import "Post.h"
 
-@interface SGPostCollectionViewCell : UICollectionViewCell
+@class SGPostCollectionViewCell;
+@class Post;
+@protocol SGPostCollectionViewCellDelegate <NSObject>
 
-@property (weak, nonatomic) IBOutlet UILabel *heartCount;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIImageView *dangerousImage;
+@optional
+- (void) didTappedCell:(SGPostCollectionViewCell *)cell;
+- (void) didTappedMore:(SGPostCollectionViewCell *)cell;
+- (void) didTappedShare:(SGPostCollectionViewCell *)cell;
+- (void) didTappedComment:(SGPostCollectionViewCell *)cell;
+- (void) didTappedReport:(SGPostCollectionViewCell *)cell;
+- (void) didTappedDelete:(SGPostCollectionViewCell *)cell;
+@end
+
+@interface SGPostCollectionViewCell : UICollectionViewCell
+@property Post *post;
+@property (nonatomic, assign) id <SGPostCollectionViewCellDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet UIView *postView;
+@property (weak, nonatomic) IBOutlet PFImageView *postImage;
+@property (weak, nonatomic) IBOutlet UIImageView *dangerImage;
 
 @property (weak, nonatomic) IBOutlet UIButton *heartButton;
-@property (weak, nonatomic) IBOutlet UIView *postPropertyContainer;
+@property (weak, nonatomic) IBOutlet UILabel *heartCount;
+
+
 
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
-@property (weak, nonatomic) IBOutlet UIView *moreOptionsView;
+@property (weak, nonatomic) IBOutlet UIView *likeMoreView;
 
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UIButton *reportButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+
 @property (weak, nonatomic) IBOutlet UIView *profileView;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 
-@property (weak, nonatomic) IBOutlet UIButton *onHeartButtonPressed;
 
-@property (weak, nonatomic) IBOutlet UIButton *onMoreButtonPressed;
-@property (weak, nonatomic) IBOutlet UIButton *onShareButtonPressed;
-@property (weak, nonatomic) IBOutlet UIButton *onCommentButtonPressed;
-@property (weak, nonatomic) IBOutlet UIButton *onReportButtonPressed;
-@property (weak, nonatomic) IBOutlet UIButton *onDeleteButtonPressed;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *userPic;
 
 @end

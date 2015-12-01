@@ -11,6 +11,7 @@
 #import "FeedViewController.h"
 #import "PostCollectionViewCell.h"
 #import "PostDetailViewController.h"
+#import "SGPostCollectionViewCell.h"
 #import "Post.h"
 #import "SuperUser.h"
 #import "Activity.h"
@@ -18,7 +19,8 @@
 @interface FeedViewController () <UICollectionViewDataSource,
                                   UICollectionViewDelegate,
                                   UICollectionViewDelegateFlowLayout,
-                                  PostCollectionViewCellDelegate>
+                                  PostCollectionViewCellDelegate,
+                                  SGPostCollectionViewCellDelegate>
 
 // IBOutlet Properties
 @property (weak, nonatomic) IBOutlet UICollectionView *feedCollectionView;
@@ -53,7 +55,7 @@
 #pragma mark - Helper Methods
 - (void) setupUI {
 
-    [self.feedCollectionView registerNib:[UINib nibWithNibName:@"PostCell" bundle:nil] forCellWithReuseIdentifier:@"PostCell"];
+    [self.feedCollectionView registerNib:[UINib nibWithNibName:@"SGPostCell" bundle:nil] forCellWithReuseIdentifier:@"PostCell"];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
 
     flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width);
@@ -118,13 +120,13 @@
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
 
-    PostCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCell" forIndexPath:indexPath];
+    SGPostCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCell" forIndexPath:indexPath];
 
     cell.delegate = self;
 
     if (cell == nil) {
         // Load the top-level objects from the custom cell XIB.
-        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"PostCell" owner:self options:nil];
+        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"SGPostCell" owner:self options:nil];
         // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
         cell = [nibArray objectAtIndex:0];
     }
@@ -146,7 +148,7 @@
         cell.dangerImage.hidden = NO;
         
         // hide moreView view
-        cell.moreView.hidden = YES;
+   //uncomment     cell.moreView.hidden = YES;
         
         // hide like more view
         cell.likeMoreView.hidden = YES;
@@ -156,20 +158,19 @@
         cell.dangerImage.hidden = YES;
         
         // show moreView view
-        cell.moreView.hidden = YES;
+    //uncomment         cell.moreView.hidden = YES;
         
         // show like more view
         cell.likeMoreView.hidden = NO;
         
     }
 
-    
-    
-    
     [cell.postImage loadInBackground];
     
     return cell;
 }
+
+
 
 #pragma - mark Cell Delegate Method
 

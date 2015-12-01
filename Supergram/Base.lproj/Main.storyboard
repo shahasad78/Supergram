@@ -594,7 +594,7 @@
                                         <rect key="frame" x="0.0" y="65" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yOt-0v-Xnp" id="xTl-Dp-hpv">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rtl-Cf-Kiy" customClass="PFImageView">
@@ -686,7 +686,7 @@
                                 <rect key="frame" x="0.0" y="263" width="600" height="288"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xr1-r3-7gU">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Xr1-r3-7gU">
                                     <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -712,10 +712,10 @@
                                         <animations/>
                                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="HFs-AH-0mf" firstAttribute="top" secondItem="I3B-rY-Ouc" secondAttribute="top" constant="5" id="5aF-9X-dCo"/>
-                                            <constraint firstAttribute="bottom" secondItem="HFs-AH-0mf" secondAttribute="bottom" constant="5" id="NSu-Fv-3H2"/>
-                                            <constraint firstAttribute="trailing" secondItem="HFs-AH-0mf" secondAttribute="trailing" constant="5" id="fz3-qS-5QM"/>
-                                            <constraint firstItem="HFs-AH-0mf" firstAttribute="leading" secondItem="I3B-rY-Ouc" secondAttribute="leading" constant="5" id="qBU-cm-S8h"/>
+                                            <constraint firstAttribute="bottom" secondItem="HFs-AH-0mf" secondAttribute="bottom" constant="5" id="5q2-dJ-IXG"/>
+                                            <constraint firstItem="HFs-AH-0mf" firstAttribute="leading" secondItem="I3B-rY-Ouc" secondAttribute="leading" constant="5" id="DrX-Ip-DvQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="HFs-AH-0mf" secondAttribute="trailing" constant="5" id="bAe-6X-tRx"/>
+                                            <constraint firstItem="HFs-AH-0mf" firstAttribute="top" secondItem="I3B-rY-Ouc" secondAttribute="top" constant="5" id="ucU-Wv-0VM"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="thumbnailImage" destination="HFs-AH-0mf" id="cpJ-h0-FQn"/>
@@ -1141,7 +1141,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DM8-Ii-exb" id="39g-bK-QWD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -1705,7 +1705,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45D-iX-8M4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1379" y="1178"/>
+            <point key="canvasLocation" x="1387" y="1178"/>
         </scene>
         <!--Supergram-->
         <scene sceneID="eNm-RU-OLe">
@@ -1734,7 +1734,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCell" id="Nds-zP-9pq" customClass="PostCollectionViewCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCell" id="Nds-zP-9pq" customClass="SGPostCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="277" height="295"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1782,7 +1782,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1d-3G-3Gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4532" y="1969"/>
+            <point key="canvasLocation" x="4400" y="1161"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Gsy-xu-jgn">
@@ -1859,6 +1859,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="K7B-qb-Oq4"/>
-        <segue reference="UYf-dI-KSV"/>
+        <segue reference="zz6-yg-bvq"/>
     </inferredMetricsTieBreakers>
 </document>
